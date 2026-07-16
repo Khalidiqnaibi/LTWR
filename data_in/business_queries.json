@@ -1,0 +1,1402 @@
+[
+ {
+  "id": 1,
+  "query": "What does TGT's official annual filing state about total revenue?",
+  "ticker": "TGT",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 2,
+  "query": "What does MSFT's official annual filing state about employee headcount?",
+  "ticker": "MSFT",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 3,
+  "query": "What does JNJ's official annual filing state about legal proceedings?",
+  "ticker": "JNJ",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 4,
+  "query": "What does WMT's official annual filing state about operating margin?",
+  "ticker": "WMT",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 5,
+  "query": "What does JPM's official annual filing state about employee headcount?",
+  "ticker": "JPM",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 6,
+  "query": "What does CVX's official annual filing state about employee headcount?",
+  "ticker": "CVX",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 7,
+  "query": "What does AAPL's official annual filing state about total revenue?",
+  "ticker": "AAPL",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 8,
+  "query": "What does CRM's official annual filing state about long-term debt?",
+  "ticker": "CRM",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 9,
+  "query": "What does CVX's official annual filing state about long-term debt?",
+  "ticker": "CVX",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 10,
+  "query": "What does CVX's official annual filing state about operating margin?",
+  "ticker": "CVX",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 11,
+  "query": "What does TGT's official annual filing state about operating margin?",
+  "ticker": "TGT",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 12,
+  "query": "What does TGT's official annual filing state about legal proceedings?",
+  "ticker": "TGT",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 13,
+  "query": "What does XOM's official annual filing state about operating margin?",
+  "ticker": "XOM",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 14,
+  "query": "What does JPM's official annual filing state about operating margin?",
+  "ticker": "JPM",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 15,
+  "query": "What does JNJ's official annual filing state about employee headcount?",
+  "ticker": "JNJ",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 16,
+  "query": "What does CAT's official annual filing state about total revenue?",
+  "ticker": "CAT",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 17,
+  "query": "What does CAT's official annual filing state about employee headcount?",
+  "ticker": "CAT",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 18,
+  "query": "What does TGT's official annual filing state about employee headcount?",
+  "ticker": "TGT",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 19,
+  "query": "What does NUE's official annual filing state about total revenue?",
+  "ticker": "NUE",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 20,
+  "query": "What does AAPL's official annual filing state about long-term debt?",
+  "ticker": "AAPL",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 21,
+  "query": "What does HON's official annual filing state about employee headcount?",
+  "ticker": "HON",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 22,
+  "query": "What does NUE's official annual filing state about employee headcount?",
+  "ticker": "NUE",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 23,
+  "query": "What does CVX's official annual filing state about legal proceedings?",
+  "ticker": "CVX",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 24,
+  "query": "What does CRM's official annual filing state about legal proceedings?",
+  "ticker": "CRM",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 25,
+  "query": "What does JNJ's official annual filing state about total revenue?",
+  "ticker": "JNJ",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 26,
+  "query": "What does JNJ's official annual filing state about long-term debt?",
+  "ticker": "JNJ",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 27,
+  "query": "What does XOM's official annual filing state about long-term debt?",
+  "ticker": "XOM",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 28,
+  "query": "What does CVX's official annual filing state about total revenue?",
+  "ticker": "CVX",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 29,
+  "query": "What does HON's official annual filing state about operating margin?",
+  "ticker": "HON",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 30,
+  "query": "What does MSFT's official annual filing state about operating margin?",
+  "ticker": "MSFT",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 31,
+  "query": "What does MSFT's official annual filing state about legal proceedings?",
+  "ticker": "MSFT",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 32,
+  "query": "What does CAT's official annual filing state about long-term debt?",
+  "ticker": "CAT",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 33,
+  "query": "What does XOM's official annual filing state about employee headcount?",
+  "ticker": "XOM",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 34,
+  "query": "What does PFE's official annual filing state about long-term debt?",
+  "ticker": "PFE",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 35,
+  "query": "What does JNJ's official annual filing state about operating margin?",
+  "ticker": "JNJ",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 36,
+  "query": "What does XOM's official annual filing state about total revenue?",
+  "ticker": "XOM",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 37,
+  "query": "What does UNH's official annual filing state about total revenue?",
+  "ticker": "UNH",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 38,
+  "query": "What does CRM's official annual filing state about employee headcount?",
+  "ticker": "CRM",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 39,
+  "query": "What does BAC's official annual filing state about employee headcount?",
+  "ticker": "BAC",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 40,
+  "query": "What does TGT's official annual filing state about long-term debt?",
+  "ticker": "TGT",
+  "fact": "debt",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 41,
+  "query": "What does AAPL's official annual filing state about legal proceedings?",
+  "ticker": "AAPL",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 42,
+  "query": "What does XOM's official annual filing state about legal proceedings?",
+  "ticker": "XOM",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 43,
+  "query": "What does WMT's official annual filing state about legal proceedings?",
+  "ticker": "WMT",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 44,
+  "query": "What does HON's official annual filing state about total revenue?",
+  "ticker": "HON",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 45,
+  "query": "What does NUE's official annual filing state about legal proceedings?",
+  "ticker": "NUE",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 46,
+  "query": "What does PFE's official annual filing state about employee headcount?",
+  "ticker": "PFE",
+  "fact": "headcount",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 47,
+  "query": "What does PFE's official annual filing state about operating margin?",
+  "ticker": "PFE",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 48,
+  "query": "What does JPM's official annual filing state about legal proceedings?",
+  "ticker": "JPM",
+  "fact": "litigation",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 49,
+  "query": "What does NUE's official annual filing state about operating margin?",
+  "ticker": "NUE",
+  "fact": "margin",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 50,
+  "query": "What does MSFT's official annual filing state about total revenue?",
+  "ticker": "MSFT",
+  "fact": "revenue",
+  "ablation_dimension": "filing_type"
+ },
+ {
+  "id": 51,
+  "query": "What is the audited, verified figure for PFE's long-term debt?",
+  "ticker": "PFE",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 52,
+  "query": "What is the audited, verified figure for NUE's total revenue?",
+  "ticker": "NUE",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 53,
+  "query": "What is the audited, verified figure for AAPL's total revenue?",
+  "ticker": "AAPL",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 54,
+  "query": "What is the audited, verified figure for HON's total revenue?",
+  "ticker": "HON",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 55,
+  "query": "What is the audited, verified figure for HON's legal proceedings?",
+  "ticker": "HON",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 56,
+  "query": "What is the audited, verified figure for JNJ's employee headcount?",
+  "ticker": "JNJ",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 57,
+  "query": "What is the audited, verified figure for JNJ's legal proceedings?",
+  "ticker": "JNJ",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 58,
+  "query": "What is the audited, verified figure for NUE's long-term debt?",
+  "ticker": "NUE",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 59,
+  "query": "What is the audited, verified figure for CAT's long-term debt?",
+  "ticker": "CAT",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 60,
+  "query": "What is the audited, verified figure for CAT's employee headcount?",
+  "ticker": "CAT",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 61,
+  "query": "What is the audited, verified figure for CRM's long-term debt?",
+  "ticker": "CRM",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 62,
+  "query": "What is the audited, verified figure for HON's long-term debt?",
+  "ticker": "HON",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 63,
+  "query": "What is the audited, verified figure for TGT's operating margin?",
+  "ticker": "TGT",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 64,
+  "query": "What is the audited, verified figure for CVX's employee headcount?",
+  "ticker": "CVX",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 65,
+  "query": "What is the audited, verified figure for BAC's employee headcount?",
+  "ticker": "BAC",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 66,
+  "query": "What is the audited, verified figure for TGT's employee headcount?",
+  "ticker": "TGT",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 67,
+  "query": "What is the audited, verified figure for CAT's operating margin?",
+  "ticker": "CAT",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 68,
+  "query": "What is the audited, verified figure for NUE's legal proceedings?",
+  "ticker": "NUE",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 69,
+  "query": "What is the audited, verified figure for AAPL's legal proceedings?",
+  "ticker": "AAPL",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 70,
+  "query": "What is the audited, verified figure for TGT's legal proceedings?",
+  "ticker": "TGT",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 71,
+  "query": "What is the audited, verified figure for TGT's total revenue?",
+  "ticker": "TGT",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 72,
+  "query": "What is the audited, verified figure for CAT's legal proceedings?",
+  "ticker": "CAT",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 73,
+  "query": "What is the audited, verified figure for BAC's legal proceedings?",
+  "ticker": "BAC",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 74,
+  "query": "What is the audited, verified figure for WMT's employee headcount?",
+  "ticker": "WMT",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 75,
+  "query": "What is the audited, verified figure for UNH's employee headcount?",
+  "ticker": "UNH",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 76,
+  "query": "What is the audited, verified figure for JPM's operating margin?",
+  "ticker": "JPM",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 77,
+  "query": "What is the audited, verified figure for BAC's long-term debt?",
+  "ticker": "BAC",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 78,
+  "query": "What is the audited, verified figure for JNJ's operating margin?",
+  "ticker": "JNJ",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 79,
+  "query": "What is the audited, verified figure for XOM's legal proceedings?",
+  "ticker": "XOM",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 80,
+  "query": "What is the audited, verified figure for MSFT's long-term debt?",
+  "ticker": "MSFT",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 81,
+  "query": "What is the audited, verified figure for MSFT's total revenue?",
+  "ticker": "MSFT",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 82,
+  "query": "What is the audited, verified figure for CAT's total revenue?",
+  "ticker": "CAT",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 83,
+  "query": "What is the audited, verified figure for UNH's long-term debt?",
+  "ticker": "UNH",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 84,
+  "query": "What is the audited, verified figure for NUE's operating margin?",
+  "ticker": "NUE",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 85,
+  "query": "What is the audited, verified figure for AAPL's long-term debt?",
+  "ticker": "AAPL",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 86,
+  "query": "What is the audited, verified figure for XOM's long-term debt?",
+  "ticker": "XOM",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 87,
+  "query": "What is the audited, verified figure for CVX's operating margin?",
+  "ticker": "CVX",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 88,
+  "query": "What is the audited, verified figure for CRM's employee headcount?",
+  "ticker": "CRM",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 89,
+  "query": "What is the audited, verified figure for HON's employee headcount?",
+  "ticker": "HON",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 90,
+  "query": "What is the audited, verified figure for UNH's total revenue?",
+  "ticker": "UNH",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 91,
+  "query": "What is the audited, verified figure for WMT's legal proceedings?",
+  "ticker": "WMT",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 92,
+  "query": "What is the audited, verified figure for AAPL's employee headcount?",
+  "ticker": "AAPL",
+  "fact": "headcount",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 93,
+  "query": "What is the audited, verified figure for WMT's long-term debt?",
+  "ticker": "WMT",
+  "fact": "debt",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 94,
+  "query": "What is the audited, verified figure for MSFT's legal proceedings?",
+  "ticker": "MSFT",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 95,
+  "query": "What is the audited, verified figure for PFE's operating margin?",
+  "ticker": "PFE",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 96,
+  "query": "What is the audited, verified figure for JNJ's total revenue?",
+  "ticker": "JNJ",
+  "fact": "revenue",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 97,
+  "query": "What is the audited, verified figure for CRM's legal proceedings?",
+  "ticker": "CRM",
+  "fact": "litigation",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 98,
+  "query": "What is the audited, verified figure for UNH's operating margin?",
+  "ticker": "UNH",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 99,
+  "query": "What is the audited, verified figure for AAPL's operating margin?",
+  "ticker": "AAPL",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 100,
+  "query": "What is the audited, verified figure for HON's operating margin?",
+  "ticker": "HON",
+  "fact": "margin",
+  "ablation_dimension": "audit_tier"
+ },
+ {
+  "id": 101,
+  "query": "What is PFE's current, most recent legal proceedings?",
+  "ticker": "PFE",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 102,
+  "query": "What is CRM's current, most recent long-term debt?",
+  "ticker": "CRM",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 103,
+  "query": "What is CVX's current, most recent operating margin?",
+  "ticker": "CVX",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 104,
+  "query": "What is UNH's current, most recent total revenue?",
+  "ticker": "UNH",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 105,
+  "query": "What is JNJ's current, most recent long-term debt?",
+  "ticker": "JNJ",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 106,
+  "query": "What is HON's current, most recent long-term debt?",
+  "ticker": "HON",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 107,
+  "query": "What is WMT's current, most recent operating margin?",
+  "ticker": "WMT",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 108,
+  "query": "What is CRM's current, most recent total revenue?",
+  "ticker": "CRM",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 109,
+  "query": "What is CVX's current, most recent legal proceedings?",
+  "ticker": "CVX",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 110,
+  "query": "What is WMT's current, most recent employee headcount?",
+  "ticker": "WMT",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 111,
+  "query": "What is PFE's current, most recent total revenue?",
+  "ticker": "PFE",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 112,
+  "query": "What is TGT's current, most recent long-term debt?",
+  "ticker": "TGT",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 113,
+  "query": "What is CAT's current, most recent operating margin?",
+  "ticker": "CAT",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 114,
+  "query": "What is BAC's current, most recent operating margin?",
+  "ticker": "BAC",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 115,
+  "query": "What is BAC's current, most recent total revenue?",
+  "ticker": "BAC",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 116,
+  "query": "What is TGT's current, most recent operating margin?",
+  "ticker": "TGT",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 117,
+  "query": "What is TGT's current, most recent total revenue?",
+  "ticker": "TGT",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 118,
+  "query": "What is JPM's current, most recent legal proceedings?",
+  "ticker": "JPM",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 119,
+  "query": "What is MSFT's current, most recent legal proceedings?",
+  "ticker": "MSFT",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 120,
+  "query": "What is AAPL's current, most recent legal proceedings?",
+  "ticker": "AAPL",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 121,
+  "query": "What is HON's current, most recent legal proceedings?",
+  "ticker": "HON",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 122,
+  "query": "What is TGT's current, most recent legal proceedings?",
+  "ticker": "TGT",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 123,
+  "query": "What is CAT's current, most recent long-term debt?",
+  "ticker": "CAT",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 124,
+  "query": "What is JNJ's current, most recent operating margin?",
+  "ticker": "JNJ",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 125,
+  "query": "What is CRM's current, most recent legal proceedings?",
+  "ticker": "CRM",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 126,
+  "query": "What is UNH's current, most recent long-term debt?",
+  "ticker": "UNH",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 127,
+  "query": "What is WMT's current, most recent total revenue?",
+  "ticker": "WMT",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 128,
+  "query": "What is WMT's current, most recent long-term debt?",
+  "ticker": "WMT",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 129,
+  "query": "What is JPM's current, most recent employee headcount?",
+  "ticker": "JPM",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 130,
+  "query": "What is XOM's current, most recent long-term debt?",
+  "ticker": "XOM",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 131,
+  "query": "What is XOM's current, most recent operating margin?",
+  "ticker": "XOM",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 132,
+  "query": "What is CVX's current, most recent long-term debt?",
+  "ticker": "CVX",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 133,
+  "query": "What is BAC's current, most recent legal proceedings?",
+  "ticker": "BAC",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 134,
+  "query": "What is CAT's current, most recent total revenue?",
+  "ticker": "CAT",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 135,
+  "query": "What is HON's current, most recent employee headcount?",
+  "ticker": "HON",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 136,
+  "query": "What is CAT's current, most recent employee headcount?",
+  "ticker": "CAT",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 137,
+  "query": "What is AAPL's current, most recent operating margin?",
+  "ticker": "AAPL",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 138,
+  "query": "What is CAT's current, most recent legal proceedings?",
+  "ticker": "CAT",
+  "fact": "litigation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 139,
+  "query": "What is PFE's current, most recent long-term debt?",
+  "ticker": "PFE",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 140,
+  "query": "What is NUE's current, most recent employee headcount?",
+  "ticker": "NUE",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 141,
+  "query": "What is MSFT's current, most recent total revenue?",
+  "ticker": "MSFT",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 142,
+  "query": "What is JNJ's current, most recent total revenue?",
+  "ticker": "JNJ",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 143,
+  "query": "What is BAC's current, most recent long-term debt?",
+  "ticker": "BAC",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 144,
+  "query": "What is TGT's current, most recent employee headcount?",
+  "ticker": "TGT",
+  "fact": "headcount",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 145,
+  "query": "What is NUE's current, most recent total revenue?",
+  "ticker": "NUE",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 146,
+  "query": "What is NUE's current, most recent long-term debt?",
+  "ticker": "NUE",
+  "fact": "debt",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 147,
+  "query": "What is HON's current, most recent total revenue?",
+  "ticker": "HON",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 148,
+  "query": "What is JPM's current, most recent total revenue?",
+  "ticker": "JPM",
+  "fact": "revenue",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 149,
+  "query": "What is UNH's current, most recent operating margin?",
+  "ticker": "UNH",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 150,
+  "query": "What is NUE's current, most recent operating margin?",
+  "ticker": "NUE",
+  "fact": "margin",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 151,
+  "query": "What is HON's employee headcount?",
+  "ticker": "HON",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 152,
+  "query": "What is AAPL's operating margin?",
+  "ticker": "AAPL",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 153,
+  "query": "What is XOM's total revenue?",
+  "ticker": "XOM",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 154,
+  "query": "What is NUE's total revenue?",
+  "ticker": "NUE",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 155,
+  "query": "What is NUE's legal proceedings?",
+  "ticker": "NUE",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 156,
+  "query": "What is JPM's long-term debt?",
+  "ticker": "JPM",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 157,
+  "query": "What is TGT's long-term debt?",
+  "ticker": "TGT",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 158,
+  "query": "What is JPM's legal proceedings?",
+  "ticker": "JPM",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 159,
+  "query": "What is TGT's operating margin?",
+  "ticker": "TGT",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 160,
+  "query": "What is CAT's employee headcount?",
+  "ticker": "CAT",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 161,
+  "query": "What is AAPL's total revenue?",
+  "ticker": "AAPL",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 162,
+  "query": "What is UNH's employee headcount?",
+  "ticker": "UNH",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 163,
+  "query": "What is BAC's operating margin?",
+  "ticker": "BAC",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 164,
+  "query": "What is WMT's total revenue?",
+  "ticker": "WMT",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 165,
+  "query": "What is HON's legal proceedings?",
+  "ticker": "HON",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 166,
+  "query": "What is PFE's employee headcount?",
+  "ticker": "PFE",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 167,
+  "query": "What is HON's operating margin?",
+  "ticker": "HON",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 168,
+  "query": "What is XOM's legal proceedings?",
+  "ticker": "XOM",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 169,
+  "query": "What is XOM's long-term debt?",
+  "ticker": "XOM",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 170,
+  "query": "What is UNH's operating margin?",
+  "ticker": "UNH",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 171,
+  "query": "What is BAC's legal proceedings?",
+  "ticker": "BAC",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 172,
+  "query": "What is WMT's operating margin?",
+  "ticker": "WMT",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 173,
+  "query": "What is CVX's operating margin?",
+  "ticker": "CVX",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 174,
+  "query": "What is WMT's employee headcount?",
+  "ticker": "WMT",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 175,
+  "query": "What is TGT's legal proceedings?",
+  "ticker": "TGT",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 176,
+  "query": "What is XOM's operating margin?",
+  "ticker": "XOM",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 177,
+  "query": "What is CAT's long-term debt?",
+  "ticker": "CAT",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 178,
+  "query": "What is CRM's operating margin?",
+  "ticker": "CRM",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 179,
+  "query": "What is JPM's total revenue?",
+  "ticker": "JPM",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 180,
+  "query": "What is BAC's long-term debt?",
+  "ticker": "BAC",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 181,
+  "query": "What is BAC's employee headcount?",
+  "ticker": "BAC",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 182,
+  "query": "What is JNJ's total revenue?",
+  "ticker": "JNJ",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 183,
+  "query": "What is CRM's legal proceedings?",
+  "ticker": "CRM",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 184,
+  "query": "What is NUE's employee headcount?",
+  "ticker": "NUE",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 185,
+  "query": "What is AAPL's long-term debt?",
+  "ticker": "AAPL",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 186,
+  "query": "What is PFE's legal proceedings?",
+  "ticker": "PFE",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 187,
+  "query": "What is JNJ's long-term debt?",
+  "ticker": "JNJ",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 188,
+  "query": "What is UNH's total revenue?",
+  "ticker": "UNH",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 189,
+  "query": "What is MSFT's legal proceedings?",
+  "ticker": "MSFT",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 190,
+  "query": "What is TGT's employee headcount?",
+  "ticker": "TGT",
+  "fact": "headcount",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 191,
+  "query": "What is HON's total revenue?",
+  "ticker": "HON",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 192,
+  "query": "What is CRM's total revenue?",
+  "ticker": "CRM",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 193,
+  "query": "What is CAT's legal proceedings?",
+  "ticker": "CAT",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 194,
+  "query": "What is JPM's operating margin?",
+  "ticker": "JPM",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 195,
+  "query": "What is PFE's total revenue?",
+  "ticker": "PFE",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 196,
+  "query": "What is MSFT's total revenue?",
+  "ticker": "MSFT",
+  "fact": "revenue",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 197,
+  "query": "What is CVX's long-term debt?",
+  "ticker": "CVX",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 198,
+  "query": "What is JNJ's legal proceedings?",
+  "ticker": "JNJ",
+  "fact": "litigation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 199,
+  "query": "What is PFE's long-term debt?",
+  "ticker": "PFE",
+  "fact": "debt",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 200,
+  "query": "What is JNJ's operating margin?",
+  "ticker": "JNJ",
+  "fact": "margin",
+  "ablation_dimension": "combined"
+ }
+]

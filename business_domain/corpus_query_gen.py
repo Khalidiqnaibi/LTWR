@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 corpus_gen.py
 
@@ -32,11 +31,15 @@ FILING_TYPE_NORMALIZED = {"DEF 14A": "DEF14A"}  # Normalizes variant names
 
 MIN_FISCAL_YEAR = 2022
 
-# Map quarterly and other naturally unaudited files directly to reduce lookup overhead
+# Only 8-K is genuinely unaudited. 10-Q filings receive an auditor's
+# limited review (SAS 100 / AS 4105), and DEF14A proxy statements
+# reference audited financials -- both need per-filing resolution, not a
+# blanket "Unaudited" tag, or audit_tier collapses into a restatement of
+# filing_type (see business_domain/README.md's note on this).
 AUDIT_TIER_BY_TYPE = {
-    "10-K": None,     # Resolved dynamically per annual filing
-    "10-Q": "Unaudited",
-    "DEF14A": "Unaudited",
+    "10-K": None,      # Resolved dynamically per filing
+    "10-Q": None,      # Resolved dynamically per filing
+    "DEF14A": None,    # Resolved dynamically per filing
     "8-K": "Unaudited",
 }
 
@@ -166,7 +169,7 @@ def resolve_audit_tier(company_facts: dict, year: int, accession: str, filing_te
             return "Big4"
         if "pricewaterhousecoopers" in text_lower or "pwc" in text_lower:
             return "Big4"
-        
+
         # Check if there is any registered audit signature or opinion reference
         if "independent registered public accounting firm" in text_lower or "report of independent" in text_lower:
             return "OtherAudited"
@@ -193,7 +196,7 @@ def extract_xbrl_fact(company_facts: dict, fact_key: str, accession: str):
     tags = FACT_XBRL_TAGS.get(fact_key, [])
     facts_dict = company_facts.get("facts", {})
     target_accn = _normalize_accn(accession)
-    
+
     best_val = None
     max_fy = -1
 
@@ -225,7 +228,7 @@ def build_document_record(chunk_id, ticker, sector, filing, cik, filing_text, co
 
     # Retrieve audited state: handle statically where possible, or invoke resolver
     audit_tier = AUDIT_TIER_BY_TYPE.get(filing_type)
-    if audit_tier is None:  
+    if audit_tier is None:
         audit_tier = resolve_audit_tier(company_facts, year, accession, filing_text)
 
     text_facts = extract_text_facts(filing_text)
@@ -303,7 +306,7 @@ def generate_queries(corpus_path="data_in/business_corpus.json",
     tickers = sorted(set(d["ticker"] for d in corpus))
 
     facts = ["revenue", "debt", "litigation", "headcount", "margin"]
-    
+
     query_templates = {
         "filing_type": "What does {ticker}'s official annual filing state about {fact}?",
         "audit_tier": "What is the audited, verified figure for {ticker}'s {fact}?",
@@ -350,7 +353,7 @@ if __name__ == "__main__":
     parser.add_argument("--corpus_out", type=str, default="data_in/business_corpus.json", help="Path to write the corpus JSON")
     parser.add_argument("--queries_out", type=str, default="data_in/business_queries.json", help="Path to write the benchmark queries")
     parser.add_argument("--target_docs", type=int, default=900, help="Target number of documents to collect")
-    args = parser.get_args() if hasattr(parser, "get_args") else parser.parse_args()
+    args = parser.parse_args([])
 
     # Domain companies for evaluation
     companies = [
@@ -363,17 +366,17 @@ if __name__ == "__main__":
 
     print("Step 1: Commencing Real SEC EDGAR Filing Retrieval...")
     generate_corpus(
-        tickers_with_sectors=companies, 
-        out_path=args.corpus_out, 
-        years=range(MIN_FISCAL_YEAR, 2027), 
+        tickers_with_sectors=companies,
+        out_path=args.corpus_out,
+        years=range(MIN_FISCAL_YEAR, 2027),
         n_docs_target=args.target_docs
     )
 
     print("\nStep 2: Commencing Stratified Query Benchmark Generation...")
     generate_queries(
-        corpus_path=args.corpus_out, 
-        out_path=args.queries_out, 
+        corpus_path=args.corpus_out,
+        out_path=args.queries_out,
         n_per_dimension=50
     )
-    
+
     print("\nProcessing finished. Pipeline outputs are completely ready for LTWR training.")
