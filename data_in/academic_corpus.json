@@ -56,6 +56,17 @@
  },
  {
   "chunk_id": "chunk_00005",
+  "text": "Fast learning method for convolutional neural networks using extreme learning machine and its application to lane detection [Published in: Neural Networks]",
+  "source": "Crossref:10.1016/j.neunet.2016.12.002",
+  "doi": "10.1016/j.neunet.2016.12.002",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2017,
+  "venue": "Neural Networks",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00006",
   "text": "A Telescopic Binary Learning Machine for Training Neural Networks [Published in: IEEE Transactions on Neural Networks and Learning Systems]",
   "source": "Crossref:10.1109/tnnls.2016.2537300",
   "doi": "10.1109/tnnls.2016.2537300",
@@ -66,7 +77,7 @@
   "field": "machine_learning"
  },
  {
-  "chunk_id": "chunk_00006",
+  "chunk_id": "chunk_00007",
   "text": "DeepX: Deep Learning Accelerator for Restricted Boltzmann Machine Artificial Neural Networks [Published in: IEEE Transactions on Neural Networks and Learning Systems]",
   "source": "Crossref:10.1109/tnnls.2017.2665555",
   "doi": "10.1109/tnnls.2017.2665555",
@@ -74,17 +85,6 @@
   "retracted": false,
   "pub_year": 2018,
   "venue": "IEEE Transactions on Neural Networks and Learning Systems",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00007",
-  "text": "Fast learning method for convolutional neural networks using extreme learning machine and its application to lane detection [Published in: Neural Networks]",
-  "source": "Crossref:10.1016/j.neunet.2016.12.002",
-  "doi": "10.1016/j.neunet.2016.12.002",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2017,
-  "venue": "Neural Networks",
   "field": "machine_learning"
  },
  {
@@ -144,23 +144,23 @@
  },
  {
   "chunk_id": "chunk_00013",
-  "text": "Practical classification accuracy of sequential data using neural networks [Published in: Machine Learning with Applications]",
-  "source": "Crossref:10.1016/j.mlwa.2024.100611",
-  "doi": "10.1016/j.mlwa.2024.100611",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2025,
-  "venue": "Machine Learning with Applications",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00014",
   "text": "Quantile convolutional neural networks for Value at Risk forecasting [Published in: Machine Learning with Applications]",
   "source": "Crossref:10.1016/j.mlwa.2021.100096",
   "doi": "10.1016/j.mlwa.2021.100096",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2021,
+  "venue": "Machine Learning with Applications",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00014",
+  "text": "Practical classification accuracy of sequential data using neural networks [Published in: Machine Learning with Applications]",
+  "source": "Crossref:10.1016/j.mlwa.2024.100611",
+  "doi": "10.1016/j.mlwa.2024.100611",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2025,
   "venue": "Machine Learning with Applications",
   "field": "machine_learning"
  },
@@ -265,17 +265,6 @@
  },
  {
   "chunk_id": "chunk_00024",
-  "text": "A Survey of Stochastic Computing Neural Networks for Machine Learning Applications [Published in: IEEE Transactions on Neural Networks and Learning Systems]",
-  "source": "Crossref:10.1109/tnnls.2020.3009047",
-  "doi": "10.1109/tnnls.2020.3009047",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2021,
-  "venue": "IEEE Transactions on Neural Networks and Learning Systems",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00025",
   "text": "Machine Learning for Multiscale Video Coding [Published in: Optical Memory and Neural Networks]",
   "source": "Crossref:10.3103/s1060992x23030037",
   "doi": "10.3103/s1060992x23030037",
@@ -283,6 +272,17 @@
   "retracted": false,
   "pub_year": 2023,
   "venue": "Optical Memory and Neural Networks",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00025",
+  "text": "A Survey of Stochastic Computing Neural Networks for Machine Learning Applications [Published in: IEEE Transactions on Neural Networks and Learning Systems]",
+  "source": "Crossref:10.1109/tnnls.2020.3009047",
+  "doi": "10.1109/tnnls.2020.3009047",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2021,
+  "venue": "IEEE Transactions on Neural Networks and Learning Systems",
   "field": "machine_learning"
  },
  {
@@ -353,39 +353,6 @@
  },
  {
   "chunk_id": "chunk_00032",
-  "text": "Theoretical bounds of generalization error for generalized extreme learning machine and random vector functional link network [Published in: Neural Networks]",
-  "source": "Crossref:10.1016/j.neunet.2023.04.014",
-  "doi": "10.1016/j.neunet.2023.04.014",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2023,
-  "venue": "Neural Networks",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00033",
-  "text": "Meta-cognitive online sequential extreme learning machine for imbalanced and concept-drifting data classification [Published in: Neural Networks]",
-  "source": "Crossref:10.1016/j.neunet.2016.04.008",
-  "doi": "10.1016/j.neunet.2016.04.008",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2016,
-  "venue": "Neural Networks",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00034",
-  "text": "Discriminative clustering via extreme learning machine [Published in: Neural Networks]",
-  "source": "Crossref:10.1016/j.neunet.2015.06.002",
-  "doi": "10.1016/j.neunet.2015.06.002",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2015,
-  "venue": "Neural Networks",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00035",
   "text": "R-ELMNet: Regularized extreme learning machine network [Published in: Neural Networks]",
   "source": "Crossref:10.1016/j.neunet.2020.06.009",
   "doi": "10.1016/j.neunet.2020.06.009",
@@ -396,18 +363,40 @@
   "field": "machine_learning"
  },
  {
-  "chunk_id": "chunk_00036",
-  "text": "Prediction Of Used Car Prices Using Artifical Neural Networks And Machine Learning [Published in: International Journal of Research Publication and Reviews]",
-  "source": "Crossref:10.55248/gengpi.6.0525.18142",
-  "doi": "10.55248/gengpi.6.0525.18142",
+  "chunk_id": "chunk_00033",
+  "text": "Theoretical bounds of generalization error for generalized extreme learning machine and random vector functional link network [Published in: Neural Networks]",
+  "source": "Crossref:10.1016/j.neunet.2023.04.014",
+  "doi": "10.1016/j.neunet.2023.04.014",
   "pub_type": "JournalArticle",
   "retracted": false,
-  "pub_year": 2025,
-  "venue": "International Journal of Research Publication and Reviews",
+  "pub_year": 2023,
+  "venue": "Neural Networks",
   "field": "machine_learning"
  },
  {
-  "chunk_id": "chunk_00037",
+  "chunk_id": "chunk_00034",
+  "text": "Meta-cognitive online sequential extreme learning machine for imbalanced and concept-drifting data classification [Published in: Neural Networks]",
+  "source": "Crossref:10.1016/j.neunet.2016.04.008",
+  "doi": "10.1016/j.neunet.2016.04.008",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2016,
+  "venue": "Neural Networks",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00035",
+  "text": "Discriminative clustering via extreme learning machine [Published in: Neural Networks]",
+  "source": "Crossref:10.1016/j.neunet.2015.06.002",
+  "doi": "10.1016/j.neunet.2015.06.002",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2015,
+  "venue": "Neural Networks",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00036",
   "text": "Beyond graph neural networks with lifted relational neural networks [Published in: Machine Learning]",
   "source": "Crossref:10.1007/s10994-021-06017-3",
   "doi": "10.1007/s10994-021-06017-3",
@@ -415,6 +404,17 @@
   "retracted": false,
   "pub_year": 2021,
   "venue": "Machine Learning",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00037",
+  "text": "Prediction Of Used Car Prices Using Artifical Neural Networks And Machine Learning [Published in: International Journal of Research Publication and Reviews]",
+  "source": "Crossref:10.55248/gengpi.6.0525.18142",
+  "doi": "10.55248/gengpi.6.0525.18142",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2025,
+  "venue": "International Journal of Research Publication and Reviews",
   "field": "machine_learning"
  },
  {
@@ -441,17 +441,6 @@
  },
  {
   "chunk_id": "chunk_00040",
-  "text": "Machine learning of Physics-informed Graph Neural Networks from TCAD models",
-  "source": "Crossref:10.26226/m.612f6739bc9810372410095e",
-  "doi": "10.26226/m.612f6739bc9810372410095e",
-  "pub_type": "Preprint",
-  "retracted": false,
-  "pub_year": 2021,
-  "venue": "Morressier",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00041",
   "text": "Scientific Machine Learning with Physics-Informed Neural Networks",
   "source": "Crossref:10.2139/ssrn.5212859",
   "doi": "10.2139/ssrn.5212859",
@@ -462,10 +451,21 @@
   "field": "machine_learning"
  },
  {
-  "chunk_id": "chunk_00042",
+  "chunk_id": "chunk_00041",
   "text": "Machine learning of Physics-informed Graph Neural Networks from TCAD models",
   "source": "Crossref:10.26226/morressier.612f6739bc9810372410095e",
   "doi": "10.26226/morressier.612f6739bc9810372410095e",
+  "pub_type": "Preprint",
+  "retracted": false,
+  "pub_year": 2021,
+  "venue": "Morressier",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00042",
+  "text": "Machine learning of Physics-informed Graph Neural Networks from TCAD models",
+  "source": "Crossref:10.26226/m.612f6739bc9810372410095e",
+  "doi": "10.26226/m.612f6739bc9810372410095e",
   "pub_type": "Preprint",
   "retracted": false,
   "pub_year": 2021,
@@ -485,17 +485,6 @@
  },
  {
   "chunk_id": "chunk_00044",
-  "text": "Fake News Detection using Machine Learning Algorithms and Recurrent Neural Networks. &lt;p&gt;In recent years, fake news has been surfacing in enormous numbers and spreading on the internet world for various political and commercial purposes. One major reason for that huge number is the rapid growth of social media. Online social network users can quickly get infected by falling for deceptive phrases and words which already had a huge impact on society. To combat this issue, Fact-checking, a method of evaluating the credibility of online news articles is practiced but it usually takes a longer time to process and flag fake news. By the time of completion, the news would have already reached most of the audiences. The vital goal in improving the credibility of online news is to identify fake news promptly. The core purpose of this research is to analyse, compare and evaluate the performance of multiple machine learning and deep learning algorithms for detecting fake news. The idea behind this research is to find the best performing model to identify fake news, this is achieved by building and comparing the performance of seven different models comprising five machine learning models and two deep learning models. Accuracy, recall, precision, f1score and ROC curve are calculated to evaluate the model\u2019s performance. A web application \u201cFake News Detector\u201d is also built to distinguish the fake and true news.&lt;/p&gt;",
-  "source": "Crossref:10.31124/advance.20751379",
-  "doi": "10.31124/advance.20751379",
-  "pub_type": "Preprint",
-  "retracted": false,
-  "pub_year": 2022,
-  "venue": "SAGE Publications",
-  "field": "machine_learning"
- },
- {
-  "chunk_id": "chunk_00045",
   "text": "MetaStructure and Iterated MetaStructure in Machine-Learning, Quantum Neural Networks, and Feature Selection. A MetaStructure treats entire mathematical structures as objects, with meta-operations producing new structures. An Iterated MetaStructure arises by repeatedly applying the MetaStructure construction, thereby forming hierarchical layers where structures of structures yield progressively deeper meta-level frameworks. MetaStructure and Iterated MetaStructure are known as approaches applicable to arbitrary concepts. In this paper, we investigate the MetaStructure and Iterated MetaStructure of Machine Learning, Quantum Neural Networks, Feature Selection, Decision-Tree, and Algorithms. Although these discussions are theoretical in nature, future work will require evaluating their effectiveness in computational implementations.",
   "source": "Crossref:10.36227/techrxiv.175693713.31579330/v1",
   "doi": "10.36227/techrxiv.175693713.31579330/v1",
@@ -503,6 +492,17 @@
   "retracted": false,
   "pub_year": 2025,
   "venue": "Institute of Electrical and Electronics Engineers (IEEE)",
+  "field": "machine_learning"
+ },
+ {
+  "chunk_id": "chunk_00045",
+  "text": "Fake News Detection using Machine Learning Algorithms and Recurrent Neural Networks. &lt;p&gt;In recent years, fake news has been surfacing in enormous numbers and spreading on the internet world for various political and commercial purposes. One major reason for that huge number is the rapid growth of social media. Online social network users can quickly get infected by falling for deceptive phrases and words which already had a huge impact on society. To combat this issue, Fact-checking, a method of evaluating the credibility of online news articles is practiced but it usually takes a longer time to process and flag fake news. By the time of completion, the news would have already reached most of the audiences. The vital goal in improving the credibility of online news is to identify fake news promptly. The core purpose of this research is to analyse, compare and evaluate the performance of multiple machine learning and deep learning algorithms for detecting fake news. The idea behind this research is to find the best performing model to identify fake news, this is achieved by building and comparing the performance of seven different models comprising five machine learning models and two deep learning models. Accuracy, recall, precision, f1score and ROC curve are calculated to evaluate the model\u2019s performance. A web application \u201cFake News Detector\u201d is also built to distinguish the fake and true news.&lt;/p&gt;",
+  "source": "Crossref:10.31124/advance.20751379",
+  "doi": "10.31124/advance.20751379",
+  "pub_type": "Preprint",
+  "retracted": false,
+  "pub_year": 2022,
+  "venue": "SAGE Publications",
   "field": "machine_learning"
  },
  {
@@ -650,13 +650,13 @@
  },
  {
   "chunk_id": "chunk_00059",
-  "text": "Application of Multi-Scale Convolutional Neural Networks and Extreme Learning Machine in Mechanical Fault Diagnosis",
-  "source": "Crossref:10.2139/ssrn.4351206",
-  "doi": "10.2139/ssrn.4351206",
+  "text": "Machine Learning Nucleation Collective Variables with Graph Neural Networks. The efficient calculation of nucleation collective variables (CVs) is one of the main limitations to the application of enhanced sampling methods to the investigation of nucleation processes in realistic environments. Here we discuss the development of a graph-based model for the approximation of nucleation CVs, which enables orders-of-magnitude gains in computational efficiency in the on-the-fly evaluation of nucleation CVs. By performing simulations on a nucleating colloidal system mimicking a multistep nucleation process from solution, we assess the model's efficiency in both postprocessing and on-the-fly biasing of nucleation trajectories with pulling, umbrella sampling and metadynamics simulations. Moreover, we probe and discuss the transferability of graph-based models of nucleation CVs across systems by using the model of a CV based on sixth-order Steinhardt parameters trained on a colloidal system to drive the nucleation of crystalline copper from its melt. Our approach is general and potentially transferable to more complex systems as well as to different CVs.",
+  "source": "Crossref:10.26434/chemrxiv-2023-l6jjd-v2",
+  "doi": "10.26434/chemrxiv-2023-l6jjd-v2",
   "pub_type": "Preprint",
   "retracted": false,
   "pub_year": 2023,
-  "venue": "Elsevier BV",
+  "venue": "American Chemical Society (ACS)",
   "field": "machine_learning"
  },
  {
@@ -1112,6 +1112,17 @@
  },
  {
   "chunk_id": "chunk_00101",
+  "text": "Locoregional Treatment in Early Stage Breast Cancer: More Evidence and Yet More Questions? [Published in: Clinical Oncology]",
+  "source": "Crossref:10.1016/j.clon.2015.09.004",
+  "doi": "10.1016/j.clon.2015.09.004",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2015,
+  "venue": "Clinical Oncology",
+  "field": "oncology"
+ },
+ {
+  "chunk_id": "chunk_00102",
   "text": "Exercise as cancer treatment: A clinical oncology framework for exercise oncology research. Exercise has been proposed as a possible cancer treatment; however, there are an infinite number of clinical oncology settings involving diverse cancer types and treatment protocols in which exercise could be tested as a cancer treatment. The primary purpose of this paper is to propose a conceptual framework to organize and guide research on exercise as a cancer treatment across distinct clinical oncology settings. A secondary purpose is to provide an overview of existing exercise research using the proposed framework. The Exercise as Cancer Treatment (EXACT) framework proposes nine distinct clinical oncology scenarios based on tumor/disease status and treatment status at the time of the proposed exercise treatment. In terms of tumor/disease status, the primary tumor has either been surgically removed (primary goal to treat micrometastases), not surgically removed (primary goal to treat the primary tumor), or metastatic disease is present (primary goal to treat metastatic disease). In terms of treatment status, the extant disease has either not been treated yet (treatment na\u00efve), is currently being treated (active treatment), or has previously been treated. These two key clinical oncology variables\u2014tumor/disease status and treatment status\u2014result in nine distinct clinical oncology scenarios in which exercise could be tested as a new cancer treatment: (a) treatment na\u00efve micrometastases, (b) actively treated micrometastases, (c) previously treated micrometastases, (d) treatment na\u00efve primary tumors, (e) actively treated primary tumors, (f) previously treated primary tumors, (g) treatment na\u00efve metastatic disease, (h) actively treated metastatic disease, and (i) previously treated metastatic disease. To date, most preclinical animal studies have examined the effects of exercise on treatment na\u00efve and actively treated primary tumors. Conversely, most observational human studies have examined the associations between exercise and cancer recurrence/survival in patients actively treated or previously treated for micrometastases. Few clinical trials have been conducted in any of these scenarios. For exercise to be integrated into clinical oncology practice as a cancer treatment, it will need to demonstrate benefit in a specific clinical setting. The EXACT framework provides a simple taxonomy for systematically evaluating exercise as a potential cancer treatment across a diverse range of cancer types and treatment protocols. [Published in: Frontiers in Oncology]",
   "source": "Crossref:10.3389/fonc.2022.957135",
   "doi": "10.3389/fonc.2022.957135",
@@ -1122,24 +1133,13 @@
   "field": "oncology"
  },
  {
-  "chunk_id": "chunk_00102",
+  "chunk_id": "chunk_00103",
   "text": "Targeting DNA Repair in Ovarian Cancer Treatment Resistance [Published in: Clinical Oncology]",
   "source": "Crossref:10.1016/j.clon.2020.03.005",
   "doi": "10.1016/j.clon.2020.03.005",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2020,
-  "venue": "Clinical Oncology",
-  "field": "oncology"
- },
- {
-  "chunk_id": "chunk_00103",
-  "text": "Locoregional Treatment in Early Stage Breast Cancer: More Evidence and Yet More Questions? [Published in: Clinical Oncology]",
-  "source": "Crossref:10.1016/j.clon.2015.09.004",
-  "doi": "10.1016/j.clon.2015.09.004",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2015,
   "venue": "Clinical Oncology",
   "field": "oncology"
  },
@@ -1244,6 +1244,17 @@
  },
  {
   "chunk_id": "chunk_00113",
+  "text": "Prospects for Personalised Treatment of Patients with Radioiodine-avid Locally Recurrent or Metastatic Thyroid Cancer [Published in: Clinical Oncology]",
+  "source": "Crossref:10.1016/j.clon.2020.11.010",
+  "doi": "10.1016/j.clon.2020.11.010",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2021,
+  "venue": "Clinical Oncology",
+  "field": "oncology"
+ },
+ {
+  "chunk_id": "chunk_00114",
   "text": "Treatment of Breast and Prostate Cancer by Hypofractionated Radiotherapy: Potential Risks and Benefits [Published in: Clinical Oncology]",
   "source": "Crossref:10.1016/j.clon.2015.02.008",
   "doi": "10.1016/j.clon.2015.02.008",
@@ -1254,7 +1265,7 @@
   "field": "oncology"
  },
  {
-  "chunk_id": "chunk_00114",
+  "chunk_id": "chunk_00115",
   "text": "The Use of Palliative Radiotherapy in the Treatment of Lung Cancer [Published in: Clinical Oncology]",
   "source": "Crossref:10.1016/j.clon.2022.08.032",
   "doi": "10.1016/j.clon.2022.08.032",
@@ -1265,24 +1276,13 @@
   "field": "oncology"
  },
  {
-  "chunk_id": "chunk_00115",
+  "chunk_id": "chunk_00116",
   "text": "A Survey of Women's Experience with Treatment for Breast Cancer on Long-term Employment [Published in: Clinical Oncology]",
   "source": "Crossref:10.1016/j.clon.2018.02.006",
   "doi": "10.1016/j.clon.2018.02.006",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2018,
-  "venue": "Clinical Oncology",
-  "field": "oncology"
- },
- {
-  "chunk_id": "chunk_00116",
-  "text": "Prospects for Personalised Treatment of Patients with Radioiodine-avid Locally Recurrent or Metastatic Thyroid Cancer [Published in: Clinical Oncology]",
-  "source": "Crossref:10.1016/j.clon.2020.11.010",
-  "doi": "10.1016/j.clon.2020.11.010",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2021,
   "venue": "Clinical Oncology",
   "field": "oncology"
  },
@@ -1926,17 +1926,6 @@
  },
  {
   "chunk_id": "chunk_00175",
-  "text": "Climate Change of 4\u00b0C Global Warming above Pre-industrial Levels [Published in: Advances in Atmospheric Sciences]",
-  "source": "Crossref:10.1007/s00376-018-7160-4",
-  "doi": "10.1007/s00376-018-7160-4",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2018,
-  "venue": "Advances in Atmospheric Sciences",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00176",
   "text": "The Nature of Climate Change- equivalent Climate Change Model\u2019s Application in Decoding the Root Cause of Global Warming. Scrutiny and analysis of various energy applications show that the energy conversion to useful work or new products has been systematically inefficient. The global energy\u2019s total effective conversion efficiency is estimated only about 20% and about 80% of the energy has been discharged into the environment. It is this energy that leads to the unbalance of the climate system\u2019s energy budget balance and causes the global warming. This article presents a simple equivalent climate change model to track the past global warming and to predict the future change trend at the global scale. The model comprises of an equivalent climate change surface air boundary layer, an equivalent climate change land surface boundary layer and an equivalent climate change seawaters surface boundary layer. It produces unique definitive relationships between the temperature changes and the heat entered the air, waters and land. The model can also be used to forecast future non-renewable energy consumption needed to keep the temperature rising under Paris Accord. Analysis of currently available data by using this model confirms that temperature changes in air, seawaters and land closely correlate to the amount of heat discharged into the climate system from human activities. NASA and NOAA\u2019s observations of temperature anomalies for the surface air, sea surface and land surface are well consistent with the temperature changes calculated by this model, especially the calculated results at the depth of 70 meters of the surface air boundary layer and NASA\u2019s Lowess Smoothing trend are very close. Flaring intensifies global warming. Reducing use of fossil fuels, nuclear and geothermal energies, developing surface renewable energies and increasing energy\u2019s total effective conversion efficiency and thus reducing the amount of residual/waste energy are the paths to effectively and efficiently control global warming. [Published in: International Journal of Environment and Climate Change]",
   "source": "Crossref:10.9734/ijecc/2019/v9i1230160",
   "doi": "10.9734/ijecc/2019/v9i1230160",
@@ -1944,6 +1933,17 @@
   "retracted": false,
   "pub_year": 2019,
   "venue": "International Journal of Environment and Climate Change",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00176",
+  "text": "Climate Change of 4\u00b0C Global Warming above Pre-industrial Levels [Published in: Advances in Atmospheric Sciences]",
+  "source": "Crossref:10.1007/s00376-018-7160-4",
+  "doi": "10.1007/s00376-018-7160-4",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2018,
+  "venue": "Advances in Atmospheric Sciences",
   "field": "climate_science"
  },
  {
@@ -1981,17 +1981,6 @@
  },
  {
   "chunk_id": "chunk_00180",
-  "text": "The Correlation of Seismic Activity and Recent Global Warming: 2016 Update [Published in: Environment Pollution and Climate Change]",
-  "source": "Crossref:10.4172/2573-458x.1000e103",
-  "doi": "10.4172/2573-458x.1000e103",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2017,
-  "venue": "Environment Pollution and Climate Change",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00181",
   "text": "Medicine in a Warming World: The Physician's Role in Climate Action. ABSTRACT Should physicians, whose collective practices contribute significantly to climate change, respond to its health hazards as part of their professional responsibilities? Or are healthcare practices, often deemed essential, exempt from reevaluation through an environmentally sustainable lens? If not, how can physicians who provide direct patient care make clinical decisions that balance individual patient benefit with environmental impact, and align with standards of medical ethics? While qualitative insights from physicians and patients are valuable and prevalent in the clinical literature, this paper does not aim to synthesize those perspectives. Instead, it examines the growing, though still limited, body of bioethics literature that argues physicians have an ethical and clinical responsibility to respond to the health hazards of climate change. This responsibility is grounded in the foundational goals of medicine, preventing disease and promoting health, and the longstanding principles of bioethics that inform clinical practice. Proposed approaches to fulfilling this responsibility include green informed consent, prescription stewardship, care involving assisted reproduction, and clinician advocacy on the health impacts of climate change. [Published in: WIREs Climate Change]",
   "source": "Crossref:10.1002/wcc.70010",
   "doi": "10.1002/wcc.70010",
@@ -2002,51 +1991,18 @@
   "field": "climate_science"
  },
  {
+  "chunk_id": "chunk_00181",
+  "text": "The Correlation of Seismic Activity and Recent Global Warming: 2016 Update [Published in: Environment Pollution and Climate Change]",
+  "source": "Crossref:10.4172/2573-458x.1000e103",
+  "doi": "10.4172/2573-458x.1000e103",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2017,
+  "venue": "Environment Pollution and Climate Change",
+  "field": "climate_science"
+ },
+ {
   "chunk_id": "chunk_00182",
-  "text": "Probabilistic projections of future warming and climate sensitivity trajectories. Abstract Projections of future global mean surface warming for a given forcing scenario remain uncertain, largely due to uncertainty in the climate sensitivity. The ensemble of Earth system models from the Climate Model Intercomparison Project phase 6 (CMIP6) represents the dominant tools for projecting future global warming. However, the distribution of climate sensitivities within the CMIP6 ensemble is not representative of recent independent probabilistic estimates, and the ensemble contains significant variation in simulated historic surface warming outside agreement with observational datasets. Here, a Bayesian approach is used to infer joint probabilistic projections of future surface warming and climate sensitivity for shared socio-economic pathway (SSP) scenarios. The projections use an efficient climate model ensemble filtered and weighted to encapsulate observational uncertainty in historic warming and ocean heat content anomalies. The probabilistic projection of climate sensitivity produces a best estimate of 2.9\u00b0C, and 5th\u201395th percentile range of 1.5\u20134.6\u00b0C, in line with previous estimates using multiple lines of evidence. The joint projection of surface warming over the period 2030\u201340 has a 50% or greater probability of exceeding 1.5\u00b0C above preindustrial for all SSPs considered: 119, 126, 245, 370 and 585. Average warming by the period 2050\u201360 has a &amp;gt;50% chance of exceeding 2\u00b0C for SSPs 245, 370 and 585. These results imply that global warming is no longer likely to remain under 1.5\u00b0C, even with drastic and immediate mitigation, and highlight the importance of urgent action to avoid exceeding 2\u00b0C warming. [Published in: Oxford Open Climate Change]",
-  "source": "Crossref:10.1093/oxfclm/kgab007",
-  "doi": "10.1093/oxfclm/kgab007",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2021,
-  "venue": "Oxford Open Climate Change",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00183",
-  "text": "Indo-Pacific Climate Modes in Warming Climate: Consensus and Uncertainty Across Model Projections. Abstract Purpose of Review Understanding the changes in climate variability in a warming climate is crucial for reliable projections of future climate change. This article reviews the recent progress in studies of how climate modes in the Indo-Pacific respond to greenhouse warming, including the consensus and uncertainty across climate models. Recent Findings Recent studies revealed a range of robust changes in the properties of climate modes, often associated with the mean state changes in the tropical Indo-Pacific. In particular, the intermodel diversity in the ocean warming pattern is a prominent source of uncertainty in mode changes. The internal variability also plays an important role in projected changes in climate modes. Summary Model biases and intermodel variability remain major challenges for reducing uncertainty in projecting climate mode changes in warming climate. Improved models and research linking simulated present-day climate and future changes are essential for reliable projections of climate mode changes. In addition, large ensembles should be used for each model to reduce the uncertainty from internal variability and isolate the forced response to global warming. [Published in: Current Climate Change Reports]",
-  "source": "Crossref:10.1007/s40641-019-00152-9",
-  "doi": "10.1007/s40641-019-00152-9",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2019,
-  "venue": "Current Climate Change Reports",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00184",
-  "text": "Heatwave\u2013blocking relation change likely dominates over decrease in blocking frequency under global warming. Abstract Extra-tropical continental summer heatwaves often occur under persistent anticyclones or blocking. Here we partition heatwave changes into contributions from blocking changes, heatwave\u2013blocking relation change and mean temperature increase, under global warming in climate models. We employ an optimized blocking index that best correlates with heatwaves (Pearson correlation of 0.7) and find heatwave-driving blocking decreases but the change in heatwave\u2013blocking relation likely dominates. Over Europe, with a historical heatwave frequency of 2.5%, less blocking will cause 0.6% fewer heatwaves, steepened heatwave\u2013blocking relation will cause 1.4% more heatwaves, and the mean temperature increase will cause 60% more heatwaves. Over Greenland, flattened heatwave\u2013blocking relation will dominate over the insignificant decrease in blocking. The future increase in heatwave frequency is not caused by changes in blocking frequency, but by factors such as thermodynamics, that enhance the capacity of blocking to drive heatwaves. [Published in: npj Climate and Atmospheric Science]",
-  "source": "Crossref:10.1038/s41612-022-00290-2",
-  "doi": "10.1038/s41612-022-00290-2",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2022,
-  "venue": "npj Climate and Atmospheric Science",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00185",
-  "text": "Climate change-induced impacts on PM2.5 in Taiwan under 2 and 4\u00a0\u00b0C global warming [Published in: Atmospheric Pollution Research]",
-  "source": "Crossref:10.1016/j.apr.2024.102106",
-  "doi": "10.1016/j.apr.2024.102106",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2024,
-  "venue": "Atmospheric Pollution Research",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00186",
   "text": "Increased Tibetan Plateau vortex activities under 2\u00a0\u00b0C warming compared to 1.5\u00a0\u00b0C warming: NCAR CESM low-warming experiments [Published in: Advances in Climate Change Research]",
   "source": "Crossref:10.1016/j.accre.2021.05.009",
   "doi": "10.1016/j.accre.2021.05.009",
@@ -2057,18 +2013,51 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00187",
-  "text": "Analytical Study on Impact of Climate Change on India Agriculture [Published in: SciFed Journal of Global Warming]",
-  "source": "Crossref:10.23959/sfjgw-1000005",
-  "doi": "10.23959/sfjgw-1000005",
+  "chunk_id": "chunk_00183",
+  "text": "Probabilistic projections of future warming and climate sensitivity trajectories. Abstract Projections of future global mean surface warming for a given forcing scenario remain uncertain, largely due to uncertainty in the climate sensitivity. The ensemble of Earth system models from the Climate Model Intercomparison Project phase 6 (CMIP6) represents the dominant tools for projecting future global warming. However, the distribution of climate sensitivities within the CMIP6 ensemble is not representative of recent independent probabilistic estimates, and the ensemble contains significant variation in simulated historic surface warming outside agreement with observational datasets. Here, a Bayesian approach is used to infer joint probabilistic projections of future surface warming and climate sensitivity for shared socio-economic pathway (SSP) scenarios. The projections use an efficient climate model ensemble filtered and weighted to encapsulate observational uncertainty in historic warming and ocean heat content anomalies. The probabilistic projection of climate sensitivity produces a best estimate of 2.9\u00b0C, and 5th\u201395th percentile range of 1.5\u20134.6\u00b0C, in line with previous estimates using multiple lines of evidence. The joint projection of surface warming over the period 2030\u201340 has a 50% or greater probability of exceeding 1.5\u00b0C above preindustrial for all SSPs considered: 119, 126, 245, 370 and 585. Average warming by the period 2050\u201360 has a &amp;gt;50% chance of exceeding 2\u00b0C for SSPs 245, 370 and 585. These results imply that global warming is no longer likely to remain under 1.5\u00b0C, even with drastic and immediate mitigation, and highlight the importance of urgent action to avoid exceeding 2\u00b0C warming. [Published in: Oxford Open Climate Change]",
+  "source": "Crossref:10.1093/oxfclm/kgab007",
+  "doi": "10.1093/oxfclm/kgab007",
   "pub_type": "JournalArticle",
   "retracted": false,
-  "pub_year": 2017,
-  "venue": "SciFed Journal of Global Warming",
+  "pub_year": 2021,
+  "venue": "Oxford Open Climate Change",
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00188",
+  "chunk_id": "chunk_00184",
+  "text": "Indo-Pacific Climate Modes in Warming Climate: Consensus and Uncertainty Across Model Projections. Abstract Purpose of Review Understanding the changes in climate variability in a warming climate is crucial for reliable projections of future climate change. This article reviews the recent progress in studies of how climate modes in the Indo-Pacific respond to greenhouse warming, including the consensus and uncertainty across climate models. Recent Findings Recent studies revealed a range of robust changes in the properties of climate modes, often associated with the mean state changes in the tropical Indo-Pacific. In particular, the intermodel diversity in the ocean warming pattern is a prominent source of uncertainty in mode changes. The internal variability also plays an important role in projected changes in climate modes. Summary Model biases and intermodel variability remain major challenges for reducing uncertainty in projecting climate mode changes in warming climate. Improved models and research linking simulated present-day climate and future changes are essential for reliable projections of climate mode changes. In addition, large ensembles should be used for each model to reduce the uncertainty from internal variability and isolate the forced response to global warming. [Published in: Current Climate Change Reports]",
+  "source": "Crossref:10.1007/s40641-019-00152-9",
+  "doi": "10.1007/s40641-019-00152-9",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2019,
+  "venue": "Current Climate Change Reports",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00185",
+  "text": "Heatwave\u2013blocking relation change likely dominates over decrease in blocking frequency under global warming. Abstract Extra-tropical continental summer heatwaves often occur under persistent anticyclones or blocking. Here we partition heatwave changes into contributions from blocking changes, heatwave\u2013blocking relation change and mean temperature increase, under global warming in climate models. We employ an optimized blocking index that best correlates with heatwaves (Pearson correlation of 0.7) and find heatwave-driving blocking decreases but the change in heatwave\u2013blocking relation likely dominates. Over Europe, with a historical heatwave frequency of 2.5%, less blocking will cause 0.6% fewer heatwaves, steepened heatwave\u2013blocking relation will cause 1.4% more heatwaves, and the mean temperature increase will cause 60% more heatwaves. Over Greenland, flattened heatwave\u2013blocking relation will dominate over the insignificant decrease in blocking. The future increase in heatwave frequency is not caused by changes in blocking frequency, but by factors such as thermodynamics, that enhance the capacity of blocking to drive heatwaves. [Published in: npj Climate and Atmospheric Science]",
+  "source": "Crossref:10.1038/s41612-022-00290-2",
+  "doi": "10.1038/s41612-022-00290-2",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2022,
+  "venue": "npj Climate and Atmospheric Science",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00186",
+  "text": "Climate change-induced impacts on PM2.5 in Taiwan under 2 and 4\u00a0\u00b0C global warming [Published in: Atmospheric Pollution Research]",
+  "source": "Crossref:10.1016/j.apr.2024.102106",
+  "doi": "10.1016/j.apr.2024.102106",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2024,
+  "venue": "Atmospheric Pollution Research",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00187",
   "text": "On the political feasibility of climate change mitigation pathways: Is it too late to keep warming below 1.5\u00b0C?. Abstract Keeping global warming below 1.5\u00b0C is technically possible but is it politically feasible? Understanding political feasibility requires answering three questions: (a) \u201c Feasibility of what ?,\u201d (b) \u201cFeasibility when and where? , \u201d and (c) \u201cFeasibility for whom? . \u201d In relation to the 1.5\u00b0C target, these questions translate into (a) identifying specific actions comprising the 1.5\u00b0C pathways; (b) assessing the economic and political costs of these actions in different socioeconomic and political contexts; and (c) assessing the economic and institutional capacity of relevant social actors to bear these costs. This view of political feasibility stresses costs and capacities in contrast to the prevailing focus on benefits and motivations which mistakes desirability for feasibility. The evidence on the political feasibility of required climate actions is not systematic, but clearly indicates that the costs of required actions are too high in relation to capacities to bear these costs in relevant contexts. In the future, costs may decline and capacities may increase which would reduce political constraints for at least some solutions. However, this is unlikely to happen in time to avoid a temperature overshoot. Further research should focus on exploring the \u201cdynamic political feasibility space\u201d constrained by costs and capacities in order to find more feasible pathways to climate stabilization. This article is categorized under: The Carbon Economy and Climate Mitigation &gt; Decarbonizing Energy and/or Reducing Demand [Published in: WIREs Climate Change]",
   "source": "Crossref:10.1002/wcc.621",
   "doi": "10.1002/wcc.621",
@@ -2079,18 +2068,18 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00189",
-  "text": "Global Warming Distorts the Twenty-Four Solar Terms [Published in: Environment Pollution and Climate Change]",
-  "source": "Crossref:10.4172/2573-458x.1000169",
-  "doi": "10.4172/2573-458x.1000169",
+  "chunk_id": "chunk_00188",
+  "text": "Analytical Study on Impact of Climate Change on India Agriculture [Published in: SciFed Journal of Global Warming]",
+  "source": "Crossref:10.23959/sfjgw-1000005",
+  "doi": "10.23959/sfjgw-1000005",
   "pub_type": "JournalArticle",
   "retracted": false,
-  "pub_year": 2018,
-  "venue": "Environment Pollution and Climate Change",
+  "pub_year": 2017,
+  "venue": "SciFed Journal of Global Warming",
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00190",
+  "chunk_id": "chunk_00189",
   "text": "General Overview of Climate Change and Global Warming: Their Effect on Microorganisms. Global warming is the rise in average global temperatures brought on by the greenhouse effect. Sunlight heats the earth's surface, but certain gases in the atmosphere act like the glass of a greenhouse, trapping the heat as it radiates back into space. Greenhouse gases build up in the atmosphere, causing the Earth to warm. This process leads to climate change, which is also known as rapid climate change. Numerous factors that contribute to global warming have negative effects on people, plants, and animals. Both natural and human-caused factors may contribute to these issues. The modern world faces significant issues due to global warming and climate change. In this regard, microbes have a significant impact on the environment as users or producers of greenhouse gases. Due to its capacity to thrive in a variety of climatic situations and to its particular metabolic characteristics, microbial diversity in diverse ecosystems has a significant impact on climate change by reducing its negative effects. There are a variety of potential roles for mitigation that microorganisms and their biological constituents can play by supplying a forward response. They offer a great deal of potential, particularly when used to treat and lower greenhouse gas emissions through nutrient recycling. This review article gives a general overview of the argument over public policy and the science behind global warming. It takes into account the elements contribute to rising near-surface air temperatures, greenhouse gases potential ecological and societal impacts of temperature increases and the influence of climatic and environmental change on microorganisms. [Published in: International Journal of Environment and Climate Change]",
   "source": "Crossref:10.9734/ijecc/2022/v12i1131116",
   "doi": "10.9734/ijecc/2022/v12i1131116",
@@ -2101,7 +2090,7 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00191",
+  "chunk_id": "chunk_00190",
   "text": "Saharan desert warming [Published in: Nature Climate Change]",
   "source": "Crossref:10.1038/nclimate2773",
   "doi": "10.1038/nclimate2773",
@@ -2112,7 +2101,7 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00192",
+  "chunk_id": "chunk_00191",
   "text": "Circulation delays warming [Published in: Nature Climate Change]",
   "source": "Crossref:10.1038/nclimate3074",
   "doi": "10.1038/nclimate3074",
@@ -2123,7 +2112,7 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00193",
+  "chunk_id": "chunk_00192",
   "text": "Impacts of global warming on southern California's winegrape climate suitability [Published in: Advances in Climate Change Research]",
   "source": "Crossref:10.1016/j.accre.2020.08.002",
   "doi": "10.1016/j.accre.2020.08.002",
@@ -2131,6 +2120,17 @@
   "retracted": false,
   "pub_year": 2020,
   "venue": "Advances in Climate Change Research",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00193",
+  "text": "Global Warming Distorts the Twenty-Four Solar Terms [Published in: Environment Pollution and Climate Change]",
+  "source": "Crossref:10.4172/2573-458x.1000169",
+  "doi": "10.4172/2573-458x.1000169",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2018,
+  "venue": "Environment Pollution and Climate Change",
   "field": "climate_science"
  },
  {
@@ -2168,13 +2168,13 @@
  },
  {
   "chunk_id": "chunk_00197",
-  "text": "The Contribution of Artificial Turf to Global Warming. This article discusses how the substitution of artificial grass for natural grass contributes to global warming. An algebraic model of the atmospheric transmittance in the infrared wavelengths from 0 to 15 microns is used to modulate the Planck law, yielding both the energy absorbed by the atmosphere and that transmitted through the atmosphere as a function of the ground temperature. The calculation shows that the energy absorbed by the atmosphere increases more rapidly than the amount transmitted through the atmosphere with increasing ground temperature. In situ experiments demonstrate that artificial grass reaches significantly greater temperatures than those reached by natural grass under the same meteorological conditions. As a result, artificial grass creates an additional amount of energy absorbed by the atmosphere. With the number of nationwide artificial grass installations, a typical result yields an additional energy deposited into the atmosphere during moderately warm summer days of 10 to 20 gigawatts. The annual nationwide cost savings to local governments by the substitution of artificial grass for natural grass is shown to be trivial. [Published in: Sustainability and Climate Change]",
-  "source": "Crossref:10.1089/scc.2021.0038",
-  "doi": "10.1089/scc.2021.0038",
+  "text": "Beyond global mean temperature: increasing asymmetry of global warming in past and future climate change [Published in: npj Climate and Atmospheric Science]",
+  "source": "Crossref:10.1038/s41612-026-01411-x",
+  "doi": "10.1038/s41612-026-01411-x",
   "pub_type": "JournalArticle",
   "retracted": false,
-  "pub_year": 2021,
-  "venue": "Sustainability and Climate Change",
+  "pub_year": 2026,
+  "venue": "npj Climate and Atmospheric Science",
   "field": "climate_science"
  },
  {
@@ -2190,17 +2190,6 @@
  },
  {
   "chunk_id": "chunk_00199",
-  "text": "Beyond global mean temperature: increasing asymmetry of global warming in past and future climate change [Published in: npj Climate and Atmospheric Science]",
-  "source": "Crossref:10.1038/s41612-026-01411-x",
-  "doi": "10.1038/s41612-026-01411-x",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2026,
-  "venue": "npj Climate and Atmospheric Science",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00200",
   "text": "Cross\u2010border migration on a warming planet: A policy framework. Abstract Migration is frequently driven by the need to improve social and economic opportunities or to flee conditions of political insecurity. The increased risks of environmental hazards, including climate change, have intensified the push to migrate. Nevertheless, the relation between climate change and forced displacement is not direct and is complicated by globalization, local ecological conditions, and deteriorating domestic institutions. Significantly, the muddy situation means the question \u201cdid this person migrate because of climate change?\u201d may never be fully answered. On the basis of ethical arguments, in this Perspective article we propose a framework with both strong and mild responses to address cross\u2010border migration. The strong version acknowledges that it is impossible to separate out fully the climate\u2010induced causes of migration from others and using climate attribution studies for this purpose is potentially harmful. This implies designing an open door policy for asylum seekers as the impacts of climate change unfold, bearing in mind that host countries having the most responsibility for climate change ought to be the most welcoming to them. In the mild version, the international community designates vulnerable zones, areas where significant land area is susceptible to overwhelming loss and damage. Such countries would include most small\u2010island states, those that are severely drought\u2010prone and those with substantial low\u2010lying deltaic areas. In both the mild and strong versions, asylum seekers are provided rights of free passage to host countries under nonrefoulement, so that they are not forced to return to their unliveable or unviable home countries and face continuing harm. This article is categorized under: Climate, Nature, and Ethics &gt; Climate Change and Global Justice [Published in: WIREs Climate Change]",
   "source": "Crossref:10.1002/wcc.763",
   "doi": "10.1002/wcc.763",
@@ -2211,14 +2200,25 @@
   "field": "climate_science"
  },
  {
-  "chunk_id": "chunk_00201",
-  "text": "Climate Change and Faith: A Bibliographic Exploration of Intersections in a Warming Planet. Climate change has emerged as both a scientific and socio-ethical challenge, demanding responses not only from policymakers and scientists but also from cultural and religious institutions. Faith traditions across the globe are increasingly recognized as key stakeholders in shaping ecological awareness, mobilizing climate action, and framing ethical debates about sustainability. This bibliometric review investigates the intersections between climate change and faith by analyzing 312 scholarly publications indexed in Lens.org between 2000 and 2025. Using bibliometric mapping, the study identifies publication trends, geographic hotspots, thematic clusters, and citation networks, while highlighting gaps in the literature. The findings reveal an accelerating growth of scholarship on religion and climate change, particularly since 2015, when frameworks such as the Paris Agreement and major faith declarations (example., Laudato Si\u2019 and the Islamic Declaration on Climate Change) brought faith perspectives into global climate discourse. North America and Europe account for more than half of all publications, though Africa, Asia, and Latin America are gaining visibility through studies of indigenous spiritualities, interfaith initiatives, and community resilience. Thematic analysis highlights four clusters: (1) eco-theology and religious ethics, (2) faith-based climate activism, (3) religion and climate justice, and (4) interfaith/indigenous perspectives. Despite this expansion, significant gaps remain in the integration of Global South perspectives and in empirical evaluations of faith-based climate initiatives. The review argues that bridging theology, policy, and science is essential for advancing climate justice and resilience in an era of ecological uncertainty. [Published in: International Journal of Environment and Climate Change]",
-  "source": "Crossref:10.9734/ijecc/2025/v15i105061",
-  "doi": "10.9734/ijecc/2025/v15i105061",
+  "chunk_id": "chunk_00200",
+  "text": "The Contribution of Artificial Turf to Global Warming. This article discusses how the substitution of artificial grass for natural grass contributes to global warming. An algebraic model of the atmospheric transmittance in the infrared wavelengths from 0 to 15 microns is used to modulate the Planck law, yielding both the energy absorbed by the atmosphere and that transmitted through the atmosphere as a function of the ground temperature. The calculation shows that the energy absorbed by the atmosphere increases more rapidly than the amount transmitted through the atmosphere with increasing ground temperature. In situ experiments demonstrate that artificial grass reaches significantly greater temperatures than those reached by natural grass under the same meteorological conditions. As a result, artificial grass creates an additional amount of energy absorbed by the atmosphere. With the number of nationwide artificial grass installations, a typical result yields an additional energy deposited into the atmosphere during moderately warm summer days of 10 to 20 gigawatts. The annual nationwide cost savings to local governments by the substitution of artificial grass for natural grass is shown to be trivial. [Published in: Sustainability and Climate Change]",
+  "source": "Crossref:10.1089/scc.2021.0038",
+  "doi": "10.1089/scc.2021.0038",
   "pub_type": "JournalArticle",
   "retracted": false,
-  "pub_year": 2025,
-  "venue": "International Journal of Environment and Climate Change",
+  "pub_year": 2021,
+  "venue": "Sustainability and Climate Change",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00201",
+  "text": "Logarithmic CO2 warming reverses North Atlantic winter atmospheric circulation changes [Published in: npj Climate and Atmospheric Science]",
+  "source": "Crossref:10.1038/s41612-025-01314-3",
+  "doi": "10.1038/s41612-025-01314-3",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2026,
+  "venue": "npj Climate and Atmospheric Science",
   "field": "climate_science"
  },
  {
@@ -2421,17 +2421,6 @@
  },
  {
   "chunk_id": "chunk_00220",
-  "text": "Discovery of the major mechanism of global warming and climate change. Statistical analysis of the number of destructive earthquakes versus global temperature and greenhouse gases revealed very significant correlations. This is a strong indication that the frequent occurrence of major earthquakes had increased earth\u2019s obliquity and induced both global warming and emission of greenhouse gases (GHG) in recent years. It is further shown by a simple model developed here that seismic-induced oceanic pressure could enhance the obliquity leading to increased solar radiative flux on earth. The possible increase in the planetary obliquity was substantiated by the solar radiation model SOLRAD, which simulated an associated increase of absorbed solar radiation. The model also revealed a net poleward gain of solar radiative flux with enhanced obliquity which could be the cause of the observed polar amplification of global warming and climate change. Multiple regression analysis also showed that the sudden obliquity change since 1995 played a major role in the temperature rise and GHG increase, and coincided with the 10 warmest years on record. Climate simulations conducted with the EdGCM also showed that enhanced obliquity causes increased solar radiative flux, increased air and ocean temperature, and decline of ocean ice cover. The enhanced obliquity and absorbed solar radiation could have accelerated the melting of ice sheets and glaciers, exposure and degradation of permafrost regions, increased CO2 respiration fluxes from soil, and forest fires during summer. This study confirmed in several ways that earthquake-pressured obliquity change, and not greenhouse effect, is the major mechanism governing global warming and climate change presently occurring on earth.",
-  "source": "Crossref:10.31219/osf.io/vpcdj",
-  "doi": "10.31219/osf.io/vpcdj",
-  "pub_type": "Preprint",
-  "retracted": false,
-  "pub_year": 2018,
-  "venue": "Center for Open Science",
-  "field": "climate_science"
- },
- {
-  "chunk_id": "chunk_00221",
   "text": "Climate Change Adaptation Strategies: Empowering Plants to Thrive in Warming Environments. Greenhouse gas emissions from pollution contributes to global warming by trapping heat in the atmosphere, leading to climate change that disrupts traditional growing seasons, and intensifies extreme weather events by elevating temperature, adversely affecting crop growth, development, and yield. To mitigate these impacts, beneficial microorganisms like Arbuscular Mycorrhiza Fungi (AMF) can be utilized to enhance agricultural resilience and ensure food security amidst a changing climate. This study aims to analyse the impact of high temperatures induced by climate stress on plant morphology, soil properties and phosphatase release, while also assessing the potential of AMF to enhance crop resistance to such stressors. The pot experiment studies conducted in an outdoor environment with a day/night temperature of 42/28\u00b0C and a mean temperature of 35\u00b0C and in greenhouse at a mean temperature of 23\u00b0C. Higher temperature (35\u00b0C), extreme weather events and shifting growing seasons were found to have a negative impact on growth characteristics such as shoot height, root length, biomass and flowering of Onion ( Allium cepa ) plants. However, the growth parameters improved when plants cultivated at 35\u00b0C were inoculated with AMF (+) compared to AMF (\u2212) Onion plants. The findings underscore the importance of integrating microbial symbionts into climate-smart agricultural practices to sustainably produce food amidst in the face of environmental uncertainty.",
   "source": "Crossref:10.22541/au.171827550.06711090/v1",
   "doi": "10.22541/au.171827550.06711090/v1",
@@ -2439,6 +2428,17 @@
   "retracted": false,
   "pub_year": 2024,
   "venue": "Wiley",
+  "field": "climate_science"
+ },
+ {
+  "chunk_id": "chunk_00221",
+  "text": "Global warming projections derived from an observation-based minimal model. Abstract. A simple conceptual model for the global mean surface temperature (GMST) response to CO2 emissions is presented and analysed. It consists of linear long-memory models for the GMST anomaly response \u0394T to radiative forcing and atmospheric CO2-concentration response \u0394C to emission rate. The responses are connected by the standard logarithmic relation between CO2 concentration and its radiative forcing. The model depends on two sensitivity parameters, \u03b1T and \u03b1C, and two \"inertia parameters\", the memory exponents \u03b2T and \u03b2C. Based on observation data, and constrained by results from the Climate Model Intercomparison Project Phase 5 (CMIP5), the likely values and range of these parameters are estimated, and projections of future warming for the parameters in this range are computed for various idealised, but instructive, emission scenarios. It is concluded that delays in the initiation of an effective global emission reduction regime is the single most important factor that influences the magnitude of global warming over the next two centuries. The main value of this study is the simplicity and transparency of the conceptual model, which makes it a useful tool for communicating the issue to non-climate scientists, students, policy-makers, and the general public.",
+  "source": "Crossref:10.5194/esdd-6-1789-2015",
+  "doi": "10.5194/esdd-6-1789-2015",
+  "pub_type": "Preprint",
+  "retracted": false,
+  "pub_year": 2015,
+  "venue": "Copernicus GmbH",
   "field": "climate_science"
  },
  {
@@ -2872,23 +2872,23 @@
  },
  {
   "chunk_id": "chunk_00261",
-  "text": "Cognitive-behavioral prevention of depression in adolescents [Published in: Current Opinion in Psychology]",
-  "source": "Crossref:10.1016/j.copsyc.2014.12.003",
-  "doi": "10.1016/j.copsyc.2014.12.003",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2015,
-  "venue": "Current Opinion in Psychology",
-  "field": "psychology"
- },
- {
-  "chunk_id": "chunk_00262",
   "text": "Cognitive-behavioral couple therapy [Published in: Current Opinion in Psychology]",
   "source": "Crossref:10.1016/j.copsyc.2016.09.004",
   "doi": "10.1016/j.copsyc.2016.09.004",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2017,
+  "venue": "Current Opinion in Psychology",
+  "field": "psychology"
+ },
+ {
+  "chunk_id": "chunk_00262",
+  "text": "Cognitive-behavioral prevention of depression in adolescents [Published in: Current Opinion in Psychology]",
+  "source": "Crossref:10.1016/j.copsyc.2014.12.003",
+  "doi": "10.1016/j.copsyc.2014.12.003",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2015,
   "venue": "Current Opinion in Psychology",
   "field": "psychology"
  },
@@ -4038,17 +4038,6 @@
  },
  {
   "chunk_id": "chunk_00367",
-  "text": "Treating Chromosomal Abnormalities with CRISPR Gene Editing",
-  "source": "Crossref:10.58445/rars.3435",
-  "doi": "10.58445/rars.3435",
-  "pub_type": "Preprint",
-  "retracted": false,
-  "pub_year": 2025,
-  "venue": "Polygence",
-  "field": "genomics"
- },
- {
-  "chunk_id": "chunk_00368",
   "text": "CRISPR/Cas9 gene editing in hiPSC v1. This protocol is adapted from Skarnes et al., 2019 and describes the steps to follow for knocking-in point mutation via CRISP/Cas9 in humain inducible pluripotent cells (hiPSC)",
   "source": "Crossref:10.17504/protocols.io.j8nlk9xxdv5r/v1",
   "doi": "10.17504/protocols.io.j8nlk9xxdv5r/v1",
@@ -4059,13 +4048,24 @@
   "field": "genomics"
  },
  {
-  "chunk_id": "chunk_00369",
+  "chunk_id": "chunk_00368",
   "text": "Gene therapy and gene editing in human disease: CRISPR and beyond",
   "source": "Crossref:10.58445/rars.484",
   "doi": "10.58445/rars.484",
   "pub_type": "Preprint",
   "retracted": false,
   "pub_year": 2023,
+  "venue": "Polygence",
+  "field": "genomics"
+ },
+ {
+  "chunk_id": "chunk_00369",
+  "text": "Treating Chromosomal Abnormalities with CRISPR Gene Editing",
+  "source": "Crossref:10.58445/rars.3435",
+  "doi": "10.58445/rars.3435",
+  "pub_type": "Preprint",
+  "retracted": false,
+  "pub_year": 2025,
   "venue": "Polygence",
   "field": "genomics"
  },
@@ -4489,17 +4489,6 @@
  },
  {
   "chunk_id": "chunk_00408",
-  "text": "Carbon nanomaterials: Synthesis, properties and applications in electrochemical sensors and energy conversion systems [Published in: Materials Science and Engineering: B]",
-  "source": "Crossref:10.1016/j.mseb.2021.115341",
-  "doi": "10.1016/j.mseb.2021.115341",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2021,
-  "venue": "Materials Science and Engineering: B",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00409",
   "text": "Synthesis and Applications of Optical Materials. As optical materials have shown outstanding physical and chemical characteristics in the bio, medical, electronics, energy and related fields of studies, the potential benefits of using these materials have been widely recognized [...] [Published in: Nanomaterials]",
   "source": "Crossref:10.3390/nano13020297",
   "doi": "10.3390/nano13020297",
@@ -4510,24 +4499,35 @@
   "field": "materials_science"
  },
  {
-  "chunk_id": "chunk_00410",
-  "text": "A review on molten salt synthesis of metal oxide nanomaterials: Status, opportunity, and challenge [Published in: Progress in Materials Science]",
-  "source": "Crossref:10.1016/j.pmatsci.2020.100734",
-  "doi": "10.1016/j.pmatsci.2020.100734",
+  "chunk_id": "chunk_00409",
+  "text": "Carbon nanomaterials: Synthesis, properties and applications in electrochemical sensors and energy conversion systems [Published in: Materials Science and Engineering: B]",
+  "source": "Crossref:10.1016/j.mseb.2021.115341",
+  "doi": "10.1016/j.mseb.2021.115341",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2021,
-  "venue": "Progress in Materials Science",
+  "venue": "Materials Science and Engineering: B",
   "field": "materials_science"
  },
  {
-  "chunk_id": "chunk_00411",
+  "chunk_id": "chunk_00410",
   "text": "From 0D to 2D: Synthesis and bio-application of anisotropic magnetic iron oxide nanomaterials [Published in: Progress in Materials Science]",
   "source": "Crossref:10.1016/j.pmatsci.2024.101267",
   "doi": "10.1016/j.pmatsci.2024.101267",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2024,
+  "venue": "Progress in Materials Science",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00411",
+  "text": "A review on molten salt synthesis of metal oxide nanomaterials: Status, opportunity, and challenge [Published in: Progress in Materials Science]",
+  "source": "Crossref:10.1016/j.pmatsci.2020.100734",
+  "doi": "10.1016/j.pmatsci.2020.100734",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2021,
   "venue": "Progress in Materials Science",
   "field": "materials_science"
  },
@@ -4632,17 +4632,6 @@
  },
  {
   "chunk_id": "chunk_00421",
-  "text": "Recent progress in synthesis, properties and potential applications of SiC nanomaterials [Published in: Progress in Materials Science]",
-  "source": "Crossref:10.1016/j.pmatsci.2015.01.003",
-  "doi": "10.1016/j.pmatsci.2015.01.003",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2015,
-  "venue": "Progress in Materials Science",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00422",
   "text": "Composite Materials Based on Polymeric Fibers Doped with Magnetic Nanoparticles: Synthesis, Properties and Applications. The increasingly sophisticated requirements of contemporary society, in relation to the assessment of environmental and health factors, are receiving much attention from the scientific community [...] [Published in: Nanomaterials]",
   "source": "Crossref:10.3390/nano12132240",
   "doi": "10.3390/nano12132240",
@@ -4650,6 +4639,17 @@
   "retracted": false,
   "pub_year": 2022,
   "venue": "Nanomaterials",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00422",
+  "text": "Recent progress in synthesis, properties and potential applications of SiC nanomaterials [Published in: Progress in Materials Science]",
+  "source": "Crossref:10.1016/j.pmatsci.2015.01.003",
+  "doi": "10.1016/j.pmatsci.2015.01.003",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2015,
+  "venue": "Progress in Materials Science",
   "field": "materials_science"
  },
  {
@@ -4753,6 +4753,17 @@
  },
  {
   "chunk_id": "chunk_00432",
+  "text": "Combustion Synthesis of Materials for Application in Supercapacitors: A Review. A supercapacitor is an energy storage device that has the advantage of rapidly storing and releasing energy compared to traditional batteries. One powerful method for creating a wide range of materials is combustion synthesis, which relies on self-sustained chemical reactions. Specifically, solution combustion synthesis involves mixing reagents at the molecular level in an aqueous solution. This method allows for the fabrication of various nanostructured materials, such as binary and complex oxides, sulfides, and carbon-based nanocomposites, which are commonly used for creating electrodes in supercapacitors. The solution combustion synthesis offers flexibility in tuning the properties of the materials by adjusting the composition of the reactive solution, the type of fuel, and the combustion conditions. The process takes advantage of high temperatures, short processing times, and significant gas release to produce well crystalline nanostructured materials with a large specific surface area. This specific surface area is essential for enhancing the performance of electrodes in supercapacitors. Our review focuses on recent publications in this field, specifically examining the relationship between the microstructure of materials and their electrochemical properties. We discuss the findings and suggest potential improvements in the properties and stability of the fabricated composites based on the results. [Published in: Nanomaterials]",
+  "source": "Crossref:10.3390/nano13233030",
+  "doi": "10.3390/nano13233030",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2023,
+  "venue": "Nanomaterials",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00433",
   "text": "Editorial for the Special Issue on \u201cGraphene-Related Materials: Synthesis and Applications\u201d. Since the groundbreaking discovery of graphene by Geim and Novoselov in 2004, there has been continuous research focused on the utilization of graphene (GR) and graphene-related materials (GRms) in technologically high-impact applications, spanning from electronics, sensing, and spintronics, to catalysis, energy storage, and environmental remediation [...] [Published in: Nanomaterials]",
   "source": "Crossref:10.3390/nano12162740",
   "doi": "10.3390/nano12162740",
@@ -4763,24 +4774,13 @@
   "field": "materials_science"
  },
  {
-  "chunk_id": "chunk_00433",
+  "chunk_id": "chunk_00434",
   "text": "Synthesis and Electrochemical Energy Storage Applications of Micro/Nanostructured Spherical Materials. Micro/nanostructured spherical materials have been widely explored for electrochemical energy storage due to their exceptional properties, which have also been summarized based on electrode type and material composition. The increased complexity of spherical structures has increased the feasibility of modulating their properties, thereby improving their performance compared with simple spherical structures. This paper comprehensively reviews the synthesis and electrochemical energy storage applications of micro/nanostructured spherical materials. After a brief classification, the concepts and syntheses of micro/nanostructured spherical materials are described in detail, which include hollow, core-shelled, yolk-shelled, double-shelled, and multi-shelled spheres. We then introduce strategies classified into hard-, soft-, and self-templating methods for synthesis of these spherical structures, and also include the concepts of synthetic methodologies. Thereafter, we discuss their applications as electrode materials for lithium-ion batteries and supercapacitors, and sulfur hosts for lithium\u2013sulfur batteries. The superiority of multi-shelled hollow micro/nanospheres for electrochemical energy storage applications is particularly summarized. Subsequently, we conclude this review by presenting the challenges, development, highlights, and future directions of the micro/nanostructured spherical materials for electrochemical energy storage. [Published in: Nanomaterials]",
   "source": "Crossref:10.3390/nano9091207",
   "doi": "10.3390/nano9091207",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2019,
-  "venue": "Nanomaterials",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00434",
-  "text": "Combustion Synthesis of Materials for Application in Supercapacitors: A Review. A supercapacitor is an energy storage device that has the advantage of rapidly storing and releasing energy compared to traditional batteries. One powerful method for creating a wide range of materials is combustion synthesis, which relies on self-sustained chemical reactions. Specifically, solution combustion synthesis involves mixing reagents at the molecular level in an aqueous solution. This method allows for the fabrication of various nanostructured materials, such as binary and complex oxides, sulfides, and carbon-based nanocomposites, which are commonly used for creating electrodes in supercapacitors. The solution combustion synthesis offers flexibility in tuning the properties of the materials by adjusting the composition of the reactive solution, the type of fuel, and the combustion conditions. The process takes advantage of high temperatures, short processing times, and significant gas release to produce well crystalline nanostructured materials with a large specific surface area. This specific surface area is essential for enhancing the performance of electrodes in supercapacitors. Our review focuses on recent publications in this field, specifically examining the relationship between the microstructure of materials and their electrochemical properties. We discuss the findings and suggest potential improvements in the properties and stability of the fabricated composites based on the results. [Published in: Nanomaterials]",
-  "source": "Crossref:10.3390/nano13233030",
-  "doi": "10.3390/nano13233030",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2023,
   "venue": "Nanomaterials",
   "field": "materials_science"
  },
@@ -4797,39 +4797,6 @@
  },
  {
   "chunk_id": "chunk_00436",
-  "text": "Two-Dimensional Nanomaterials: Their Structures, Synthesis, and Applications [Published in: Science of Advanced Materials]",
-  "source": "Crossref:10.1166/sam.2017.3170",
-  "doi": "10.1166/sam.2017.3170",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2017,
-  "venue": "Science of Advanced Materials",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00437",
-  "text": "Synthesis and Characterization of Layered Double Hydroxides as Materials for Electrocatalytic Applications. Layered double hydroxides (LDHs) are anionic clays which have found applications in a wide range of fields, including electrochemistry. In such a case, to display good performances they should possess electrical conductivity which can be ensured by the presence of metals able to give reversible redox reactions in a proper potential window. The metal centers can act as redox mediators to catalyze reactions for which the required overpotential is too high, and this is a key aspect for the development of processes and devices where the control of charge transfer reactions plays an important role. In order to act as redox mediator, a material can be present in solution or supported on a conductive support. The most commonly used methods to synthesize LDHs, referring both to bulk synthesis and in situ growth methods, which allow for the direct modification of conductive supports, are here summarized. In addition, the most widely used techniques to characterize the LDHs structure and morphology are also reported, since their electrochemical performance is strictly related to these features. Finally, some electrocatalytic applications of LDHs, when synthesized as nanomaterials, are discussed considering those related to sensing, oxygen evolution reaction, and other energy issues. [Published in: Nanomaterials]",
-  "source": "Crossref:10.3390/nano11030725",
-  "doi": "10.3390/nano11030725",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2021,
-  "venue": "Nanomaterials",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00438",
-  "text": "Facile synthesis and characterization of MnO2 nanomaterials as supercapacitor electrode materials [Published in: Journal of Materials Science: Materials in Electronics]",
-  "source": "Crossref:10.1007/s10854-016-4457-x",
-  "doi": "10.1007/s10854-016-4457-x",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2016,
-  "venue": "Journal of Materials Science: Materials in Electronics",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00439",
   "text": "Investigation of the Possibility for Control of High-Temperature Synthesis of Nanomaterials. The feasibility of creating conditions for control of high-temperature synthesis (SHS) of nanomaterials has been studied. Experiments were carried out to determine the velocity of the combustion wave propagation of aluminum nanopowder obtained by electric explosion. In the course of the study, the factors influencing formation of the induction time: the thermal diffusivity of the substrate, the method of initiation of the combustion wave (flame, spark, heated body), the induction time between the initiating front and the front of the thermal explosion were considered. The relation describing the time of induction of thermal explosion is established. [Published in: Materials Science Forum]",
   "source": "Crossref:10.4028/www.scientific.net/msf.942.1",
   "doi": "10.4028/www.scientific.net/msf.942.1",
@@ -4840,7 +4807,29 @@
   "field": "materials_science"
  },
  {
-  "chunk_id": "chunk_00440",
+  "chunk_id": "chunk_00437",
+  "text": "Two-Dimensional Nanomaterials: Their Structures, Synthesis, and Applications [Published in: Science of Advanced Materials]",
+  "source": "Crossref:10.1166/sam.2017.3170",
+  "doi": "10.1166/sam.2017.3170",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2017,
+  "venue": "Science of Advanced Materials",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00438",
+  "text": "Synthesis and Characterization of Layered Double Hydroxides as Materials for Electrocatalytic Applications. Layered double hydroxides (LDHs) are anionic clays which have found applications in a wide range of fields, including electrochemistry. In such a case, to display good performances they should possess electrical conductivity which can be ensured by the presence of metals able to give reversible redox reactions in a proper potential window. The metal centers can act as redox mediators to catalyze reactions for which the required overpotential is too high, and this is a key aspect for the development of processes and devices where the control of charge transfer reactions plays an important role. In order to act as redox mediator, a material can be present in solution or supported on a conductive support. The most commonly used methods to synthesize LDHs, referring both to bulk synthesis and in situ growth methods, which allow for the direct modification of conductive supports, are here summarized. In addition, the most widely used techniques to characterize the LDHs structure and morphology are also reported, since their electrochemical performance is strictly related to these features. Finally, some electrocatalytic applications of LDHs, when synthesized as nanomaterials, are discussed considering those related to sensing, oxygen evolution reaction, and other energy issues. [Published in: Nanomaterials]",
+  "source": "Crossref:10.3390/nano11030725",
+  "doi": "10.3390/nano11030725",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2021,
+  "venue": "Nanomaterials",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00439",
   "text": "Progress on cupric oxide based nanomaterials: Exploring advancements in their synthesis, applications and prospects [Published in: Materials Science and Engineering: B]",
   "source": "Crossref:10.1016/j.mseb.2024.117598",
   "doi": "10.1016/j.mseb.2024.117598",
@@ -4848,6 +4837,17 @@
   "retracted": false,
   "pub_year": 2024,
   "venue": "Materials Science and Engineering: B",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00440",
+  "text": "Facile synthesis and characterization of MnO2 nanomaterials as supercapacitor electrode materials [Published in: Journal of Materials Science: Materials in Electronics]",
+  "source": "Crossref:10.1007/s10854-016-4457-x",
+  "doi": "10.1007/s10854-016-4457-x",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2016,
+  "venue": "Journal of Materials Science: Materials in Electronics",
   "field": "materials_science"
  },
  {
@@ -4874,23 +4874,23 @@
  },
  {
   "chunk_id": "chunk_00443",
-  "text": "Synthesis and Characterization of Silver-Modified Nanoporous Silica Materials for Enhanced Iodine Removal. In aquatic environments, the presence of iodine species, including radioactive isotopes like 129I and I2, poses significant environmental and health concerns. Iodine can enter water resources from various sources, including nuclear accidents, medical procedures, and natural occurrences. To address this issue, the use of natural occurring nanoporous minerals, such as zeolitic materials, for iodine removal will be explored. This study focuses on the adsorption of iodine by silver-modified zeolites (13X-Ag, 5A-Ag, Chabazite-Ag, and Clinoptilolite-Ag) and evaluates their performance under different conditions. All materials were characterized using scanning electron microscopey (SEM), energy-dispersive X-ray spectroscopy (EDS), powdered X-ray diffraction (P-XRD), Fourier-transform infrared spectrometry (FTIR), and nitrogen adsorption studies. The results indicate that Chabazite-Ag exhibited the highest iodine adsorption capacity, with an impressive 769 mg/g, making it a viable option for iodine removal applications. 13X-Ag and 5A-Ag also demonstrated substantial adsorption capacities of 714 mg/g and 556 mg/g, respectively, though their behavior varied according to different models. In contrast, Clinoptilolite-Ag exhibited strong pH-dependent behavior, rendering it less suitable for neutral to slightly acidic conditions. Furthermore, this study explored the impact of ionic strength on iodine adsorption, revealing that Chabazite-Ag is efficient in low-salinity environments with an iodine adsorption capacity of 51.80 mg/g but less effective in saline conditions. 5A-Ag proved to be a versatile option for various water treatments, maintaining its iodine adsorption capacity across different salinity levels. In contrast, Clinoptilolite-Ag exhibited high sensitivity to ionic competition, virtually losing its iodine adsorption ability at a NaCl concentration of 0.1 M. Kinetic studies indicated that the pseudo-second-order model best describes the adsorption process, suggesting chemisorption mechanisms dominate iodine removal. Chabazite-Ag exhibited the highest initial adsorption rate with a k2 value of 0.002 mg g\u22121 h\u22121, emphasizing its superior adsorption capabilities. Chabazite and Clinoptilolite, naturally occurring minerals, provide eco-friendly solutions for iodine adsorption. Chabazite superior iodine removal highlights its value in critical applications and its potential for addressing pressing environmental challenges. [Published in: Nanomaterials]",
-  "source": "Crossref:10.3390/nano14131143",
-  "doi": "10.3390/nano14131143",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2024,
-  "venue": "Nanomaterials",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00444",
   "text": "Graphene and Carbon Quantum Dot-Based Materials in Photovoltaic Devices: From Synthesis to Applications. Graphene and carbon quantum dots have extraordinary optical and electrical features because of their quantum confinement properties. This makes them attractive materials for applications in photovoltaic devices (PV). Their versatility has led to their being used as light harvesting materials or selective contacts, either for holes or electrons, in silicon quantum dot, polymer or dye-sensitized solar cells. In this review, we summarize the most common uses of both types of semiconducting materials and highlight the significant advances made in recent years due to the influence that synthetic materials have on final performance. [Published in: Nanomaterials]",
   "source": "Crossref:10.3390/nano6090157",
   "doi": "10.3390/nano6090157",
   "pub_type": "JournalArticle",
   "retracted": false,
   "pub_year": 2016,
+  "venue": "Nanomaterials",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00444",
+  "text": "Synthesis and Characterization of Silver-Modified Nanoporous Silica Materials for Enhanced Iodine Removal. In aquatic environments, the presence of iodine species, including radioactive isotopes like 129I and I2, poses significant environmental and health concerns. Iodine can enter water resources from various sources, including nuclear accidents, medical procedures, and natural occurrences. To address this issue, the use of natural occurring nanoporous minerals, such as zeolitic materials, for iodine removal will be explored. This study focuses on the adsorption of iodine by silver-modified zeolites (13X-Ag, 5A-Ag, Chabazite-Ag, and Clinoptilolite-Ag) and evaluates their performance under different conditions. All materials were characterized using scanning electron microscopey (SEM), energy-dispersive X-ray spectroscopy (EDS), powdered X-ray diffraction (P-XRD), Fourier-transform infrared spectrometry (FTIR), and nitrogen adsorption studies. The results indicate that Chabazite-Ag exhibited the highest iodine adsorption capacity, with an impressive 769 mg/g, making it a viable option for iodine removal applications. 13X-Ag and 5A-Ag also demonstrated substantial adsorption capacities of 714 mg/g and 556 mg/g, respectively, though their behavior varied according to different models. In contrast, Clinoptilolite-Ag exhibited strong pH-dependent behavior, rendering it less suitable for neutral to slightly acidic conditions. Furthermore, this study explored the impact of ionic strength on iodine adsorption, revealing that Chabazite-Ag is efficient in low-salinity environments with an iodine adsorption capacity of 51.80 mg/g but less effective in saline conditions. 5A-Ag proved to be a versatile option for various water treatments, maintaining its iodine adsorption capacity across different salinity levels. In contrast, Clinoptilolite-Ag exhibited high sensitivity to ionic competition, virtually losing its iodine adsorption ability at a NaCl concentration of 0.1 M. Kinetic studies indicated that the pseudo-second-order model best describes the adsorption process, suggesting chemisorption mechanisms dominate iodine removal. Chabazite-Ag exhibited the highest initial adsorption rate with a k2 value of 0.002 mg g\u22121 h\u22121, emphasizing its superior adsorption capabilities. Chabazite and Clinoptilolite, naturally occurring minerals, provide eco-friendly solutions for iodine adsorption. Chabazite superior iodine removal highlights its value in critical applications and its potential for addressing pressing environmental challenges. [Published in: Nanomaterials]",
+  "source": "Crossref:10.3390/nano14131143",
+  "doi": "10.3390/nano14131143",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2024,
   "venue": "Nanomaterials",
   "field": "materials_science"
  },
@@ -5226,17 +5226,6 @@
  },
  {
   "chunk_id": "chunk_00475",
-  "text": "High-efficiency generation of nanomaterials via laser ablation synthesis in solution with in-situ diagnostics for closed-loop control [Published in: Synthesis and Photonics of Nanoscale Materials XVII]",
-  "source": "Crossref:10.1117/12.2545878",
-  "doi": "10.1117/12.2545878",
-  "pub_type": "ProceedingsArticle",
-  "retracted": false,
-  "pub_year": 2020,
-  "venue": "Synthesis and Photonics of Nanoscale Materials XVII",
-  "field": "materials_science"
- },
- {
-  "chunk_id": "chunk_00476",
   "text": "One-pot Synthesis of Silver Nanoparticles and Composite Materials for Drinking Water Disinfection [Published in: 2018 IEEE 8th International Conference Nanomaterials: Application &amp; Properties (NAP)]",
   "source": "Crossref:10.1109/nap.2018.8915184",
   "doi": "10.1109/nap.2018.8915184",
@@ -5244,6 +5233,17 @@
   "retracted": false,
   "pub_year": 2018,
   "venue": "2018 IEEE 8th International Conference Nanomaterials: Application &amp; Properties (NAP)",
+  "field": "materials_science"
+ },
+ {
+  "chunk_id": "chunk_00476",
+  "text": "High-efficiency generation of nanomaterials via laser ablation synthesis in solution with in-situ diagnostics for closed-loop control [Published in: Synthesis and Photonics of Nanoscale Materials XVII]",
+  "source": "Crossref:10.1117/12.2545878",
+  "doi": "10.1117/12.2545878",
+  "pub_type": "ProceedingsArticle",
+  "retracted": false,
+  "pub_year": 2020,
+  "venue": "Synthesis and Photonics of Nanoscale Materials XVII",
   "field": "materials_science"
  },
  {
@@ -5490,17 +5490,6 @@
  },
  {
   "chunk_id": "chunk_00499",
-  "text": "Monkeypox \u2015 exotic infection outbreak or a new global challenge to global Health system?. BACKGROUND: Monkeypox, a zoonotic disease caused by an orthopoxvirus, results in a smallpox-like or a chickenpox-like disease. Monkeypox in human was first diagnosed in 1970 in the Democratic Republic of the Congo and subsequently has spread to other regions of Africa (primarily West and Central). In 2003 the first monkeypox outbreak occurred outside of Africa in USA. The latest outbreak of monkeypox in May 2022 is characterized by the simultaneous involvement of several hundred people. The appearance of cases outside of Africa highlights the risk for geographical spread and the global relevance of the disease requiring the epidemiologic studies and the search for effective methods of prevention and therapy. AIMS: To summarize and systematize the results of studies on the epidemiology, diagnosis, clinical picture, the role of vaccination and treatment of monkeypox, including taking into account the last outbreak of the disease in May 2022 in non-endemic regions. MATERIALS AND METHODS: A systematic literature search was conducted in MEDLINE (Ovid), MEDLINE (PubMed), and the Google Scholar database published up to May 31, 2022, using the keywords \"monkeypox\" or \"monkeypox virus\" or \"smallpox human monkeys\". We primary selected 112 abstracts. After removing duplicates and irrelevant articles, 48 full-text articles have been selected. After reviewing the full-text article versions, 15 articles were excluded due to highly specialized biological topics, poor study design, quality of results, or their unavailability. Ultimately, this review included 33 articles, in addition to which 6 founding and supporting websites were cited. RESULTS: Monkeypox cases among humans have been on the rise since the 1970s, primarily in endemic areas. The median age at the time of treatment increased from 4 (1970s) to 21 (20102019). Since 2003, the spread of monkeypox outside Africa has been noted, associated with the importation of infected animals, migration and tourism. Transmission to humans occurs through close contact with an infected animal (70%), a person or material contaminated with the virus. Monkeypox presents with fever, vesicular rash, and lymphadenopathy lasting 2 to 4 weeks. Mortality is associated with the development of complications and is 10.6% for the Central African clade compared to 3.6% for the West African clade. There have been no deaths outside of Africa. Our review shows an escalation of monkeypox cases, especially in endemic Africa and spread to other countries, which is likely due to the discontinuation of smallpox vaccination, which provided cross-protection against monkeypox. Unfortunately, smallpox vaccination is contraindicated in immunocompromised individuals, despite the availability of recommended vaccines. The effectiveness of existing antiviral drugs (tecovirimate and brincidofovir) has been little studied in humans. CONCLUSION: The weakening of population immunity, associated with the cessation of vaccination against smallpox, created the prerequisites for the outbreaks of monkeypox, including in non-endemic areas. Surveillance and detection programs are important tools for understanding the ever-changing epidemiology of this disease. In light of the emergence of cases outside of Africa, the potential for human-to-human transmission of the virus, the public health significance of monkeypox should not be underestimated. [Published in: Epidemiology and Infectious Diseases]",
-  "source": "Crossref:10.17816/eid108550",
-  "doi": "10.17816/eid108550",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2022,
-  "venue": "Epidemiology and Infectious Diseases",
-  "field": "epidemiology"
- },
- {
-  "chunk_id": "chunk_00500",
   "text": "Analysis of the outbreak of COVID-19 in Japan by SIQR model [Published in: Infectious Disease Modelling]",
   "source": "Crossref:10.1016/j.idm.2020.08.013",
   "doi": "10.1016/j.idm.2020.08.013",
@@ -5511,7 +5500,7 @@
   "field": "epidemiology"
  },
  {
-  "chunk_id": "chunk_00501",
+  "chunk_id": "chunk_00500",
   "text": "Risk of monkeypox outbreak in Nepal [Published in: Travel Medicine and Infectious Disease]",
   "source": "Crossref:10.1016/j.tmaid.2022.102381",
   "doi": "10.1016/j.tmaid.2022.102381",
@@ -5519,6 +5508,17 @@
   "retracted": false,
   "pub_year": 2022,
   "venue": "Travel Medicine and Infectious Disease",
+  "field": "epidemiology"
+ },
+ {
+  "chunk_id": "chunk_00501",
+  "text": "Monkeypox \u2015 exotic infection outbreak or a new global challenge to global Health system?. BACKGROUND: Monkeypox, a zoonotic disease caused by an orthopoxvirus, results in a smallpox-like or a chickenpox-like disease. Monkeypox in human was first diagnosed in 1970 in the Democratic Republic of the Congo and subsequently has spread to other regions of Africa (primarily West and Central). In 2003 the first monkeypox outbreak occurred outside of Africa in USA. The latest outbreak of monkeypox in May 2022 is characterized by the simultaneous involvement of several hundred people. The appearance of cases outside of Africa highlights the risk for geographical spread and the global relevance of the disease requiring the epidemiologic studies and the search for effective methods of prevention and therapy. AIMS: To summarize and systematize the results of studies on the epidemiology, diagnosis, clinical picture, the role of vaccination and treatment of monkeypox, including taking into account the last outbreak of the disease in May 2022 in non-endemic regions. MATERIALS AND METHODS: A systematic literature search was conducted in MEDLINE (Ovid), MEDLINE (PubMed), and the Google Scholar database published up to May 31, 2022, using the keywords \"monkeypox\" or \"monkeypox virus\" or \"smallpox human monkeys\". We primary selected 112 abstracts. After removing duplicates and irrelevant articles, 48 full-text articles have been selected. After reviewing the full-text article versions, 15 articles were excluded due to highly specialized biological topics, poor study design, quality of results, or their unavailability. Ultimately, this review included 33 articles, in addition to which 6 founding and supporting websites were cited. RESULTS: Monkeypox cases among humans have been on the rise since the 1970s, primarily in endemic areas. The median age at the time of treatment increased from 4 (1970s) to 21 (20102019). Since 2003, the spread of monkeypox outside Africa has been noted, associated with the importation of infected animals, migration and tourism. Transmission to humans occurs through close contact with an infected animal (70%), a person or material contaminated with the virus. Monkeypox presents with fever, vesicular rash, and lymphadenopathy lasting 2 to 4 weeks. Mortality is associated with the development of complications and is 10.6% for the Central African clade compared to 3.6% for the West African clade. There have been no deaths outside of Africa. Our review shows an escalation of monkeypox cases, especially in endemic Africa and spread to other countries, which is likely due to the discontinuation of smallpox vaccination, which provided cross-protection against monkeypox. Unfortunately, smallpox vaccination is contraindicated in immunocompromised individuals, despite the availability of recommended vaccines. The effectiveness of existing antiviral drugs (tecovirimate and brincidofovir) has been little studied in humans. CONCLUSION: The weakening of population immunity, associated with the cessation of vaccination against smallpox, created the prerequisites for the outbreaks of monkeypox, including in non-endemic areas. Surveillance and detection programs are important tools for understanding the ever-changing epidemiology of this disease. In light of the emergence of cases outside of Africa, the potential for human-to-human transmission of the virus, the public health significance of monkeypox should not be underestimated. [Published in: Epidemiology and Infectious Diseases]",
+  "source": "Crossref:10.17816/eid108550",
+  "doi": "10.17816/eid108550",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2022,
+  "venue": "Epidemiology and Infectious Diseases",
   "field": "epidemiology"
  },
  {
@@ -5578,6 +5578,17 @@
  },
  {
   "chunk_id": "chunk_00507",
+  "text": "The epidemiology and identification of risk factors associated with severe dengue during the 2023 dengue outbreak in Kaohsiung City, Taiwan [Published in: Travel Medicine and Infectious Disease]",
+  "source": "Crossref:10.1016/j.tmaid.2025.102852",
+  "doi": "10.1016/j.tmaid.2025.102852",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2025,
+  "venue": "Travel Medicine and Infectious Disease",
+  "field": "epidemiology"
+ },
+ {
+  "chunk_id": "chunk_00508",
   "text": "An outbreak of infections caused by extensively drug-resistant Klebsiella pneumoniae strains during a short period of time in a Chinese teaching hospital: epidemiology study and molecular characteristics [Published in: Diagnostic Microbiology and Infectious Disease]",
   "source": "Crossref:10.1016/j.diagmicrobio.2015.03.017",
   "doi": "10.1016/j.diagmicrobio.2015.03.017",
@@ -5588,7 +5599,7 @@
   "field": "epidemiology"
  },
  {
-  "chunk_id": "chunk_00508",
+  "chunk_id": "chunk_00509",
   "text": "On optimal control at the onset of a new viral outbreak [Published in: Infectious Disease Modelling]",
   "source": "Crossref:10.1016/j.idm.2024.05.006",
   "doi": "10.1016/j.idm.2024.05.006",
@@ -5596,17 +5607,6 @@
   "retracted": false,
   "pub_year": 2024,
   "venue": "Infectious Disease Modelling",
-  "field": "epidemiology"
- },
- {
-  "chunk_id": "chunk_00509",
-  "text": "The epidemiology and identification of risk factors associated with severe dengue during the 2023 dengue outbreak in Kaohsiung City, Taiwan [Published in: Travel Medicine and Infectious Disease]",
-  "source": "Crossref:10.1016/j.tmaid.2025.102852",
-  "doi": "10.1016/j.tmaid.2025.102852",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2025,
-  "venue": "Travel Medicine and Infectious Disease",
   "field": "epidemiology"
  },
  {
@@ -5798,17 +5798,6 @@
  },
  {
   "chunk_id": "chunk_00527",
-  "text": "Control of the Outbreak of Disease Aftermath Earthquake: an Overview. DOI: http://dx.doi.org/10.3126/nje.v5i2.12828Nepal J Epidemiol. 2015;5(2); 468-469. [Published in: Nepal Journal of Epidemiology]",
-  "source": "Crossref:10.3126/nje.v5i2.12828",
-  "doi": "10.3126/nje.v5i2.12828",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2015,
-  "venue": "Nepal Journal of Epidemiology",
-  "field": "epidemiology"
- },
- {
-  "chunk_id": "chunk_00528",
   "text": "A Model for the Lifespan Loss Due to a Viral Disease: Example of the COVID-19 Outbreak. The end of the acute phase of the COVID-19 pandemic is near in some countries as declared by World Health Organization (WHO) in January 2022 based on some studies in Europe and South Africa despite unequal distribution of vaccines to combat the disease spread globally. The heterogeneity in individual age and the reaction to biological and environmental changes that has been observed in COVID-19 dynamics in terms of different reaction to vaccination by age group, severity of infection per age group, hospitalization and Intensive Care Unit (ICU) records show different patterns, and hence, it is important to improve mathematical models for COVID-19 pandemic prediction to account for different proportions of ages in the population, which is a major factor in epidemic history. We aim in this paper to estimate, using the Usher model, the lifespan loss due to viral infection and ageing which could result in pathological events such as infectious diseases. Exploiting epidemiology and demographic data firstly from Cameroon and then from some other countries, we described the ageing in the COVID-19 outbreak in human populations and performed a graphical representation of the proportion of sensitivity of some of the model parameters which we varied. The result shows a coherence between the orders of magnitude of the calculated and observed incidence numbers during the epidemic wave, which constitutes a semi-quantitative validation of the mathematical modelling approach at the population level. To conclude, the age heterogeneity of the populations involved in the COVID-19 outbreak needs the consideration of models in age groups with specific susceptibilities to infection. [Published in: Infectious Disease Reports]",
   "source": "Crossref:10.3390/idr14030038",
   "doi": "10.3390/idr14030038",
@@ -5816,6 +5805,17 @@
   "retracted": false,
   "pub_year": 2022,
   "venue": "Infectious Disease Reports",
+  "field": "epidemiology"
+ },
+ {
+  "chunk_id": "chunk_00528",
+  "text": "Control of the Outbreak of Disease Aftermath Earthquake: an Overview. DOI: http://dx.doi.org/10.3126/nje.v5i2.12828Nepal J Epidemiol. 2015;5(2); 468-469. [Published in: Nepal Journal of Epidemiology]",
+  "source": "Crossref:10.3126/nje.v5i2.12828",
+  "doi": "10.3126/nje.v5i2.12828",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2015,
+  "venue": "Nepal Journal of Epidemiology",
   "field": "epidemiology"
  },
  {
@@ -6359,17 +6359,6 @@
  },
  {
   "chunk_id": "chunk_00578",
-  "text": "Impact Analysis of U.S. Macroeconomic Policy on China. The adjustment of macroeconomic policies in the United States cannot be ignored for its global economic and social impact, especially the recent adjustment of tariff policies, which has also attracted the attention of scholars. The research focuses on the impact of US trade policies on China's economic growth, exports, and industrial structure. This paper uses trade data, PMI reports, and forecasts from institutions like the Federal Reserve, Reuters, and the Financial Times. Both quantitative data and qualitative evidence are combined: numbers show the direct hit on exports and GDP, while reports and analysis reveal how firms and policymakers respond. The results show that the July 2025 export surge was a short-term rush, while the real story is a sustained 22% drop in shipments to the U.S. The tariffs are estimated to shave 0.2 percentage points off China\u2019s growth, with small and medium exporters taking the hardest blow. At the same time, China is diversifying into ASEAN, the Middle East, and Africa, and pushing domestic consumption. Still, these measures cannot fully make up for U.S. demand. U.S. restrictions on semiconductors and critical tech are also forcing China into a faster but more expensive path toward self-reliance. Overall, the findings show that U.S. macro policies not only disrupt trade flows but also speed up China\u2019s structural shift. [Published in: Advances in Economics, Management and Political Sciences]",
-  "source": "Crossref:10.54254/2754-1169/2025.gl27776",
-  "doi": "10.54254/2754-1169/2025.gl27776",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2025,
-  "venue": "Advances in Economics, Management and Political Sciences",
-  "field": "economics"
- },
- {
-  "chunk_id": "chunk_00579",
   "text": "A macroeconomic estimation of wine production in Greece [Published in: Wine Economics and Policy]",
   "source": "Crossref:10.1016/j.wep.2017.03.001",
   "doi": "10.1016/j.wep.2017.03.001",
@@ -6377,6 +6366,17 @@
   "retracted": false,
   "pub_year": 2017,
   "venue": "Wine Economics and Policy",
+  "field": "economics"
+ },
+ {
+  "chunk_id": "chunk_00579",
+  "text": "Impact Analysis of U.S. Macroeconomic Policy on China. The adjustment of macroeconomic policies in the United States cannot be ignored for its global economic and social impact, especially the recent adjustment of tariff policies, which has also attracted the attention of scholars. The research focuses on the impact of US trade policies on China's economic growth, exports, and industrial structure. This paper uses trade data, PMI reports, and forecasts from institutions like the Federal Reserve, Reuters, and the Financial Times. Both quantitative data and qualitative evidence are combined: numbers show the direct hit on exports and GDP, while reports and analysis reveal how firms and policymakers respond. The results show that the July 2025 export surge was a short-term rush, while the real story is a sustained 22% drop in shipments to the U.S. The tariffs are estimated to shave 0.2 percentage points off China\u2019s growth, with small and medium exporters taking the hardest blow. At the same time, China is diversifying into ASEAN, the Middle East, and Africa, and pushing domestic consumption. Still, these measures cannot fully make up for U.S. demand. U.S. restrictions on semiconductors and critical tech are also forcing China into a faster but more expensive path toward self-reliance. Overall, the findings show that U.S. macro policies not only disrupt trade flows but also speed up China\u2019s structural shift. [Published in: Advances in Economics, Management and Political Sciences]",
+  "source": "Crossref:10.54254/2754-1169/2025.gl27776",
+  "doi": "10.54254/2754-1169/2025.gl27776",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2025,
+  "venue": "Advances in Economics, Management and Political Sciences",
   "field": "economics"
  },
  {
@@ -6645,17 +6645,6 @@
  },
  {
   "chunk_id": "chunk_00604",
-  "text": "Economic Response to the Epidemic: An Analysis of Macroeconomic Policy in China and the US. The global outbreak of COVID-19 epidemic has instigated turmoil in international financial markets and a severe economic recession. China and the United States have adopted context-specific strategies in response to the pandemic. This research diligently gathers and compares the interventions implemented by each country, with the objective of elucidating the similarities and differences in their methodologies, along with the economic implications of these measures. As the United States is highly market-oriented, the Federal Reserve implements direct monetary policies, along with other fiscal tools by the government. From a formal perspective, the novel monetary policy instruments deployed in both China and the United States operate through the establishment of specialized purpose vehicles. However, the two are still fundamentally different. In policy terms, the Federal Reserve\u2019s tool is quantitative easing, while China's tool is the traditional category of credit. It can be anticipated that the paths of economic recovery of the two countries will demonstrate a more pronounced divergence trend. [Published in: Advances in Economics, Management and Political Sciences]",
-  "source": "Crossref:10.54254/2754-1169/2024.ox18530",
-  "doi": "10.54254/2754-1169/2024.ox18530",
-  "pub_type": "JournalArticle",
-  "retracted": false,
-  "pub_year": 2024,
-  "venue": "Advances in Economics, Management and Political Sciences",
-  "field": "economics"
- },
- {
-  "chunk_id": "chunk_00605",
   "text": "Dynamic effects of monetary policy shocks on macroeconomic volatility [Published in: Journal of Monetary Economics]",
   "source": "Crossref:10.1016/j.jmoneco.2019.03.011",
   "doi": "10.1016/j.jmoneco.2019.03.011",
@@ -6666,7 +6655,7 @@
   "field": "economics"
  },
  {
-  "chunk_id": "chunk_00606",
+  "chunk_id": "chunk_00605",
   "text": "Ageing and Welfare State Policy: A Macroeconomic Perspective [Published in: Journal of Government and Economics]",
   "source": "Crossref:10.1016/j.jge.2022.100030",
   "doi": "10.1016/j.jge.2022.100030",
@@ -6674,6 +6663,17 @@
   "retracted": false,
   "pub_year": 2022,
   "venue": "Journal of Government and Economics",
+  "field": "economics"
+ },
+ {
+  "chunk_id": "chunk_00606",
+  "text": "Economic Response to the Epidemic: An Analysis of Macroeconomic Policy in China and the US. The global outbreak of COVID-19 epidemic has instigated turmoil in international financial markets and a severe economic recession. China and the United States have adopted context-specific strategies in response to the pandemic. This research diligently gathers and compares the interventions implemented by each country, with the objective of elucidating the similarities and differences in their methodologies, along with the economic implications of these measures. As the United States is highly market-oriented, the Federal Reserve implements direct monetary policies, along with other fiscal tools by the government. From a formal perspective, the novel monetary policy instruments deployed in both China and the United States operate through the establishment of specialized purpose vehicles. However, the two are still fundamentally different. In policy terms, the Federal Reserve\u2019s tool is quantitative easing, while China's tool is the traditional category of credit. It can be anticipated that the paths of economic recovery of the two countries will demonstrate a more pronounced divergence trend. [Published in: Advances in Economics, Management and Political Sciences]",
+  "source": "Crossref:10.54254/2754-1169/2024.ox18530",
+  "doi": "10.54254/2754-1169/2024.ox18530",
+  "pub_type": "JournalArticle",
+  "retracted": false,
+  "pub_year": 2024,
+  "venue": "Advances in Economics, Management and Political Sciences",
   "field": "economics"
  },
  {
@@ -6997,17 +6997,6 @@
  },
  {
   "chunk_id": "chunk_00636",
-  "text": "EFFECT OF EXOGENOUS MONETARY POLICY SHOCKS ON SELECTED MACROECONOMIC VARIABLES IN HUNGARY: A SVAR APPROACH [Published in: 12th International Conference of J. Selye University. Economics Section. Conference Proceedings]",
-  "source": "Crossref:10.36007/3754.2020.115",
-  "doi": "10.36007/3754.2020.115",
-  "pub_type": "ProceedingsArticle",
-  "retracted": false,
-  "pub_year": 2020,
-  "venue": "12th International Conference of J. Selye University. Economics Section. Conference Proceedings",
-  "field": "economics"
- },
- {
-  "chunk_id": "chunk_00637",
   "text": "Macroeconomic policy analysis model based on Dynamic Game Theory [Published in: 2020 International Conference on Virtual Reality and Intelligent Systems (ICVRIS)]",
   "source": "Crossref:10.1109/icvris51417.2020.00258",
   "doi": "10.1109/icvris51417.2020.00258",
@@ -7015,6 +7004,17 @@
   "retracted": false,
   "pub_year": 2020,
   "venue": "2020 International Conference on Virtual Reality and Intelligent Systems (ICVRIS)",
+  "field": "economics"
+ },
+ {
+  "chunk_id": "chunk_00637",
+  "text": "EFFECT OF EXOGENOUS MONETARY POLICY SHOCKS ON SELECTED MACROECONOMIC VARIABLES IN HUNGARY: A SVAR APPROACH [Published in: 12th International Conference of J. Selye University. Economics Section. Conference Proceedings]",
+  "source": "Crossref:10.36007/3754.2020.115",
+  "doi": "10.36007/3754.2020.115",
+  "pub_type": "ProceedingsArticle",
+  "retracted": false,
+  "pub_year": 2020,
+  "venue": "12th International Conference of J. Selye University. Economics Section. Conference Proceedings",
   "field": "economics"
  },
  {

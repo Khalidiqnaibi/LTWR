@@ -27,7 +27,7 @@ from scipy.optimize import lsq_linear
 
 from infra.academic_document import AcademicDocument
 from pipeline.academic_retrieval import AcademicTWRPipeline
-from domain.gains import peer_review_gain, retraction_gain, recency_weight
+from domain.gains import peer_review_gain, retraction_gain, recency_weight, PUB_TYPE_GAIN
 from domain.model_utils import BoundedLinearModel
 
 # Field-disjoint split, matching corpus_gen.py's 8-field pull.
@@ -42,6 +42,9 @@ TEST_FIELDS = ["materials_science", "epidemiology", "economics"]
 FEATURE_NAMES = ["rrf_score", "bm25_score", "dense_score", "w1_peer_review", "w2_retraction", "w3_recency"]
 
 COEF_BOUNDS = (0.0, 1.0)  # matches static TWR's beta/gamma/delta range
+
+PEER_REVIEW_GAIN_MAX = max(PUB_TYPE_GAIN.values())  # = 4
+COMBINED_LABEL_MAX = 3.0  # max of a 3-term sum of [0,1]-normalized signals
 
 
 def fit_bounded_ridge(X, y, alpha=1.0, bounds=COEF_BOUNDS):
@@ -75,14 +78,20 @@ def load_corpus(path="data_in/academic_corpus.json"):
 
 
 def combined_label(doc: AcademicDocument, current_year=2026) -> float:
-    """Graded relevance target: sum of the same trust signals static TWR
-    uses, on one combined scale. Retraction gain is intentionally weighted
-    ~2x, mirroring static TWR's higher default gamma -- a retracted work
-    should pull the combined label down hard, not just nudge it."""
-    raw = (peer_review_gain(doc.pub_type)
-           + 2.0 * retraction_gain(doc.retracted)
-           + 4.0 * recency_weight(doc.pub_year, current_year))
-    return round(raw, 2)
+    """The 'beta*w1(d) + gamma*w2(d) + delta*w3(d)' block of Eq. 2, evaluated
+    with beta=gamma=delta=1 (equal, neutral weight -- see module-level note
+    above for why). Deliberately excludes alpha*RRF(d): this is a pure
+    per-document quality score, meant to be computed once per document and
+    added to a query's RRF(d) later, matching Eq. 2's additive structure --
+    not an average, and not a full TWR score on its own.
+
+    Each of the three signals is normalized to [0,1] before summing, so all
+    three carry equal weight and the label doesn't presuppose which one
+    should matter most -- that's what beta/gamma/delta are for."""
+    peer_review = peer_review_gain(doc.pub_type) / PEER_REVIEW_GAIN_MAX  # 0..1
+    retraction = retraction_gain(doc.retracted)  # already 0 or 1
+    recency = recency_weight(doc.pub_year, current_year)  # already 0..1
+    return round(peer_review + retraction + recency, 4)  # sum, range 0..3
 
 
 def build_training_set(pipeline: AcademicTWRPipeline, queries, fields_filter):
@@ -113,7 +122,13 @@ def main():
     X_train, y_train, group_train = build_training_set(pipeline, queries, TRAIN_FIELDS)
     print(f"Training rows: {X_train.shape}, groups: {len(group_train)}")
 
-    model = fit_bounded_ridge(X_train, y_train, alpha=1.0, bounds=COEF_BOUNDS)
+    # y_train is in combined_label()'s natural 0..COMBINED_LABEL_MAX (=3) units.
+    # Rescale to [0,1] ONLY here, for the bounded-ridge fit -- not inside
+    # combined_label() itself, which needs to stay in its natural additive
+    # units to be reusable as Eq. 2's "+ beta*w1 + gamma*w2 + delta*w3" term
+    # alongside a real per-query RRF(d) later. See COMBINED_LABEL_MAX's
+    # definition above for why this rescaling doesn't distort the fit.
+    model = fit_bounded_ridge(X_train, y_train / COMBINED_LABEL_MAX, alpha=1.0, bounds=COEF_BOUNDS)
 
     coefficients = dict(zip(FEATURE_NAMES, model.coef_.tolist()))
     assert len(coefficients) == len(FEATURE_NAMES) == len(model.coef_), (
