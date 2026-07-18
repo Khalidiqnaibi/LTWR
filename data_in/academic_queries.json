@@ -1,0 +1,1402 @@
+[
+ {
+  "id": 1,
+  "query": "What does peer-reviewed research say about gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 2,
+  "query": "What does peer-reviewed research say about vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 3,
+  "query": "What does peer-reviewed research say about outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 4,
+  "query": "What does peer-reviewed research say about immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 5,
+  "query": "What does peer-reviewed research say about labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 6,
+  "query": "What does peer-reviewed research say about extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 7,
+  "query": "What does peer-reviewed research say about neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 8,
+  "query": "What does peer-reviewed research say about memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 9,
+  "query": "What does peer-reviewed research say about tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 10,
+  "query": "What does peer-reviewed research say about carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 11,
+  "query": "What does peer-reviewed research say about transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 12,
+  "query": "What does peer-reviewed research say about reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 13,
+  "query": "What does peer-reviewed research say about CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 14,
+  "query": "What does peer-reviewed research say about cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 15,
+  "query": "What does peer-reviewed research say about behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 16,
+  "query": "What does peer-reviewed research say about nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 17,
+  "query": "What does peer-reviewed research say about chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 18,
+  "query": "What does peer-reviewed research say about sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 19,
+  "query": "What does peer-reviewed research say about disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 20,
+  "query": "What does peer-reviewed research say about battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 21,
+  "query": "What does peer-reviewed research say about monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 22,
+  "query": "What does peer-reviewed research say about inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 23,
+  "query": "What does peer-reviewed research say about superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 24,
+  "query": "What does peer-reviewed research say about genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 25,
+  "query": "What does peer-reviewed research say about gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 26,
+  "query": "What does peer-reviewed research say about vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 27,
+  "query": "What does peer-reviewed research say about outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 28,
+  "query": "What does peer-reviewed research say about immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 29,
+  "query": "What does peer-reviewed research say about labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 30,
+  "query": "What does peer-reviewed research say about extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 31,
+  "query": "What does peer-reviewed research say about neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 32,
+  "query": "What does peer-reviewed research say about memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 33,
+  "query": "What does peer-reviewed research say about tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 34,
+  "query": "What does peer-reviewed research say about carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 35,
+  "query": "What does peer-reviewed research say about transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 36,
+  "query": "What does peer-reviewed research say about reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 37,
+  "query": "What does peer-reviewed research say about CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 38,
+  "query": "What does peer-reviewed research say about cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 39,
+  "query": "What does peer-reviewed research say about behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 40,
+  "query": "What does peer-reviewed research say about nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 41,
+  "query": "What does peer-reviewed research say about chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 42,
+  "query": "What does peer-reviewed research say about sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 43,
+  "query": "What does peer-reviewed research say about disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 44,
+  "query": "What does peer-reviewed research say about battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 45,
+  "query": "What does peer-reviewed research say about monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 46,
+  "query": "What does peer-reviewed research say about inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 47,
+  "query": "What does peer-reviewed research say about superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 48,
+  "query": "What does peer-reviewed research say about genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 49,
+  "query": "What does peer-reviewed research say about gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 50,
+  "query": "What does peer-reviewed research say about vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "peer_review"
+ },
+ {
+  "id": 51,
+  "query": "What is the scientifically validated finding on disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 52,
+  "query": "What is the scientifically validated finding on tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 53,
+  "query": "What is the scientifically validated finding on superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 54,
+  "query": "What is the scientifically validated finding on nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 55,
+  "query": "What is the scientifically validated finding on memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 56,
+  "query": "What is the scientifically validated finding on outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 57,
+  "query": "What is the scientifically validated finding on genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 58,
+  "query": "What is the scientifically validated finding on behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 59,
+  "query": "What is the scientifically validated finding on extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 60,
+  "query": "What is the scientifically validated finding on immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 61,
+  "query": "What is the scientifically validated finding on cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 62,
+  "query": "What is the scientifically validated finding on gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 63,
+  "query": "What is the scientifically validated finding on chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 64,
+  "query": "What is the scientifically validated finding on monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 65,
+  "query": "What is the scientifically validated finding on CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 66,
+  "query": "What is the scientifically validated finding on labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 67,
+  "query": "What is the scientifically validated finding on carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 68,
+  "query": "What is the scientifically validated finding on sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 69,
+  "query": "What is the scientifically validated finding on inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 70,
+  "query": "What is the scientifically validated finding on transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 71,
+  "query": "What is the scientifically validated finding on reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 72,
+  "query": "What is the scientifically validated finding on battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 73,
+  "query": "What is the scientifically validated finding on neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 74,
+  "query": "What is the scientifically validated finding on vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 75,
+  "query": "What is the scientifically validated finding on disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 76,
+  "query": "What is the scientifically validated finding on tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 77,
+  "query": "What is the scientifically validated finding on superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 78,
+  "query": "What is the scientifically validated finding on nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 79,
+  "query": "What is the scientifically validated finding on memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 80,
+  "query": "What is the scientifically validated finding on outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 81,
+  "query": "What is the scientifically validated finding on genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 82,
+  "query": "What is the scientifically validated finding on behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 83,
+  "query": "What is the scientifically validated finding on extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 84,
+  "query": "What is the scientifically validated finding on immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 85,
+  "query": "What is the scientifically validated finding on cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 86,
+  "query": "What is the scientifically validated finding on gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 87,
+  "query": "What is the scientifically validated finding on chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 88,
+  "query": "What is the scientifically validated finding on monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 89,
+  "query": "What is the scientifically validated finding on CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 90,
+  "query": "What is the scientifically validated finding on labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 91,
+  "query": "What is the scientifically validated finding on carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 92,
+  "query": "What is the scientifically validated finding on sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 93,
+  "query": "What is the scientifically validated finding on inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 94,
+  "query": "What is the scientifically validated finding on transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 95,
+  "query": "What is the scientifically validated finding on reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 96,
+  "query": "What is the scientifically validated finding on battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 97,
+  "query": "What is the scientifically validated finding on neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 98,
+  "query": "What is the scientifically validated finding on vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 99,
+  "query": "What is the scientifically validated finding on disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 100,
+  "query": "What is the scientifically validated finding on tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "retraction"
+ },
+ {
+  "id": 101,
+  "query": "What is the most recent research on nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 102,
+  "query": "What is the most recent research on chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 103,
+  "query": "What is the most recent research on labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 104,
+  "query": "What is the most recent research on CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 105,
+  "query": "What is the most recent research on immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 106,
+  "query": "What is the most recent research on disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 107,
+  "query": "What is the most recent research on inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 108,
+  "query": "What is the most recent research on battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 109,
+  "query": "What is the most recent research on sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 110,
+  "query": "What is the most recent research on memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 111,
+  "query": "What is the most recent research on cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 112,
+  "query": "What is the most recent research on transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 113,
+  "query": "What is the most recent research on neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 114,
+  "query": "What is the most recent research on tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 115,
+  "query": "What is the most recent research on vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 116,
+  "query": "What is the most recent research on carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 117,
+  "query": "What is the most recent research on behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 118,
+  "query": "What is the most recent research on monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 119,
+  "query": "What is the most recent research on reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 120,
+  "query": "What is the most recent research on superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 121,
+  "query": "What is the most recent research on gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 122,
+  "query": "What is the most recent research on extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 123,
+  "query": "What is the most recent research on outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 124,
+  "query": "What is the most recent research on genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 125,
+  "query": "What is the most recent research on nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 126,
+  "query": "What is the most recent research on chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 127,
+  "query": "What is the most recent research on labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 128,
+  "query": "What is the most recent research on CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 129,
+  "query": "What is the most recent research on immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 130,
+  "query": "What is the most recent research on disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 131,
+  "query": "What is the most recent research on inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 132,
+  "query": "What is the most recent research on battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 133,
+  "query": "What is the most recent research on sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 134,
+  "query": "What is the most recent research on memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 135,
+  "query": "What is the most recent research on cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 136,
+  "query": "What is the most recent research on transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 137,
+  "query": "What is the most recent research on neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 138,
+  "query": "What is the most recent research on tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 139,
+  "query": "What is the most recent research on vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 140,
+  "query": "What is the most recent research on carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 141,
+  "query": "What is the most recent research on behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 142,
+  "query": "What is the most recent research on monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 143,
+  "query": "What is the most recent research on reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 144,
+  "query": "What is the most recent research on superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 145,
+  "query": "What is the most recent research on gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 146,
+  "query": "What is the most recent research on extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 147,
+  "query": "What is the most recent research on outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 148,
+  "query": "What is the most recent research on genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 149,
+  "query": "What is the most recent research on nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 150,
+  "query": "What is the most recent research on chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 151,
+  "query": "What does research show about outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 152,
+  "query": "What does research show about extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 153,
+  "query": "What does research show about battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 154,
+  "query": "What does research show about cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 155,
+  "query": "What does research show about superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 156,
+  "query": "What does research show about carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 157,
+  "query": "What does research show about immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 158,
+  "query": "What does research show about neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 159,
+  "query": "What does research show about memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 160,
+  "query": "What does research show about genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 161,
+  "query": "What does research show about monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 162,
+  "query": "What does research show about chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 163,
+  "query": "What does research show about tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 164,
+  "query": "What does research show about behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 165,
+  "query": "What does research show about disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 166,
+  "query": "What does research show about labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 167,
+  "query": "What does research show about reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 168,
+  "query": "What does research show about gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 169,
+  "query": "What does research show about vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 170,
+  "query": "What does research show about CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 171,
+  "query": "What does research show about nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 172,
+  "query": "What does research show about transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 173,
+  "query": "What does research show about inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 174,
+  "query": "What does research show about sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 175,
+  "query": "What does research show about outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 176,
+  "query": "What does research show about extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 177,
+  "query": "What does research show about battery electrode materials?",
+  "field": "materials_science",
+  "topic": "battery electrode materials",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 178,
+  "query": "What does research show about cognitive bias replication?",
+  "field": "psychology",
+  "topic": "cognitive bias replication",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 179,
+  "query": "What does research show about superconductor properties?",
+  "field": "materials_science",
+  "topic": "superconductor properties",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 180,
+  "query": "What does research show about carbon capture methods?",
+  "field": "climate_science",
+  "topic": "carbon capture methods",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 181,
+  "query": "What does research show about immunotherapy response?",
+  "field": "oncology",
+  "topic": "immunotherapy response",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 182,
+  "query": "What does research show about neural network generalization?",
+  "field": "machine_learning",
+  "topic": "neural network generalization",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 183,
+  "query": "What does research show about memory formation?",
+  "field": "psychology",
+  "topic": "memory formation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 184,
+  "query": "What does research show about genome-wide association?",
+  "field": "genomics",
+  "topic": "genome-wide association",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 185,
+  "query": "What does research show about monetary policy effects?",
+  "field": "economics",
+  "topic": "monetary policy effects",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 186,
+  "query": "What does research show about chemotherapy resistance?",
+  "field": "oncology",
+  "topic": "chemotherapy resistance",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 187,
+  "query": "What does research show about tumor biomarkers?",
+  "field": "oncology",
+  "topic": "tumor biomarkers",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 188,
+  "query": "What does research show about behavioral intervention outcomes?",
+  "field": "psychology",
+  "topic": "behavioral intervention outcomes",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 189,
+  "query": "What does research show about disease transmission modeling?",
+  "field": "epidemiology",
+  "topic": "disease transmission modeling",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 190,
+  "query": "What does research show about labor market outcomes?",
+  "field": "economics",
+  "topic": "labor market outcomes",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 191,
+  "query": "What does research show about reinforcement learning?",
+  "field": "machine_learning",
+  "topic": "reinforcement learning",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 192,
+  "query": "What does research show about gene expression regulation?",
+  "field": "genomics",
+  "topic": "gene expression regulation",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 193,
+  "query": "What does research show about vaccine efficacy?",
+  "field": "epidemiology",
+  "topic": "vaccine efficacy",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 194,
+  "query": "What does research show about CRISPR off-target effects?",
+  "field": "genomics",
+  "topic": "CRISPR off-target effects",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 195,
+  "query": "What does research show about nanomaterial synthesis?",
+  "field": "materials_science",
+  "topic": "nanomaterial synthesis",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 196,
+  "query": "What does research show about transformer architectures?",
+  "field": "machine_learning",
+  "topic": "transformer architectures",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 197,
+  "query": "What does research show about inflation forecasting?",
+  "field": "economics",
+  "topic": "inflation forecasting",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 198,
+  "query": "What does research show about sea level rise projections?",
+  "field": "climate_science",
+  "topic": "sea level rise projections",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 199,
+  "query": "What does research show about outbreak surveillance methods?",
+  "field": "epidemiology",
+  "topic": "outbreak surveillance methods",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 200,
+  "query": "What does research show about extreme weather attribution?",
+  "field": "climate_science",
+  "topic": "extreme weather attribution",
+  "ablation_dimension": "combined"
+ }
+]

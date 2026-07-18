@@ -1,18 +1,18 @@
 """
-Three-arm fusion pipeline for the LTWR business/SEC-filing study:
+academic_retrieval.py -- academic-publishing analogue of
+pipeline/business_retrieval.py. Same three-arm design:
 
   Arm A: RRF   -- unweighted reciprocal-rank fusion (baseline)
-  Arm B: Static TWR -- hand-set alpha/beta/gamma/delta (analogue of Eq. 2)
+  Arm B: Static TWR -- hand-set alpha/beta/gamma/delta (Eq. 2, as specified:
+         w1=peer-review status, w2=retraction penalty, w3=recency decay)
   Arm C: LTWR (Learned Trust-Weighted Ranking) -- learned fusion weights
          over the SAME closed, scalar feature set as static TWR (rrf score,
-         w1, w2, w3). No document text, no new embeddings, no cross-encoder
-         pass -- this is a learned combination FUNCTION, not a reranker,
-         and is the architectural distinction the paper must state
-         explicitly to preserve TWR's zero-overhead claim.
+         bm25 score, dense score, w1, w2, w3). No document text is a
+         feature, no new embeddings, no cross-encoder pass.
 
-Both the retrieval stage (BM25 + FAISS) and the candidate pool are IDENTICAL
-across all three arms, exactly mirroring the original TWR paper's design so
-that any measured difference is attributable to the fusion step alone.
+Both the retrieval stage (BM25 + dense) and the candidate pool are IDENTICAL
+across all three arms, so any measured difference is attributable to the
+fusion step alone.
 """
 import re
 import time
@@ -22,22 +22,19 @@ from typing import List, Dict, Any, Optional
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 
-from infra.business_document import BusinessDocument
-from business_domain.gains import recency_weight
+from infra.academic_document import AcademicDocument
+from domain.gains import peer_review_weight, retraction_weight, recency_weight
 
 DENSE_MODEL_NAME = "all-MiniLM-L6-v2"
 
-FILING_W1 = {"10-K": 1.0, "10-Q": 0.75, "8-K": 0.5, "DEF14A": 0.35}
-AUDIT_W2 = {"Big4": 1.0, "OtherAudited": 0.7, "Unaudited": 0.3, "Unknown": 0.3}
 
-
-class BusinessTWRPipeline:
-    def __init__(self, corpus: List[BusinessDocument], k_doc: int = 5, ltwr_model=None):
+class AcademicTWRPipeline:
+    def __init__(self, corpus: List[AcademicDocument], k_doc: int = 5, ltwr_model=None):
         self.corpus = corpus
         self.k_doc = k_doc
         self.k_rrf = 60
         self.current_year = 2026
-        self.ltwr_model = ltwr_model  # trained LGBMRanker/booster, or None
+        self.ltwr_model = ltwr_model  # trained sklearn/LightGBM model, or None
 
         self.embedder = SentenceTransformer(DENSE_MODEL_NAME)
         self._build_bm25_index()
@@ -56,8 +53,7 @@ class BusinessTWRPipeline:
         self.faiss_index.add(embeddings)
 
     def _embed_query(self, query: str):
-        emb = self.embedder.encode([query], convert_to_numpy=True, show_progress_bar=False).astype("float32")
-        return emb
+        return self.embedder.encode([query], convert_to_numpy=True, show_progress_bar=False).astype("float32")
 
     def hybrid_retrieval(self, query: str, top_n: int = 10):
         tokenized_query = re.findall(r"\b\w+\b", query.lower())
@@ -71,10 +67,10 @@ class BusinessTWRPipeline:
 
         return bm25_ranking, bm25_scores, faiss_ranking
 
-    def calculate_metadata_components(self, doc: BusinessDocument):
-        w1 = FILING_W1.get(doc.filing_type, 0.2)
-        w2 = AUDIT_W2.get(doc.audit_tier, 0.3)
-        w3 = recency_weight(doc.filing_year, self.current_year)
+    def calculate_metadata_components(self, doc: AcademicDocument):
+        w1 = peer_review_weight(doc.pub_type)
+        w2 = retraction_weight(doc.retracted)
+        w3 = recency_weight(doc.pub_year, self.current_year)
         return w1, w2, w3
 
     def _accumulate_rrf(self, bm25_ranking, faiss_ranking, alpha=1.0):
@@ -90,9 +86,16 @@ class BusinessTWRPipeline:
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)
         return sorted(rrf_scores.keys(), key=lambda x: rrf_scores[x], reverse=True)
 
-    # ---- Arm B: static TWR (Eq. 2 analogue) -------------------------
+    # ---- Arm B: static TWR (Eq. 2, exactly as specified) ------------
     def static_twr(self, bm25_ranking, faiss_ranking,
-                   alpha=1.0, beta=0.5, gamma=0.5, delta=0.3) -> List[int]:
+                    alpha=1.0, beta=0.5, gamma=0.7, delta=0.3) -> List[int]:
+        """TWR(d) = alpha*RRF(d) + beta*w1(d) + gamma*w2(d) + delta*w3(d).
+        gamma (retraction penalty weight) is set higher than beta/delta by
+        default -- a retracted work should be suppressed hard, not merely
+        nudged down, reflecting how strongly retraction status should
+        dominate the ranking decision relative to peer-review tier or
+        recency. Tune per your paper's design; this is a stated default,
+        not a derived constant."""
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking, alpha=alpha)
         twr_scores = {}
         for doc_idx, rrf in rrf_scores.items():
@@ -108,8 +111,13 @@ class BusinessTWRPipeline:
         dense_score = faiss_score_lookup.get(doc_idx, 0.0)
         return [rrf_score, bm25_score, dense_score, w1, w2, w3]
 
+    def build_features(self, query: str, top_n: int = 10):
+        bm25_ranking, bm25_scores, faiss_ranking = self.hybrid_retrieval(query, top_n=top_n)
+        return self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
+
     def build_features_from_rankings(self, bm25_ranking, bm25_scores, faiss_ranking):
-        """Constructs scalar features directly from pre-computed rankings to bypass re-retrieval."""
+        """Builds features from pre-computed rankings so static TWR/RRF/LTWR
+        can share ONE retrieval call per query instead of three."""
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)
         faiss_score_lookup = {idx: 1.0 / (r + 1) for r, idx in enumerate(faiss_ranking)}
         feats = {}
@@ -117,22 +125,17 @@ class BusinessTWRPipeline:
             feats[doc_idx] = self._feature_vector(doc_idx, rrf, bm25_scores[doc_idx], faiss_score_lookup)
         return feats
 
-    def build_features(self, query: str, top_n: int = 10):
-        """Exposed for legacy training scripts."""
-        bm25_ranking, bm25_scores, faiss_ranking = self.hybrid_retrieval(query, top_n=top_n)
-        return self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
-
     # ---- Arm C: LTWR (learned scalar-feature fusion) -------------
     def ltwr(self, bm25_ranking, bm25_scores, faiss_ranking) -> List[int]:
-        """Runs fast, zero-overhead scalar ranking utilizing pre-computed ranking states."""
+        """Runs fast, zero-overhead scalar ranking using pre-computed
+        ranking state (no re-running retrieval for this arm)."""
         if self.ltwr_model is None:
-            raise RuntimeError("LTWR model not loaded -- train it first (business_domain/train_ltwr.py)")
-        
+            raise RuntimeError("LTWR model not loaded -- train it first (academic_domain/train_ltwr.py)")
+
         feats = self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
         doc_idxs = list(feats.keys())
         if not doc_idxs:
             return []
-            
         X = np.array([feats[i] for i in doc_idxs])
         scores = self.ltwr_model.predict(X)
         order = np.argsort(scores)[::-1]
@@ -145,17 +148,17 @@ class BusinessTWRPipeline:
             out.append({
                 "rank": rank + 1,
                 "chunk_id": doc.chunk_id,
-                "filing_type": doc.filing_type,
-                "audit_tier": doc.audit_tier,
-                "filing_year": doc.filing_year,
-                "ticker": doc.ticker,
+                "doi": doc.doi,
+                "pub_type": doc.pub_type,
+                "retracted": doc.retracted,
+                "pub_year": doc.pub_year,
+                "field": doc.field,
             })
         return out
 
     def retrieve(self, query: str, arm: str = "static_twr") -> Dict[str, Any]:
         t0 = time.perf_counter()
         bm25_ranking, bm25_scores, faiss_ranking = self.hybrid_retrieval(query)
-        
         if arm == "rrf":
             indices = self.rrf_only(bm25_ranking, faiss_ranking)
         elif arm == "static_twr":
@@ -164,6 +167,5 @@ class BusinessTWRPipeline:
             indices = self.ltwr(bm25_ranking, bm25_scores, faiss_ranking)
         else:
             raise ValueError(f"unknown arm: {arm}")
-            
         latency_ms = (time.perf_counter() - t0) * 1000.0
         return {"results": self.provenance(indices), "latency_ms": latency_ms}
