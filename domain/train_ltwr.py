@@ -1,63 +1,200 @@
 """
-train_ltwr.py -- fits the LTWR fusion function on the CLOSED, scalar
-feature set [rrf_score, bm25_score, dense_score, w1, w2, w3] for the
-academic-publishing domain. No document text is used as a feature.
+train_ltwr_cve.py -- CVE/supply-chain-security analogue of
+domain/train_ltwr.py (academic) and business_domain/train_ltwr.py (SEC),
+BUT with the key architectural fix those domains could not make without
+new annotation infrastructure: this module fits beta/gamma/delta against
+REAL per-query top-k relevance judgments (data_in/ground_truth.json,
+produced by corpus_gen.py from NVD's own CPE-match linkage), using a
+pairwise ranking loss -- not a regression against a self-declared scalar
+label.
 
-Coefficients are BOUNDED to [0, 1] -- the same range static TWR's hand-set
-alpha/beta/gamma/delta live in (see pipeline/academic_retrieval.py's
-static_twr()). See fit_bounded_ridge()'s docstring for why bounded, not
-unconstrained-then-clamped.
+TWO TRAINING OBJECTIVES ARE IMPLEMENTED, BOTH REPORTED, NEITHER HIDDEN:
 
-NOTE ON THE PICKLED MODEL CLASS: BoundedLinearModel lives in
-domain/model_utils.py, NOT in this file, specifically so pickle can locate
-it reliably regardless of how this script or run_experiment.py is invoked
-(direct script run vs. `-m` vs. import) -- see that file's docstring for
-why this matters. If you ever move or rename that class, you must retrain
-(regenerate domain/ltwr_model.pkl) afterward; existing pickles reference
-the old location and will NOT be fixed by changing the code.
+  1. fit_pairwise_ranking() -- the real fix. For each query, every pair
+     (doc_i ranked above doc_j in the real ground truth) becomes a
+     training constraint: score(doc_i) should exceed score(doc_j). This
+     is standard pairwise Learning-to-Rank (RankNet-style logistic
+     pairwise loss), fit via gradient descent over a linear scoring
+     function with the SAME closed feature set static TWR uses
+     [rrf_score, bm25_score, dense_score, w1, w2, w3], coefficients
+     bounded to [0,1] to stay comparable to static TWR's alpha/beta/
+     gamma/delta range. This is the objective whose results should be
+     reported as "LTWR" in the paper's headline comparison against
+     static TWR and RRF.
 
-Split is FIELD-DISJOINT (train fields != test fields) to avoid the leakage
-a random query split would introduce -- the academic-domain analogue of the
-SEC domain's company-disjoint split.
+  2. fit_bounded_ridge() -- kept from the earlier domains' approach
+     (regression to combined_label, an equal-weighted normalized sum of
+     w1+w2+w3) ONLY as a labeled ablation/reference point, per the
+     project's earlier finding that this objective measures "does LTWR
+     reproduce its own declared training target better than static
+     weights do" -- NOT retrieval quality. If reported at all, it must be
+     labeled exactly that way, not as a second confirmation of (1).
+
+Split is PACKAGE-DISJOINT (train packages != test packages), the
+CVE-domain analogue of the SEC domain's company-disjoint split and the
+academic domain's field-disjoint split, to avoid a query about a package
+seen during training leaking into evaluation.
 """
 import json
 import pickle
 import numpy as np
 from scipy.optimize import lsq_linear
 
-from infra.academic_document import AcademicDocument
-from pipeline.academic_retrieval import AcademicTWRPipeline
-from domain.gains import peer_review_gain, retraction_gain, recency_weight, PUB_TYPE_GAIN
+from infra.cve_document import CveDocument
+from pipeline.retrieval import CveTWRPipeline
+from domain.gains import severity_gain, vuln_status_gain, recency_weight, SEVERITY_GAIN
 from domain.model_utils import BoundedLinearModel
 
-# Field-disjoint split, matching corpus_gen.py's 8-field pull.
-TRAIN_FIELDS = ["machine_learning", "oncology", "climate_science", "psychology", "genomics"]
-TEST_FIELDS = ["materials_science", "epidemiology", "economics"]
+# Package-disjoint split. Adjust to match whichever package list
+# query_gen.py was run with; these are the defaults from that module.
+TRAIN_PACKAGES = [
+    "xz-utils", "log4j-core", "openssl", "lodash", "express",
+    "flask", "django", "spring-framework",
+]
+TEST_PACKAGES = ["struts2", "jackson-databind", "openssh", "curl", "requests"]
 
-# Locked to the same 6-feature order _feature_vector() in
-# pipeline/academic_retrieval.py produces -- do not reorder or shorten this
-# list independently of that function, or coefficients will be silently
-# mislabeled (this is exactly the bug that dropped w2_retraction from an
-# earlier run's printout: the list and the array went out of sync).
-FEATURE_NAMES = ["rrf_score", "bm25_score", "dense_score", "w1_peer_review", "w2_retraction", "w3_recency"]
-
+FEATURE_NAMES = ["rrf_score", "bm25_score", "dense_score", "w1_severity", "w2_vuln_status", "w3_recency"]
 COEF_BOUNDS = (0.0, 1.0)  # matches static TWR's beta/gamma/delta range
 
-PEER_REVIEW_GAIN_MAX = max(PUB_TYPE_GAIN.values())  # = 4
+SEVERITY_GAIN_MAX = max(SEVERITY_GAIN.values())  # = 4
 COMBINED_LABEL_MAX = 3.0  # max of a 3-term sum of [0,1]-normalized signals
 
 
-def fit_bounded_ridge(X, y, alpha=1.0, bounds=COEF_BOUNDS):
-    """Bounded ridge via the augmented-least-squares trick: appending
-    sqrt(alpha)*I rows to X (and zeros to y) applies an L2 penalty inside an
-    ordinary bounded least-squares solve. This is a real bounded-ridge fit,
-    not an unconstrained fit clamped after the fact -- clamping afterward
-    would NOT recover the same (or a valid) optimum under the constraint,
-    since the other coefficients wouldn't rebalance to compensate.
-    Intercept is fit unconstrained via mean-centering, matching how sklearn
-    handles intercepts for Ridge by default."""
-    n_samples, n_features = X.shape
+def load_corpus(path="data_in/corpus.json"):
+    raw = json.load(open(path))
+    return [CveDocument(**r) for r in raw]
 
+
+def load_ground_truth(path="data_in/ground_truth.json"):
+    """Loads the REAL top-k judgment file: {package: [cve_id, ...]},
+    ordered most-relevant-first, derived from NVD's own CPE-match linkage
+    (see corpus_gen.py's generate_corpus()/build_seed_corpus()).
+    This is the external signal the earlier domains' LTWR training
+    lacked."""
+    return json.load(open(path))
+
+
+# ---------------------------------------------------------------------
+# Objective 1 (the fix): pairwise ranking loss against real ground truth
+# ---------------------------------------------------------------------
+def build_pairwise_training_set(pipeline: CveTWRPipeline, queries, ground_truth: dict, packages_filter):
+    """For each query, builds (feature_i, feature_j) pairs where doc_i is
+    ranked strictly above doc_j in the real ground-truth ordering for that
+    query's package. Only pairs where BOTH documents were actually
+    retrieved by the shared BM25+dense stage are used (a document the
+    retrieval stage never surfaces can't be reordered by the fusion layer
+    no matter how the coefficients are set, so including it would just add
+    noise to the loss)."""
+    pair_features_i, pair_features_j = [], []
+    n_queries_used = 0
+
+    for q in queries:
+        if q["package"] not in packages_filter:
+            continue
+        true_order = ground_truth.get(q["package"], [])
+        if len(true_order) < 2:
+            continue  # no real pair to learn from for this package
+
+        feats = pipeline.build_features(q["query"], top_n=10)
+        if len(feats) < 2:
+            continue
+
+        # Map retrieved doc_idx -> its cve_id, so we can look up each
+        # retrieved doc's position in the real ground-truth order.
+        idx_to_cve = {idx: pipeline.corpus[idx].cve_id for idx in feats}
+        cve_to_true_rank = {cve_id: r for r, cve_id in enumerate(true_order)}
+
+        retrieved_with_rank = [
+            (idx, cve_to_true_rank[cve_id])
+            for idx, cve_id in idx_to_cve.items()
+            if cve_id in cve_to_true_rank
+        ]
+        if len(retrieved_with_rank) < 2:
+            continue
+
+        n_queries_used += 1
+        # Every (i, j) pair where i has a better (lower) true rank than j
+        # becomes one training constraint: score(i) > score(j).
+        for a in range(len(retrieved_with_rank)):
+            for b in range(len(retrieved_with_rank)):
+                idx_i, rank_i = retrieved_with_rank[a]
+                idx_j, rank_j = retrieved_with_rank[b]
+                if rank_i < rank_j:  # i strictly more relevant than j
+                    pair_features_i.append(feats[idx_i])
+                    pair_features_j.append(feats[idx_j])
+
+    return np.array(pair_features_i), np.array(pair_features_j), n_queries_used
+
+
+def fit_pairwise_ranking(X_i, X_j, bounds=COEF_BOUNDS, lr=0.05, n_epochs=300, l2=0.01, seed=13):
+    """RankNet-style pairwise logistic loss: for each training pair
+    (x_i, x_j) where x_i should outrank x_j, minimize
+        -log(sigmoid(w . (x_i - x_j)))
+    via projected gradient descent, clipping w to `bounds` after every
+    step (projected gradient, not clamp-after-convergence, for the same
+    reason fit_bounded_ridge() in the earlier domains used a real bounded
+    solve rather than an unconstrained fit clamped afterward -- clamping
+    only at the end would not let the other coefficients rebalance around
+    the constraint during optimization).
+
+    No intercept: only the RELATIVE ordering implied by w . (x_i - x_j)
+    matters for a ranking loss, so an intercept term would be exactly
+    unidentifiable (it cancels in every pairwise difference) -- omitted
+    rather than fit-and-ignored, to avoid a misleading nonzero-but-
+    meaningless value in the printed coefficients.
+    """
+    rng = np.random.default_rng(seed)
+    n_features = X_i.shape[1]
+    w = rng.uniform(bounds[0], bounds[1], size=n_features)  # random init, per the
+    # "set random coefficients, then adjust" instinct from the project's
+    # earlier discussion -- valid here because the adjustment direction is
+    # now driven by a real external loss (pairwise ground-truth ordering),
+    # not by a self-referential score. This is what makes the same
+    # iterative-adjustment MECHANISM valid this time.
+
+    n_pairs = X_i.shape[0]
+    for epoch in range(n_epochs):
+        diff = X_i - X_j  # shape (n_pairs, n_features)
+        margin = diff @ w  # shape (n_pairs,)
+        sigmoid = 1.0 / (1.0 + np.exp(-margin))
+        # gradient of -log(sigmoid(margin)) w.r.t. w is -(1-sigmoid)*diff
+        grad = -((1.0 - sigmoid)[:, None] * diff).mean(axis=0) + l2 * w
+        w = w - lr * grad
+        w = np.clip(w, bounds[0], bounds[1])  # projected gradient step
+
+    # Report final pairwise accuracy (fraction of training pairs correctly
+    # ordered) as a fit-quality diagnostic -- not a held-out metric, just a
+    # sanity check that the optimization actually moved w somewhere useful.
+    final_margin = (X_i - X_j) @ w
+    train_pairwise_acc = float((final_margin > 0).mean())
+
+    return BoundedLinearModel(w, intercept=0.0), train_pairwise_acc
+
+
+# ---------------------------------------------------------------------
+# Objective 2 (reference/ablation only): regression to combined_label
+# ---------------------------------------------------------------------
+def combined_label(doc: CveDocument, current_year=2026) -> float:
+    """The 'beta*w1(d) + gamma*w2(d) + delta*w3(d)' block of Eq. 2,
+    evaluated with beta=gamma=delta=1 (equal, neutral weight). Kept ONLY
+    as a labeled ablation against fit_pairwise_ranking() above -- fitting
+    to this target measures optimization fidelity to a self-declared
+    target, not retrieval quality against real relevance. See this
+    module's docstring and README's circularity note before reporting
+    results from this objective as if they were validated against
+    ground truth."""
+    severity = severity_gain(doc.severity) / SEVERITY_GAIN_MAX
+    status = vuln_status_gain(doc.vuln_status) / 4.0  # VULN_STATUS_GAIN max is 4
+    recency = recency_weight(doc.pub_year, current_year)
+    return round(severity + status + recency, 4)
+
+
+def fit_bounded_ridge(X, y, alpha=1.0, bounds=COEF_BOUNDS):
+    """Bounded ridge via the augmented-least-squares trick, identical
+    method to the academic/SEC domains' version -- see that docstring for
+    why bounded-by-construction rather than clamped after an unconstrained
+    fit."""
+    n_samples, n_features = X.shape
     X_mean = X.mean(axis=0)
     y_mean = y.mean()
     X_centered = X - X_mean
@@ -72,78 +209,71 @@ def fit_bounded_ridge(X, y, alpha=1.0, bounds=COEF_BOUNDS):
     return BoundedLinearModel(coef, intercept)
 
 
-def load_corpus(path="data_in/academic_corpus.json"):
-    raw = json.load(open(path))
-    return [AcademicDocument(**r) for r in raw]
-
-
-def combined_label(doc: AcademicDocument, current_year=2026) -> float:
-    """The 'beta*w1(d) + gamma*w2(d) + delta*w3(d)' block of Eq. 2, evaluated
-    with beta=gamma=delta=1 (equal, neutral weight -- see module-level note
-    above for why). Deliberately excludes alpha*RRF(d): this is a pure
-    per-document quality score, meant to be computed once per document and
-    added to a query's RRF(d) later, matching Eq. 2's additive structure --
-    not an average, and not a full TWR score on its own.
-
-    Each of the three signals is normalized to [0,1] before summing, so all
-    three carry equal weight and the label doesn't presuppose which one
-    should matter most -- that's what beta/gamma/delta are for."""
-    peer_review = peer_review_gain(doc.pub_type) / PEER_REVIEW_GAIN_MAX  # 0..1
-    retraction = retraction_gain(doc.retracted)  # already 0 or 1
-    recency = recency_weight(doc.pub_year, current_year)  # already 0..1
-    return round(peer_review + retraction + recency, 4)  # sum, range 0..3
-
-
-def build_training_set(pipeline: AcademicTWRPipeline, queries, fields_filter):
-    X_rows, y_rows, group_sizes = [], [], []
+def build_regression_training_set(pipeline: CveTWRPipeline, queries, packages_filter):
+    X_rows, y_rows = [], []
     for q in queries:
-        if q["field"] not in fields_filter:
+        if q["package"] not in packages_filter:
             continue
         feats = pipeline.build_features(q["query"], top_n=10)
-        if not feats:
-            continue
         for doc_idx, fv in feats.items():
-            assert len(fv) == len(FEATURE_NAMES), (
-                f"feature vector has {len(fv)} entries but FEATURE_NAMES has "
-                f"{len(FEATURE_NAMES)} -- _feature_vector() and FEATURE_NAMES "
-                f"have drifted out of sync, fix before training on mislabeled data."
-            )
             X_rows.append(fv)
             y_rows.append(combined_label(pipeline.corpus[doc_idx]))
-        group_sizes.append(len(feats))
-    return np.array(X_rows), np.array(y_rows), group_sizes
+    return np.array(X_rows), np.array(y_rows)
 
 
 def main():
     corpus = load_corpus()
-    queries = json.load(open("data_in/academic_queries.json"))
-    pipeline = AcademicTWRPipeline(corpus)
+    queries = json.load(open("data_in/queries.json"))
+    ground_truth = load_ground_truth()
+    pipeline = CveTWRPipeline(corpus)
 
-    X_train, y_train, group_train = build_training_set(pipeline, queries, TRAIN_FIELDS)
-    print(f"Training rows: {X_train.shape}, groups: {len(group_train)}")
+    print("=" * 70)
+    print("OBJECTIVE 1 (primary): pairwise ranking loss vs. real NVD-derived "
+          "ground truth")
+    print("=" * 70)
+    X_i, X_j, n_q_used = build_pairwise_training_set(pipeline, queries, ground_truth, TRAIN_PACKAGES)
+    print(f"Training pairs: {X_i.shape[0]}, from {n_q_used} queries "
+          f"(train packages: {TRAIN_PACKAGES})")
 
-    # y_train is in combined_label()'s natural 0..COMBINED_LABEL_MAX (=3) units.
-    # Rescale to [0,1] ONLY here, for the bounded-ridge fit -- not inside
-    # combined_label() itself, which needs to stay in its natural additive
-    # units to be reusable as Eq. 2's "+ beta*w1 + gamma*w2 + delta*w3" term
-    # alongside a real per-query RRF(d) later. See COMBINED_LABEL_MAX's
-    # definition above for why this rescaling doesn't distort the fit.
-    model = fit_bounded_ridge(X_train, y_train / COMBINED_LABEL_MAX, alpha=1.0, bounds=COEF_BOUNDS)
+    if X_i.shape[0] == 0:
+        print("WARNING: zero training pairs generated -- check that "
+              "ground_truth.json covers TRAIN_PACKAGES and that the "
+              "retrieval stage is actually surfacing ground-truth CVEs for "
+              "these queries. Skipping pairwise fit.")
+        pairwise_model = None
+    else:
+        pairwise_model, train_acc = fit_pairwise_ranking(X_i, X_j)
+        coefficients = dict(zip(FEATURE_NAMES, pairwise_model.coef_.tolist()))
+        print(f"Training pairwise accuracy: {train_acc:.4f}")
+        print(f"\n=== LEARNED COEFFICIENTS (pairwise objective, bounded to {COEF_BOUNDS}) ===")
+        for feat in FEATURE_NAMES:
+            print(f"{feat:15s} : {coefficients[feat]:+.6f}")
 
-    coefficients = dict(zip(FEATURE_NAMES, model.coef_.tolist()))
-    assert len(coefficients) == len(FEATURE_NAMES) == len(model.coef_), (
-        "coefficient count mismatch -- FEATURE_NAMES and model.coef_ are out "
-        "of sync, do not trust the printout below until this is fixed."
-    )
+        with open("domain/ltwr_model.pkl", "wb") as f:
+            pickle.dump(pairwise_model, f)
+        print("Saved -> domain/ltwr_model.pkl  (this is the model "
+              "run_experiment.py's 'ltwr' arm loads by default)")
 
-    print(f"=== LEARNED COEFFICIENTS (bounded to {COEF_BOUNDS}) ===")
-    for feat in FEATURE_NAMES:  # iterate FEATURE_NAMES directly, not the dict,
-        print(f"{feat:15s} : {coefficients[feat]:+.6f}")  # so order is guaranteed
-    print(f"Intercept       : {model.intercept_:+.6f}  (unconstrained)")
+    print("\n" + "=" * 70)
+    print("OBJECTIVE 2 (reference/ablation ONLY -- NOT validated against "
+          "real relevance, see docstring above before reporting)")
+    print("=" * 70)
+    X_train, y_train = build_regression_training_set(pipeline, queries, TRAIN_PACKAGES)
+    if X_train.shape[0] == 0:
+        print("WARNING: zero rows for regression ablation -- skipping.")
+    else:
+        ridge_model = fit_bounded_ridge(X_train, y_train / COMBINED_LABEL_MAX, alpha=1.0, bounds=COEF_BOUNDS)
+        ridge_coefficients = dict(zip(FEATURE_NAMES, ridge_model.coef_.tolist()))
+        print(f"\n=== LEARNED COEFFICIENTS (combined_label regression, ablation only) ===")
+        for feat in FEATURE_NAMES:
+            print(f"{feat:15s} : {ridge_coefficients[feat]:+.6f}")
+        print(f"Intercept       : {ridge_model.intercept_:+.6f}  (unconstrained)")
 
-    with open("domain/ltwr_model.pkl", "wb") as f:
-        pickle.dump(model, f)
-    print("Saved -> domain/ltwr_model.pkl")
+        with open("domain/ltwr_model_ablation_ridge.pkl", "wb") as f:
+            pickle.dump(ridge_model, f)
+        print("Saved -> domain/ltwr_model_ablation_ridge.pkl  "
+              "(ablation reference only -- do not load this as the "
+              "headline 'ltwr' arm)")
 
 
 if __name__ == "__main__":

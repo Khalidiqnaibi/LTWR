@@ -1,10 +1,11 @@
 """
-academic_retrieval.py -- academic-publishing analogue of
-pipeline/business_retrieval.py. Same three-arm design:
+retrieval.py -- CVE/supply-chain-security analogue of
+pipeline/academic_retrieval.py and pipeline/business_retrieval.py. Same
+three-arm design:
 
   Arm A: RRF   -- unweighted reciprocal-rank fusion (baseline)
   Arm B: Static TWR -- hand-set alpha/beta/gamma/delta (Eq. 2, as specified:
-         w1=peer-review status, w2=retraction penalty, w3=recency decay)
+         w1=severity, w2=vuln_status/review-status, w3=recency decay)
   Arm C: LTWR (Learned Trust-Weighted Ranking) -- learned fusion weights
          over the SAME closed, scalar feature set as static TWR (rrf score,
          bm25 score, dense score, w1, w2, w3). No document text is a
@@ -12,7 +13,7 @@ pipeline/business_retrieval.py. Same three-arm design:
 
 Both the retrieval stage (BM25 + dense) and the candidate pool are IDENTICAL
 across all three arms, so any measured difference is attributable to the
-fusion step alone.
+fusion step alone -- matching Section 3.1 of the TWR paper exactly.
 """
 import re
 import time
@@ -22,19 +23,19 @@ from typing import List, Dict, Any, Optional
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 
-from infra.academic_document import AcademicDocument
-from domain.gains import peer_review_weight, retraction_weight, recency_weight
+from infra.cve_document import CveDocument
+from domain.gains import severity_weight, vuln_status_weight, recency_weight
 
 DENSE_MODEL_NAME = "all-MiniLM-L6-v2"
 
 
-class AcademicTWRPipeline:
-    def __init__(self, corpus: List[AcademicDocument], k_doc: int = 5, ltwr_model=None):
+class CveTWRPipeline:
+    def __init__(self, corpus: List[CveDocument], k_doc: int = 5, ltwr_model=None):
         self.corpus = corpus
         self.k_doc = k_doc
         self.k_rrf = 60
         self.current_year = 2026
-        self.ltwr_model = ltwr_model  # trained sklearn/LightGBM model, or None
+        self.ltwr_model = ltwr_model  # trained sklearn-compatible model, or None
 
         self.embedder = SentenceTransformer(DENSE_MODEL_NAME)
         self._build_bm25_index()
@@ -67,9 +68,9 @@ class AcademicTWRPipeline:
 
         return bm25_ranking, bm25_scores, faiss_ranking
 
-    def calculate_metadata_components(self, doc: AcademicDocument):
-        w1 = peer_review_weight(doc.pub_type)
-        w2 = retraction_weight(doc.retracted)
+    def calculate_metadata_components(self, doc: CveDocument):
+        w1 = severity_weight(doc.severity)
+        w2 = vuln_status_weight(doc.vuln_status)
         w3 = recency_weight(doc.pub_year, self.current_year)
         return w1, w2, w3
 
@@ -88,14 +89,18 @@ class AcademicTWRPipeline:
 
     # ---- Arm B: static TWR (Eq. 2, exactly as specified) ------------
     def static_twr(self, bm25_ranking, faiss_ranking,
-                    alpha=1.0, beta=0.5, gamma=0.7, delta=0.3) -> List[int]:
+                    alpha=1.0, beta=0.6, gamma=0.6, delta=0.3) -> List[int]:
         """TWR(d) = alpha*RRF(d) + beta*w1(d) + gamma*w2(d) + delta*w3(d).
-        gamma (retraction penalty weight) is set higher than beta/delta by
-        default -- a retracted work should be suppressed hard, not merely
-        nudged down, reflecting how strongly retraction status should
-        dominate the ranking decision relative to peer-review tier or
-        recency. Tune per your paper's design; this is a stated default,
-        not a derived constant."""
+        beta (severity) and gamma (review-status) are set equal by default
+        -- unlike the academic domain's retraction penalty, which was
+        deliberately weighted higher than the other two signals, neither
+        severity nor review-status obviously dominates the other for a
+        security-triage use case: an unreviewed Critical-CVSS-scored CVE
+        and a fully-Analyzed High-severity CVE are both worth surfacing
+        prominently. Tune per your paper's design; this is a stated
+        default, not a derived constant (see Section 6.2 of the TWR paper
+        on why static coefficients are auditable-by-construction rather
+        than fit to data by default)."""
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking, alpha=alpha)
         twr_scores = {}
         for doc_idx, rrf in rrf_scores.items():
@@ -130,7 +135,7 @@ class AcademicTWRPipeline:
         """Runs fast, zero-overhead scalar ranking using pre-computed
         ranking state (no re-running retrieval for this arm)."""
         if self.ltwr_model is None:
-            raise RuntimeError("LTWR model not loaded -- train it first (academic_domain/train_ltwr.py)")
+            raise RuntimeError("LTWR model not loaded -- train it first (domain/train_ltwr_cve.py)")
 
         feats = self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
         doc_idxs = list(feats.keys())
@@ -148,11 +153,12 @@ class AcademicTWRPipeline:
             out.append({
                 "rank": rank + 1,
                 "chunk_id": doc.chunk_id,
-                "doi": doc.doi,
-                "pub_type": doc.pub_type,
-                "retracted": doc.retracted,
+                "cve_id": doc.cve_id,
+                "severity": doc.severity,
+                "vuln_status": doc.vuln_status,
                 "pub_year": doc.pub_year,
-                "field": doc.field,
+                "package": doc.package,
+                "ecosystem": doc.ecosystem,
             })
         return out
 

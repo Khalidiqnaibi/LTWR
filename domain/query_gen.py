@@ -1,53 +1,47 @@
 """
-query_gen.py -- generates the stratified query benchmark for the academic-
-publishing LTWR study, mirroring business_domain/query_gen.py's 4-dimension
-design.
+query_gen.py -- generates the stratified query benchmark for the
+CVE/supply-chain-security LTWR study, mirroring business_domain/query_gen.py
+and domain/query_gen.py's 4-dimension design.
+
+KEY DIFFERENCE FROM THE EARLIER DOMAINS: every query here is scoped to a
+single package (e.g. "log4j-core"), because that is exactly the unit
+corpus_gen.py's ground-truth judgment file (ground_truth.json) is
+keyed on. This is deliberate -- it's what makes real top-k evaluation
+possible at all: "what vulnerabilities affect log4j-core" has a genuine,
+externally-curated answer (NVD's own CPE-matched CVE list for that
+package); "what are the most severe vulnerabilities in general" would
+not, and generating queries at that granularity would silently drop back
+into needing self-authored judgments.
 """
 import json
-import random
 from pathlib import Path
 
-random.seed(11)
-
-FIELD_TOPICS = {
-    "machine_learning": ["neural network generalization", "transformer architectures", "reinforcement learning"],
-    "oncology": ["immunotherapy response", "tumor biomarkers", "chemotherapy resistance"],
-    "climate_science": ["sea level rise projections", "carbon capture methods", "extreme weather attribution"],
-    "psychology": ["cognitive bias replication", "behavioral intervention outcomes", "memory formation"],
-    "genomics": ["CRISPR off-target effects", "gene expression regulation", "genome-wide association"],
-    "materials_science": ["nanomaterial synthesis", "battery electrode materials", "superconductor properties"],
-    "epidemiology": ["disease transmission modeling", "vaccine efficacy", "outbreak surveillance methods"],
-    "economics": ["monetary policy effects", "labor market outcomes", "inflation forecasting"],
-}
-
 QUERY_TEMPLATES = {
-    # peer_review dimension: phrasing emphasizes peer-reviewed/published framing
-    "peer_review": "What does peer-reviewed research say about {topic}?",
-    # retraction dimension: phrasing emphasizes reliability/validity framing
-    "retraction": "What is the scientifically validated finding on {topic}?",
+    # severity dimension: phrasing emphasizes criticality/impact framing
+    "severity": "What are the most severe known vulnerabilities in {package}?",
+    # vuln_status dimension: phrasing emphasizes confirmed/reviewed framing
+    "vuln_status": "What are the confirmed, analyst-reviewed vulnerabilities in {package}?",
     # recency dimension: phrasing emphasizes current/latest framing
-    "recency": "What is the most recent research on {topic}?",
+    "recency": "What are the most recently disclosed vulnerabilities in {package}?",
     # combined: neutral phrasing, all three signals matter roughly equally
-    "combined": "What does research show about {topic}?",
+    "combined": "What vulnerabilities affect {package}?",
 }
 
 
-def generate_queries(out_path="data_in/academic_queries.json", n_per_dimension=50):
-    all_topics = [(field, topic) for field, topics in FIELD_TOPICS.items() for topic in topics]
-
+def generate_queries(packages, out_path="data_in/queries.json"):
+    """One query per (package, dimension) combination -- exhaustive rather
+    than sampled, since the package list here is intentionally small
+    (unlike the academic/SEC domains' larger topic pools) and every
+    package needs at least one query per dimension for a clean per-
+    dimension breakdown (Table 4 analogue)."""
     queries = []
     qid = 1
-    for dim, template in QUERY_TEMPLATES.items():
-        combos = list(all_topics)
-        random.shuffle(combos)
-        # cycle through topics if n_per_dimension exceeds the topic pool
-        picks = (combos * ((n_per_dimension // len(combos)) + 1))[:n_per_dimension]
-        for field, topic in picks:
+    for package in packages:
+        for dim, template in QUERY_TEMPLATES.items():
             queries.append({
                 "id": qid,
-                "query": template.format(topic=topic),
-                "field": field,
-                "topic": topic,
+                "query": template.format(package=package),
+                "package": package,
                 "ablation_dimension": dim,
             })
             qid += 1
@@ -60,4 +54,10 @@ def generate_queries(out_path="data_in/academic_queries.json", n_per_dimension=5
 
 
 if __name__ == "__main__":
-    generate_queries()
+    # Default package list matches corpus_gen.py's SEED_CVES packages.
+    packages = [
+        "xz-utils", "log4j-core", "openssl", "lodash", "express",
+        "flask", "django", "spring-framework", "struts2",
+        "jackson-databind", "openssh", "curl", "requests",
+    ]
+    generate_queries(packages)

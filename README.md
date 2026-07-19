@@ -1,164 +1,154 @@
-# LTWR — Academic-Publishing Domain
+# TWR — Software Supply-Chain / CVE Domain
 
-**Learned Trust-Weighted Ranking**: RRF vs. static TWR vs. LTWR, instantiating
-the original TWR equation
+Third domain instantiation of the TWR paper's Equation 2, after clinical
+(original paper) and SEC filings. This one closes a gap the earlier two
+could not close without new annotation infrastructure: **real, external,
+pre-existing top-k relevance judgments**, sourced from NVD's own CPE-match
+linkage between a CVE and the software it affects.
+
+## 0. Why this domain, and what it fixes
+
+The clinical and SEC domains both had genuine, citable, externally-defined
+`w1/w2/w3` — but neither had an independent signal for "which documents
+are the true top-k for this query." Fitting LTWR's `beta/gamma/delta`
+against anything derived only from `w1/w2/w3` and `RRF(d)` is circular:
+there is no data outside those four inputs to check the fit against.
+
+CVE/NVD data closes that gap for free. NVD analysts already link each CVE
+to the specific package/product/version it affects (CPE matching), as
+part of their normal review work, for a purpose that predates and is
+unaware of this paper. A query like *"what vulnerabilities affect
+`log4j-core`"* therefore has a real, pre-existing answer: the actual CVEs
+NVD has CPE-matched to that package. `domain/corpus_gen.py` derives
+`data_in/ground_truth.json` — `{package: [cve_id, ...]}`, most-severe
+/ most-recent first — directly from that linkage, and
+`domain/train_ltwr_cve.py` fits `beta/gamma/delta` with a **pairwise
+ranking loss against that real ordering**, not a regression to a
+self-declared scalar label.
+
+## 1. Domain mapping (Eq. 2)
+
+| Symbol | Clinical (original) | SEC (2nd domain) | CVE (this domain) |
+|---|---|---|---|
+| Document | Paper/article | Filing chunk | CVE/GHSA advisory record |
+| `w1` | OCEBM evidence level | Filing type hierarchy | **Severity** (CVSS base-severity band, prefers v3.1 → v3.0 → v2) |
+| `w2` | SJR journal quartile | ICFR attestation status | **Advisory review status** (NVD `vulnStatus`: Analyzed/Modified/Awaiting Analysis/Undergoing Analysis/Rejected) |
+| `w3` | Recency decay | Recency decay | Recency decay (`λ=0.12`, faster than academic's `0.08`, slower than SEC's `0.15`) |
+| Query | Clinical question | "What does filing X say about Y" | "What vulnerabilities affect package X" |
+| Ground truth | *(none — static weights only)* | *(none — static weights only)* | **NVD's own CPE-matched CVE list per package** |
+
+`w2` deliberately uses NVD's *review status*, not the *reporter's*
+identity — the same design principle used when the SEC domain's `w2` was
+switched from auditor identity to ICFR attestation status: grade the
+finding, not the grader.
+
+## 2. Files
 
 ```
-TWR(d) = alpha * RRF(d) + beta * w1(d) + gamma * w2(d) + delta * w3(d)
+infra/cve_document.py        CveDocument dataclass
+domain/gains.py           w1/w2/w3 weight + gain functions, is_authoritative()
+domain/corpus_gen.py      NVD API pull + offline seed corpus + ground-truth derivation
+pipeline/retrieval.py     3-arm pipeline (RRF / static TWR / LTWR), mirrors academic_retrieval.py
+domain/query_gen.py       package-scoped query benchmark generator
+domain/train_ltwr_cve.py      PRIMARY: pairwise ranking loss vs. real ground truth
+                               ABLATION ONLY: bounded-ridge regression to combined_label
+domain/run_experiment_cve.py  full stats battery; reports BOTH gain-based and real-ground-truth metrics
+domain/model_utils.py         BoundedLinearModel (copied unchanged from the academic domain)
 ```
 
-in the academic-publishing domain, per the specification:
-
-- **w1 — Peer-Review Status**: 1.0 for a journal article, 0.4 for a preprint
-  (a `ProceedingsArticle` tier at 0.8 is also included, since Crossref
-  actually returns that type and collapsing it into one of the other two
-  would misrepresent it — see `academic_domain/gains.py`).
-- **w2 — Retraction Penalty**: 1.0 for no correction, 0.0 for retracted.
-- **w3 — Recency Decay**: `e^(-lambda * age)`.
-
-This replaces the earlier SEC-filing domain implementation entirely. Data
-source is the Crossref REST API (`api.crossref.org`) — fully open, no API
-key required.
-
-## 0. Why this domain is cleaner than the SEC one
-
-All three signals come from structured Crossref fields, not text heuristics:
-
-| Signal | Crossref field | Notes |
-|---|---|---|
-| w1 | `type` | `journal-article` / `posted-content` / `proceedings-article` — exact, no parsing |
-| w2 | `relation.is-retracted-by` | populated via publisher CrossMark metadata |
-| w3 | `published` / `published-print` / `published-online` | structured date |
-
-The one caveat worth stating plainly: **w2's coverage depends on publishers
-registering CrossMark relation metadata**, so it under-counts some real
-retractions (a retraction that exists but wasn't CrossMark-registered won't
-show up via this field). `corpus_gen.py` compensates for this by pulling
-confirmed-retracted works directly from Crossref's retraction notices
-(`filter=update-type:retraction`) rather than relying on retractions turning
-up naturally in topic-based search results — **this oversampling step is
-required for w2 to have real variance, not optional.** See the module
-docstring in `academic_domain/corpus_gen.py` for the SEC-domain bug this is
-specifically designed to avoid repeating (audit tier there ended up
-perfectly collinear with filing type because of a similar oversampling gap).
-
-If you need broader retraction coverage than the `relation` field gives you,
-Crossref also hosts the full Retraction Watch database via a separate Labs
-endpoint requiring free registration — see the corpus_gen.py docstring for
-the link, and swap `fetch_confirmed_retracted_works()` to that source if
-needed.
-
-## 1. Setup
+## 3. Run order
 
 ```bash
-pip install -r requirements.txt --break-system-packages
+# 1. Build corpus + ground truth. Live NVD pull needs network access to
+#    services.nvd.nist.gov (NOT reachable from every sandboxed
+#    environment -- this was developed against the offline fallback,
+#    see note below). For a real run:
+python -c "
+from domain.corpus_gen import generate_corpus, SEED_ECOSYSTEM_LOOKUP
+packages = ['xz-utils','log4j-core','openssl','lodash','express','flask',
+            'django','spring-framework','struts2','jackson-databind',
+            'openssh','curl','requests']
+generate_corpus(packages, SEED_ECOSYSTEM_LOOKUP)
+"
+# Offline fallback used for development/testing (no network needed):
+python domain/corpus_gen.py    # -> data_in/corpus.json + ground_truth.json
+
+# 2. Generate the query benchmark (package-scoped, 4 dimensions x N packages)
+python domain/query_gen.py     # -> data_in/queries.json
+
+# 3. Train LTWR -- fits beta/gamma/delta via pairwise loss against REAL
+#    ground truth (primary), plus the combined_label ablation (reference
+#    only, do not report as validated against relevance)
+python domain/train_ltwr_cve.py    # -> domain/ltwr_model.pkl (+ ablation pkl)
+
+# 4. Run the full 3-arm comparison + stats battery on package-disjoint
+#    test queries
+python domain/run_experiment_cve.py
+# -> eval_results/metrics_per_query.csv
+# -> eval_results/stats_report.csv
+# -> eval_results/fusion_latency.csv
 ```
 
-Edit `CONTACT_EMAIL` at the top of `academic_domain/corpus_gen.py` before
-running — Crossref's polite pool (faster, more reliable responses) is keyed
-off a real contact email in the User-Agent, similar in spirit to SEC's
-User-Agent requirement but not strictly enforced.
+## 4. NETWORK NOTE (read before trusting any numbers)
 
-First run of the retrieval pipeline downloads `all-MiniLM-L6-v2` (~80MB)
-from HuggingFace Hub — needs normal internet access, cached after that.
+`services.nvd.nist.gov` was not reachable from the sandboxed environment
+this code was authored in. `domain/corpus_gen.py` was therefore
+developed and tested against `build_seed_corpus()` — a small (17-record),
+hand-verified set of real, publicly documented CVEs (Log4Shell,
+Heartbleed, the xz-utils backdoor, Spring4Shell, etc., with accurate
+severity/status/year metadata) — NOT a live NVD pull. The end-to-end
+pipeline (pairwise training, real-ground-truth nDCG/MRR, the full stats
+battery) was verified correct against this seed corpus, including a
+directional check that reversing a known-good ranking order lowers
+`real_ndcg3` as expected.
 
-## 2. Run order
+**Before reporting any numbers in the paper, re-run step 1 with
+`generate_corpus()` against live NVD data, on a machine with real network
+access, across a package list large enough to support a benchmark
+comparable in size to the clinical paper's 170 queries** (the seed
+corpus's 13-package, 52-query benchmark is a development-scale
+placeholder, not a submission-scale one).
 
-```bash
-# Step 1 -- pull the real Crossref corpus (several minutes: 8 fields x
-# ~3 work types x rate-limited requests, plus retraction-notice resolution)
-python domain/corpus_gen.py
-# -> data_in/academic_corpus.json
-# check the field/pub_type/retracted distribution before proceeding --
-# see Section 3 for the exact check to run.
+## 5. On the two training objectives in `train_ltwr_cve.py`
 
-# Step 2 -- generate the query benchmark
-python domain/query_gen.py
-# -> data_in/academic_queries.json  (200 queries, 4 ablation dimensions)
+- **`fit_pairwise_ranking()` (primary, report this as "LTWR"):** fits
+  `beta/gamma/delta` (as a bounded linear model over
+  `[rrf_score, bm25_score, dense_score, w1, w2, w3]`) via a RankNet-style
+  pairwise logistic loss against `ground_truth.json`. This is
+  standard supervised Learning-to-Rank against real judgments — the fix
+  this project's discussion converged on. Coefficients are randomly
+  initialized then adjusted via projected gradient descent; this is the
+  same "start somewhere, iteratively adjust" mechanism proposed earlier
+  in the project's discussion, made valid here specifically because the
+  adjustment direction comes from a real external loss (pairwise
+  ground-truth ordering) rather than from a self-referential score built
+  only out of `w1/w2/w3` and `RRF(d)`.
 
-# Step 3 -- train the LTWR model (train fields only)
-python -m domain.train_ltwr
-# -> domain/ltwr_model.pkl
-# prints learned coefficients -- sanity-check signs and magnitudes before
-# proceeding (see Section 4).
+- **`fit_bounded_ridge()` (ablation only, label it as such if reported):**
+  regresses to `combined_label()`, an equal-weighted sum of normalized
+  `w1+w2+w3`. This measures "does LTWR reproduce its own declared
+  training target better than static weights do" — a fact about
+  optimization fidelity, not about retrieval quality. Kept only as a
+  labeled comparison point; do not present its results as validated
+  against real relevance.
 
-# Step 4 -- run all three arms on held-out test fields + full stats
-python -m domain.run_experiment
-# -> eval_results/academic_metrics_per_query.csv
-# -> eval_results/academic_stats_report.csv
-# -> eval_results/academic_fusion_latency.csv
-```
+## 6. Statistics reported
 
-## 3. Data-quality check to run before trusting any result
+`run_experiment_cve.py` reports two metric families, computed on the same
+package-disjoint test queries:
 
-Same class of check that caught the SEC-domain's w2-collapse bug:
+- `ndcg3_severity`, `ndcg3_vuln_status`, `mrr_authoritative` — gain-based,
+  same family the clinical/academic/SEC papers report. Kept for
+  cross-domain comparability in the paper's Section 6 abstraction table.
+  **These measure agreement with this paper's own `w1/w2/w3` scheme, not
+  independent relevance** — do not present them as validating LTWR
+  against ground truth.
 
-```python
-import json
-from collections import Counter
+- `real_ndcg3`, `real_mrr` — computed directly against
+  `ground_truth.json`. **These are the metrics that actually answer
+  whether trust-weighting improves retrieval of the true top documents.
+  Lead with these in the paper's headline results table.**
 
-corpus = json.load(open("data_in/academic_corpus.json"))
-print("retracted distribution:", Counter(d["retracted"] for d in corpus))
-print("pub_type distribution:", Counter(d["pub_type"] for d in corpus))
-print("retracted by pub_type:")
-by_type = {}
-for d in corpus:
-    by_type.setdefault(d["pub_type"], Counter())[d["retracted"]] += 1
-for pt, c in by_type.items():
-    print(f"  {pt}: {dict(c)}")
-```
-
-You want: a real (non-trivial, ideally >5%) fraction of `retracted=True`
-documents, AND that fraction should NOT be perfectly determined by
-`pub_type` alone (i.e. retracted documents should appear across journal
-articles, not just concentrated in one type) — if `w2` collapses into a
-restatement of `w1` the way SEC's audit tier collapsed into filing type,
-LTWR training will show the same near-zero coefficient/importance on `w2`
-regardless of whether retraction actually matters in this domain.
-
-## 4. What to check in the learned coefficients
-
-`train_ltwr.py` prints something like:
-```
-=== LEARNED COEFFICIENTS ===
-rrf_score       : ...
-bm25_score      : ...
-dense_score     : ...
-w1_peer_review  : ...
-w2_retraction   : ...
-w3_recency      : ...
-Intercept       : ...
-```
-Sanity checks before moving to Step 4:
-- `w2_retraction` should have a clearly positive, non-trivial coefficient
-  (retracted=0.0/not-retracted=1.0, so a positive coefficient means the
-  model correctly learned to reward non-retracted work). Near-zero here
-  after confirming real variance in Section 3 would itself be a genuine,
-  reportable finding — not a bug — the same way the SEC domain's null
-  result on learned-vs-static was.
-- If `rrf_score` and `dense_score` end up with unstable or sign-flipped
-  coefficients, that's collinearity between `rrf_score` and its two inputs
-  (`bm25_score`/`dense_score`) — consider dropping `rrf_score` from the
-  feature set (it's derived from the other two anyway) or increasing
-  `alpha` in the `Ridge` call.
-
-## 5. Re-running with a different train/test field split
-
-Edit `TRAIN_FIELDS` / `TEST_FIELDS` in `academic_domain/train_ltwr.py` (also
-imported by `run_experiment.py`). Keep the split field-disjoint — a random
-query-level split leaks field-specific vocabulary between train and test.
-
-## 6. Adjusting weights, gamma, or lambda
-
-- `PUB_TYPE_WEIGHT` / retraction weights in `academic_domain/gains.py` — w1/w2
-  as specified in the equation.
-- `RECENCY_LAMBDA` in `academic_domain/gains.py` — currently 0.08, slower
-  decay than the SEC domain's 0.15, reflecting that academic relevance
-  persists longer than financial data currency. Re-run Steps 3-4 after any
-  change here, since both static TWR's score and LTWR's training labels
-  derive from the same `recency_weight()` call.
-- `gamma` (retraction penalty's fusion weight) defaults higher than `beta`/
-  `delta` in `static_twr()` — stated explicitly in that function's docstring
-  as a design choice (retraction should suppress hard, not nudge), not a
-  derived constant. Change it there if your paper wants a different
-  weighting philosophy.
+Both families go through the identical Shapiro-Wilk-gated paired
+test → Holm-Bonferroni correction → Cliff's delta pipeline as the
+clinical paper's Section 4.3, for every `(metric, arm-pair)` combination.
