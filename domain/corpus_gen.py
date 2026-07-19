@@ -45,7 +45,11 @@ import requests
 
 NVD_BASE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 MIN_PUB_YEAR = 2018
-HEADERS = {"User-Agent": "LTWR-CVE-Research (research contact: you@example.com)"}
+# Replace with real contact info -- _get() below refuses to send requests
+# against the placeholder value rather than silently identifying as a fake
+# contact to NVD (same pattern as the academic domain's CONTACT_EMAIL guard).
+CONTACT_EMAIL = "241154@ppu.edu.ps"
+HEADERS = {"User-Agent": f"LTWR-CVE-Research (research contact: {CONTACT_EMAIL})"}
 
 # NVD rate-limits unauthenticated requests to ~5 requests / 30s. Sleep
 # between calls to stay well under that; use an API key (nvd_api_key
@@ -54,6 +58,12 @@ NVD_RATE_LIMIT_SLEEP_SEC = 6.5
 
 
 def _get(url, params=None, api_key=None, max_retries=3):
+    if CONTACT_EMAIL == "you@example.com":
+        raise RuntimeError(
+            "CONTACT_EMAIL is still the placeholder value -- edit it at the "
+            "top of domain/corpus_gen.py to your real contact info before "
+            "making live NVD requests. Refusing to send a fake identity."
+        )
     headers = dict(HEADERS)
     if api_key:
         headers["apiKey"] = api_key
@@ -131,11 +141,30 @@ def build_passage_text(cve_item: dict) -> str:
     return f"{cve_id}: {desc_text} [Affected packages: {pkg_str}]"
 
 
-def build_document_record(chunk_id: int, cve_item: dict, ecosystem_lookup: dict) -> dict:
+def build_document_record(chunk_id: int, cve_item: dict, ecosystem_lookup: dict,
+                           search_package: str = None) -> dict:
+    """search_package: the package this CVE was actually fetched for (the
+    generate_corpus() loop variable). A single CVE's CPE-match configuration
+    routinely lists DOZENS of products for a widely-embedded library (e.g.
+    a lodash CVE is also CPE-matched against every downstream vendor
+    product that bundles that lodash version -- NetApp's
+    active-iq-unified-manager, various banking-platform products, etc.).
+    packages[0] (alphabetically first) is essentially never the library you
+    actually searched for -- it's whichever bundling vendor product happens
+    to sort first. Preferring search_package when it's present in the
+    matched list (which it always will be, since this function is only
+    called on records that already passed that membership check) fixes a
+    real bug: entire searched packages (log4j-core, jackson-databind,
+    express, spring-framework) ended up with EMPTY ground truth because
+    every one of their real, matched CVEs got tagged with an unrelated
+    vendor product name instead of their own."""
     cve_id = cve_item.get("id", "")
     pub_year = int(cve_item.get("published", "1970")[:4])
     packages = extract_affected_packages(cve_item)
-    primary_package = packages[0] if packages else "unknown"
+    if search_package and search_package.lower() in [p.lower() for p in packages]:
+        primary_package = search_package.lower()
+    else:
+        primary_package = packages[0] if packages else "unknown"
     ecosystem = ecosystem_lookup.get(primary_package, "system")
 
     return {
@@ -174,11 +203,18 @@ def generate_corpus(
 
     for package in packages:
         print(f"Fetching CVEs for package: {package} ...")
+        # NVD API 2.0 caps ANY date-range-filtered query (pubStartDate/
+        # pubEndDate or lastModStartDate/lastModEndDate) at a MAXIMUM of
+        # 120 consecutive days between start and end -- this is documented
+        # NVD behavior, not a bug on the caller's side. MIN_PUB_YEAR=2018
+        # to "now" spans ~8+ years, which is why every single package
+        # request failed identically. Fix: drop the date-range params from
+        # the request entirely (keywordSearch alone has no such cap) and
+        # filter by MIN_PUB_YEAR client-side after parsing each result's
+        # own published date instead.
         params = {
             "keywordSearch": package,
             "resultsPerPage": results_per_package,
-            "pubStartDate": f"{MIN_PUB_YEAR}-01-01T00:00:00.000",
-            "pubEndDate": "2026-07-19T00:00:00.000",
         }
         try:
             resp = _get(NVD_BASE_URL, params=params, api_key=api_key)
@@ -190,9 +226,23 @@ def generate_corpus(
         vulnerabilities = data.get("vulnerabilities", [])
         pkg_cve_ids = []
 
+        # Diagnostic counters -- makes it visible WHICH stage is dropping
+        # results for a given package, instead of a silent zero at the end
+        # (this is what would have caught the "openssl/xz-utils/etc. return
+        # nothing at all" case immediately instead of needing a manual
+        # corpus-vs-ground_truth diff to notice it).
+        n_raw = len(vulnerabilities)
+        n_dropped_old = 0
+        n_dropped_no_cpe_match = 0
+
         for vuln in vulnerabilities:
             cve_item = vuln.get("cve", {})
-            record = build_document_record(chunk_id, cve_item, ecosystem_lookup)
+            record = build_document_record(chunk_id, cve_item, ecosystem_lookup, search_package=package)
+
+            if record["pub_year"] < MIN_PUB_YEAR:
+                n_dropped_old += 1
+                continue  # client-side date filter, replacing the server-side one removed above
+
             # Only keep records that actually CPE-match this package --
             # keywordSearch can return loosely related hits (e.g. mentions
             # in the description text without a real CPE match), and using
@@ -205,6 +255,18 @@ def generate_corpus(
                 docs.append(record)
                 pkg_cve_ids.append(record["cve_id"])
                 chunk_id += 1
+            else:
+                n_dropped_no_cpe_match += 1
+
+        print(f"  {package}: {n_raw} raw NVD results -> {len(pkg_cve_ids)} kept "
+              f"({n_dropped_old} dropped as pre-{MIN_PUB_YEAR}, "
+              f"{n_dropped_no_cpe_match} dropped as no real CPE match to '{package}')")
+        if n_raw == 0:
+            print(f"  *** '{package}' got ZERO raw results from NVD's keywordSearch "
+                  f"-- the search TERM itself is likely the problem (e.g. NVD may "
+                  f"index this package under a different name than the one "
+                  f"searched), not a filtering issue downstream. Try a broader or "
+                  f"alternate term for this package. ***")
 
         # NVD's own implied relevance order for ground truth: severity
         # first (Critical > High > Medium > Low), then recency within a
@@ -228,6 +290,21 @@ def generate_corpus(
         ground_truth[package] = [d["cve_id"] for d in pkg_docs_sorted]
 
         time.sleep(NVD_RATE_LIMIT_SLEEP_SEC)
+
+    if not docs:
+        # Every package fetch failed (or all returned zero real CPE
+        # matches) -- do NOT write an empty corpus.json and report
+        # "success." An empty file that looks superficially like a
+        # completed run is worse than a loud failure: it can silently
+        # propagate into query_gen.py / train_ltwr_cve.py without anyone
+        # noticing the corpus is empty until much later.
+        raise RuntimeError(
+            "generate_corpus() produced ZERO documents across all "
+            f"{len(packages)} packages -- refusing to write an empty "
+            "corpus.json/ground_truth.json. Check network access to "
+            "services.nvd.nist.gov and the per-package error messages "
+            "printed above."
+        )
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
@@ -407,12 +484,16 @@ SEED_CVES = [
          desc="DO NOT USE THIS CVE RECORD. ConsultIDs: CVE-2022-1010. "
               "Reason: This record was withdrawn by its CNA as a "
               "duplicate/erroneous assignment."),
-    dict(cve_id="CVE-2024-99999", severity="Medium", vuln_status="Awaiting Analysis", pub_year=2024,
-         package="requests", ecosystem="pypi",
-         desc="[Illustrative placeholder for a real 'Awaiting Analysis' "
-              "record -- replace with a live NVD pull; not a verified "
-              "real CVE ID, included only to exercise the Awaiting "
-              "Analysis code path in the offline seed corpus.]"),
+    # NOTE: an 'Awaiting Analysis' seed example was deliberately removed
+    # from here rather than replaced with a guessed real CVE ID. That
+    # status is transient by definition -- any specific CVE cited as
+    # "currently Awaiting Analysis" would likely already be stale (NVD
+    # analyzes most records within days to weeks), and a fabricated CVE ID
+    # is strictly worse than having no seed example for that status at
+    # all. The offline seed corpus therefore has no 'Awaiting Analysis'
+    # coverage -- generate_corpus() against live data will have real
+    # examples, since some fraction of any live pull is always
+    # freshly-submitted and not yet analyzed.
 ]
 
 
@@ -465,4 +546,35 @@ SEVERITY_RANK = {"Critical": 4, "High": 3, "Medium": 2, "Low": 1, "Unrated": 0}
 
 
 if __name__ == "__main__":
-    build_seed_corpus()
+    # DEFAULT BEHAVIOR: attempt a REAL live NVD pull first. The offline seed
+    # corpus is a development fallback, not something that should run
+    # silently by default just because it's convenient or network access is
+    # flaky -- a run that quietly produces 17 placeholder records instead of
+    # a real corpus, with no visible signal that anything different
+    # happened, is exactly the failure mode this fix exists to prevent.
+    DEFAULT_PACKAGES = [
+        "xz-utils", "log4j-core", "openssl", "lodash", "express", "flask",
+        "django", "spring-framework", "struts2", "jackson-databind",
+        "openssh", "curl", "requests",
+    ]
+
+    print("Attempting live NVD pull (services.nvd.nist.gov)...")
+    try:
+        generate_corpus(DEFAULT_PACKAGES, SEED_ECOSYSTEM_LOOKUP)
+    except (requests.exceptions.RequestException, RuntimeError) as e:
+        print()
+        print("=" * 78)
+        print("LIVE NVD PULL FAILED -- did NOT silently fall back to placeholder data.")
+        print(f"Error: {e}")
+        print()
+        print("services.nvd.nist.gov is unreachable from this environment (this is a")
+        print("known limitation in some sandboxed/restricted-network environments --")
+        print("see README section 4). No corpus.json or ground_truth.json was written.")
+        print()
+        print("To proceed anyway with the small, hand-verified OFFLINE SEED corpus")
+        print("(development/testing only -- NOT submission-scale, NOT a substitute")
+        print("for real data -- see README section 4 before trusting any numbers")
+        print("produced from it), run explicitly:")
+        print("    python -c \"from domain.corpus_gen import build_seed_corpus; build_seed_corpus()\"")
+        print("=" * 78)
+        raise SystemExit(1)
