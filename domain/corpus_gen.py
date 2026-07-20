@@ -10,22 +10,6 @@ clinical and SEC domains lacked -- derives GROUND-TRUTH per-package top-k
 relevance judgments directly from NVD's own CPE-match linkage between a
 CVE and the software product/version it affects.
 
-WHY THIS SIDESTEPS THE ANNOTATION PROBLEM:
-Earlier domains (clinical, SEC) had real w1/w2/w3 signals but no
-independent, external "which documents are actually the true top-k for
-this query" judgment -- that gap is what made naive LTWR training
-circular (see README section "Ground truth and circularity" below).
-NVD's CPE (Common Platform Enumeration) matching already links each CVE
-to the specific package/product/version it affects, as part of NVD
-analysts' normal review work, for a purpose that predates and is
-unaware of this paper. A query like "what vulnerabilities affect
-package X" therefore has a REAL, pre-existing, externally-curated
-answer: the actual CVEs NVD has CPE-matched to that package. This lets
-train_ltwr_cve.py fit beta/gamma/delta against genuine top-k judgments
-(a supervised pairwise/listwise objective) instead of regressing to a
-self-declared combined_label, closing the circularity gap the earlier
-domains could not close without new annotation infrastructure.
-
 NETWORK NOTE: services.nvd.nist.gov is not reachable from every sandboxed
 environment (it was not reachable from the one this module was authored
 in). generate_corpus() below performs live fetches when run somewhere
@@ -39,12 +23,59 @@ before treating any reported numbers as final -- see README.
 import json
 import re
 import time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 import requests
 
 NVD_BASE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 MIN_PUB_YEAR = 2018
+
+# keywordSearch is free-text against CVE description PROSE, not against CPE
+# product names -- a hyphenated compound like "spring-framework" or
+# "xz-utils" often just never appears verbatim in a description (NVD tends
+# to write "Spring Framework" with a space, or "xz" alone), even though the
+# underlying CPE product has plenty of real CVEs. This maps the CANONICAL
+# package name (used everywhere else -- tagging, ground truth, ecosystem
+# lookup) to a better free-text query string, WITHOUT changing what counts
+# as a real match: build_document_record()/extract_affected_packages() still
+# check against the canonical name, not this override.
+#
+# NEEDS VERIFICATION AGAINST A LIVE RUN: these are informed guesses based on
+# common public naming for these projects, not confirmed against NVD's
+# actual CPE dictionary or description phrasing from this sandbox (which
+# cannot reach services.nvd.nist.gov to check). Re-check the per-package
+# diagnostic line this file already prints after your next live run --
+# if any of these still return 0 raw results, the guess was wrong and needs
+# a different term, not more pagination.
+SEARCH_TERM_OVERRIDES = {
+    "log4j-core": "log4j",
+    "struts2": "struts",
+    "xz-utils": "xz",
+    "spring-framework": "Spring Framework",
+}
+
+# How many pages (of results_per_package each) to fetch per package before
+# giving up. Needed because keywordSearch's result ordering is NOT
+# guaranteed to be recency-sorted -- for a common word (openssl, curl,
+# requests, django, express, openssh all hit this), a single page of 40 can
+# be entirely pre-MIN_PUB_YEAR results, burying every recent, relevant CVE
+# on a later page instead. Stops early once TARGET_KEPT_PER_PACKAGE
+# qualifying records have been collected, so well-behaved packages (like
+# lodash/jackson-databind, which worked fine on page 1) don't pay the cost
+# of unnecessary extra requests.
+# How the backward-chronological date-windowed search (see generate_corpus)
+# is bounded. WINDOW_DAYS stays safely under NVD's 120-day cap on any
+# date-range query. MAX_WINDOWS_PER_PACKAGE bounds worst-case runtime for a
+# genuinely sparse or still-mismatched search term (e.g. ~15 windows x 110
+# days ~= 4.5 years back from today, comfortably covering MIN_PUB_YEAR=2018
+# for most packages without scanning the full 8-year range every time).
+# MAX_PAGES_PER_WINDOW bounds pagination WITHIN a single window, for a
+# package with a very high density of matches in one window.
+WINDOW_DAYS = 110
+MAX_WINDOWS_PER_PACKAGE = 15
+MAX_PAGES_PER_WINDOW = 3
+TARGET_KEPT_PER_PACKAGE = 15
 # Replace with real contact info -- _get() below refuses to send requests
 # against the placeholder value rather than silently identifying as a fake
 # contact to NVD (same pattern as the academic domain's CONTACT_EMAIL guard).
@@ -202,71 +233,119 @@ def generate_corpus(
     chunk_id = 0
 
     for package in packages:
-        print(f"Fetching CVEs for package: {package} ...")
-        # NVD API 2.0 caps ANY date-range-filtered query (pubStartDate/
-        # pubEndDate or lastModStartDate/lastModEndDate) at a MAXIMUM of
-        # 120 consecutive days between start and end -- this is documented
-        # NVD behavior, not a bug on the caller's side. MIN_PUB_YEAR=2018
-        # to "now" spans ~8+ years, which is why every single package
-        # request failed identically. Fix: drop the date-range params from
-        # the request entirely (keywordSearch alone has no such cap) and
-        # filter by MIN_PUB_YEAR client-side after parsing each result's
-        # own published date instead.
-        params = {
-            "keywordSearch": package,
-            "resultsPerPage": results_per_package,
-        }
-        try:
-            resp = _get(NVD_BASE_URL, params=params, api_key=api_key)
-        except requests.HTTPError as e:
-            print(f"  Error fetching {package}: {e}")
-            continue
+        search_term = SEARCH_TERM_OVERRIDES.get(package, package)
+        print(f"Fetching CVEs for package: {package} "
+              f"(search term: '{search_term}') ...")
 
-        data = resp.json()
-        vulnerabilities = data.get("vulnerabilities", [])
         pkg_cve_ids = []
-
-        # Diagnostic counters -- makes it visible WHICH stage is dropping
-        # results for a given package, instead of a silent zero at the end
-        # (this is what would have caught the "openssl/xz-utils/etc. return
-        # nothing at all" case immediately instead of needing a manual
-        # corpus-vs-ground_truth diff to notice it).
-        n_raw = len(vulnerabilities)
+        n_raw_total = 0
         n_dropped_old = 0
         n_dropped_no_cpe_match = 0
+        sample_dropped_cpes = []  # a few real CPE criteria strings from
+        # no-match drops, printed below so a wrong SEARCH_TERM_OVERRIDES/
+        # matching guess can be diagnosed from actual NVD data instead of
+        # guessed again blind.
 
-        for vuln in vulnerabilities:
-            cve_item = vuln.get("cve", {})
-            record = build_document_record(chunk_id, cve_item, ecosystem_lookup, search_package=package)
+        # WINDOWED, BACKWARD-CHRONOLOGICAL DATE SEARCH. Two earlier
+        # approaches both failed for different terms:
+        #   1. No date filter at all -> for a common word (openssl,
+        #      express, requests), the sheer volume of OLD, unrelated
+        #      mentions is large enough that even 5 pages (1000 results)
+        #      of undated keywordSearch never reached a single post-2018
+        #      hit.
+        #   2. A single pubStartDate/pubEndDate spanning MIN_PUB_YEAR to
+        #      now -> rejected outright, since NVD caps any date-range
+        #      query at 120 consecutive days.
+        # Fix: search in successive <=120-day windows, walking BACKWARD
+        # from today toward MIN_PUB_YEAR, stopping as soon as
+        # TARGET_KEPT_PER_PACKAGE qualifying records are collected. Each
+        # window's result set is small and inherently recency-scoped, so
+        # old noise can no longer bury recent matches the way it did with
+        # undated pagination.
+        window_end = datetime.now(timezone.utc).replace(tzinfo=None)  # NVD's date params are naive, no tz suffix
+        min_date = datetime(MIN_PUB_YEAR, 1, 1)
+        windows_checked = 0
 
-            if record["pub_year"] < MIN_PUB_YEAR:
-                n_dropped_old += 1
-                continue  # client-side date filter, replacing the server-side one removed above
+        while window_end > min_date and windows_checked < MAX_WINDOWS_PER_PACKAGE:
+            if len(pkg_cve_ids) >= TARGET_KEPT_PER_PACKAGE:
+                break
 
-            # Only keep records that actually CPE-match this package --
-            # keywordSearch can return loosely related hits (e.g. mentions
-            # in the description text without a real CPE match), and using
-            # those for ground truth would quietly reintroduce a
-            # keyword-similarity judgment exactly like the thing TWR is
-            # meant to correct for.
-            if record["package"].lower() == package.lower() or package.lower() in [
-                p.lower() for p in extract_affected_packages(cve_item)
-            ]:
-                docs.append(record)
-                pkg_cve_ids.append(record["cve_id"])
-                chunk_id += 1
-            else:
-                n_dropped_no_cpe_match += 1
+            window_start = max(window_end - timedelta(days=WINDOW_DAYS), min_date)
+            windows_checked += 1
 
-        print(f"  {package}: {n_raw} raw NVD results -> {len(pkg_cve_ids)} kept "
+            for page_num in range(MAX_PAGES_PER_WINDOW):
+                params = {
+                    "keywordSearch": search_term,
+                    "resultsPerPage": results_per_package,
+                    "startIndex": page_num * results_per_package,
+                    "pubStartDate": window_start.strftime("%Y-%m-%dT00:00:00.000"),
+                    "pubEndDate": window_end.strftime("%Y-%m-%dT23:59:59.999"),
+                }
+                try:
+                    resp = _get(NVD_BASE_URL, params=params, api_key=api_key)
+                except requests.HTTPError as e:
+                    print(f"  Error fetching {package} "
+                          f"(window {window_start.date()}..{window_end.date()}, page {page_num}): {e}")
+                    break
+
+                data = resp.json()
+                vulnerabilities = data.get("vulnerabilities", [])
+                n_raw_total += len(vulnerabilities)
+                if not vulnerabilities:
+                    break  # this window is exhausted, move to the next one back
+
+                for vuln in vulnerabilities:
+                    cve_item = vuln.get("cve", {})
+                    record = build_document_record(chunk_id, cve_item, ecosystem_lookup, search_package=search_term)
+
+                    if record["pub_year"] < MIN_PUB_YEAR:
+                        n_dropped_old += 1
+                        continue
+
+                    # Match against search_term, NOT the hyphenated
+                    # canonical `package` label -- NVD's real CPE product
+                    # name is usually closer to the simplified search term
+                    # (e.g. "xz", "log4j", "struts") than to a compound
+                    # label like "xz-utils"/"log4j-core"/"struts2". The
+                    # canonical `package` label is still what gets STORED
+                    # (a couple lines below), so corpus.json/ground_truth.json
+                    # stay consistent -- only the relevance check itself
+                    # uses search_term.
+                    matched_products = extract_affected_packages(cve_item)
+                    matched_lower = [p.lower() for p in matched_products]
+                    if record["package"].lower() == search_term.lower() or search_term.lower() in matched_lower:
+                        record["package"] = package  # normalize to the canonical label for storage
+                        docs.append(record)
+                        pkg_cve_ids.append(record["cve_id"])
+                        chunk_id += 1
+                    else:
+                        n_dropped_no_cpe_match += 1
+                        if len(sample_dropped_cpes) < 3 and matched_products:
+                            sample_dropped_cpes.append((record["cve_id"], matched_products[:5]))
+
+                if len(vulnerabilities) < results_per_package:
+                    break  # got fewer than a full page -- this window has no more results
+
+                time.sleep(NVD_RATE_LIMIT_SLEEP_SEC)  # only between pages WITHIN a window
+
+            window_end = window_start - timedelta(days=1)  # step to the next (earlier) window
+            if window_end > min_date and len(pkg_cve_ids) < TARGET_KEPT_PER_PACKAGE:
+                time.sleep(NVD_RATE_LIMIT_SLEEP_SEC)  # between windows, not just between pages within one
+
+        print(f"  {package}: {n_raw_total} raw NVD results across "
+              f"{windows_checked} date window(s) -> {len(pkg_cve_ids)} kept "
               f"({n_dropped_old} dropped as pre-{MIN_PUB_YEAR}, "
-              f"{n_dropped_no_cpe_match} dropped as no real CPE match to '{package}')")
-        if n_raw == 0:
-            print(f"  *** '{package}' got ZERO raw results from NVD's keywordSearch "
-                  f"-- the search TERM itself is likely the problem (e.g. NVD may "
-                  f"index this package under a different name than the one "
-                  f"searched), not a filtering issue downstream. Try a broader or "
-                  f"alternate term for this package. ***")
+              f"{n_dropped_no_cpe_match} dropped as no real CPE match to '{search_term}')")
+        if n_raw_total == 0:
+            print(f"  *** '{package}' (search term '{search_term}') got ZERO raw "
+                  f"results from NVD's keywordSearch across all windows fetched -- "
+                  f"the search TERM itself is the problem. Try a different term "
+                  f"(add/edit an entry in SEARCH_TERM_OVERRIDES above). ***")
+        elif len(pkg_cve_ids) == 0:
+            print(f"  *** '{package}' got {n_raw_total} raw results but kept NONE -- "
+                  f"likely a CPE product-name mismatch. Sample CPE-matched "
+                  f"products from dropped records (use one of these as the "
+                  f"SEARCH_TERM_OVERRIDES value if it looks right): {sample_dropped_cpes} ***")
 
         # NVD's own implied relevance order for ground truth: severity
         # first (Critical > High > Medium > Low), then recency within a
@@ -371,7 +450,7 @@ SEED_ECOSYSTEM_LOOKUP = {
     "openssl": "system",
     "lodash": "npm",
     "django": "pypi",
-    "spring-framework": "maven", "spring-core": "maven",
+    "Spring Framework": "maven", "spring-core": "maven",
     "curl": "system",
     "openssh": "system",
     "struts": "maven", "struts2": "maven",
