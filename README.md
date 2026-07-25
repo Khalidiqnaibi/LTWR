@@ -44,7 +44,7 @@ finding, not the grader.
 
 ## 2. Files
 
-```
+``` bash
 infra/cve_document.py        CveDocument dataclass
 domain/gains.py           w1/w2/w3 weight + gain functions, is_authoritative()
 domain/corpus_gen.py      NVD API pull + offline seed corpus + ground-truth derivation
