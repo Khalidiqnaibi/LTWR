@@ -1,0 +1,16 @@
+metric,mean_delta,p_raw,test,cliffs_delta,p_holm,significant
+ndcg3_severity::static_twr_vs_rrf,0.16430142322469296,2.976742372480886e-06,paired t-test,0.93359375,4.465113558721329e-05,True
+ndcg3_severity::ltwr_vs_rrf,0.05305781204311749,0.04501100966826256,paired t-test,0.3515625,0.4315960722785226,False
+ndcg3_severity::ltwr_vs_static_twr,-0.11124361118157547,0.00011320299564027618,paired t-test,-0.859375,0.0015848419389638665,True
+ndcg3_vuln_status::static_twr_vs_rrf,0.0,1.0,none,0.0,1.0,False
+ndcg3_vuln_status::ltwr_vs_rrf,0.0,1.0,none,0.0,1.0,False
+ndcg3_vuln_status::ltwr_vs_static_twr,0.0,1.0,none,0.0,1.0,False
+mrr_authoritative::static_twr_vs_rrf,0.35937500000000006,0.004016514660032747,Wilcoxon,0.625,0.05221469058042571,False
+mrr_authoritative::ltwr_vs_rrf,0.265625,0.004016514660032747,Wilcoxon,0.484375,0.05221469058042571,False
+mrr_authoritative::ltwr_vs_static_twr,-0.09375,0.0832645166635504,Wilcoxon,-0.1875,0.5828516166448529,False
+real_ndcg3::static_twr_vs_rrf,0.16244448652157828,0.04315960722785226,paired t-test,0.44140625,0.4315960722785226,False
+real_ndcg3::ltwr_vs_rrf,0.21377086627728387,0.0057191487809327935,paired t-test,0.53125,0.06291063659026074,False
+real_ndcg3::ltwr_vs_static_twr,0.05132637975570557,0.206733931833909,paired t-test,0.078125,1.0,False
+real_mrr::static_twr_vs_rrf,-0.07291666666666667,0.25683925795785656,Wilcoxon,-0.1328125,1.0,False
+real_mrr::ltwr_vs_rrf,0.0625,0.15729920705028502,Wilcoxon,0.125,0.9437952423017102,False
+real_mrr::ltwr_vs_static_twr,0.13541666666666669,0.05878172135535886,Wilcoxon,0.25,0.4702537708428709,False

@@ -29,9 +29,9 @@ from scipy import stats
 from statsmodels.stats.multitest import multipletests
 
 from infra.cve_document import CveDocument
-from pipeline.cve_retrieval import CveTWRPipeline
-from domain.cve_gains import severity_gain, vuln_status_gain, is_authoritative
-from domain.train_ltwr_cve import TEST_PACKAGES, load_corpus, load_ground_truth
+from pipeline.retrieval import CveTWRPipeline
+from domain.gains import severity_gain, vuln_status_gain, is_authoritative
+from domain.train_ltwr import TEST_PACKAGES, load_corpus, load_ground_truth
 # Explicit import so a missing/renamed model_utils.py fails here with a clear
 # ImportError, rather than as a confusing AttributeError inside pickle.load()
 # below -- see domain/model_utils.py's docstring for why this class lives
