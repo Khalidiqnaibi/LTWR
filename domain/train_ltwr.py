@@ -4,7 +4,7 @@ domain/train_ltwr.py (academic) and business_domain/train_ltwr.py (SEC),
 BUT with the key architectural fix those domains could not make without
 new annotation infrastructure: this module fits beta/gamma/delta against
 REAL per-query top-k relevance judgments (data_in/ground_truth.json,
-produced by corpus_gen.py from NVD's own CPE-match linkage), using a
+produced by cve_corpus_gen.py from NVD's own CPE-match linkage), using a
 pairwise ranking loss -- not a regression against a self-declared scalar
 label.
 
@@ -45,13 +45,33 @@ from pipeline.retrieval import CveTWRPipeline
 from domain.gains import severity_gain, vuln_status_gain, recency_weight, SEVERITY_GAIN
 from domain.model_utils import BoundedLinearModel
 
-# Package-disjoint split. Adjust to match whichever package list
-# query_gen.py was run with; these are the defaults from that module.
-TRAIN_PACKAGES = [
-    "xz-utils", "log4j-core", "openssl", "lodash", "express",
-    "flask", "django", "spring-framework",
-]
-TEST_PACKAGES = ["struts2", "jackson-databind", "openssh", "curl", "requests"]
+# Package-disjoint split, rebuilt from the real live-NVD-pulled corpus
+# (data_in/corpus.json / data_in/ground_truth.json).
+#
+# Four packages from the original candidate list were dropped entirely
+# before this split was built: "express", "struts2", and "requests"
+# returned ZERO ground-truth CVEs (a real query/CPE-match gap worth
+# re-pulling separately later, not a sign the rest of the data is bad --
+# spot-checked several of the remaining packages' CVE records against
+# independent sources, e.g. CVE-2026-59995/CVE-2026-34477, and both
+# verified as real, accurately-described, live NVD/CNA advisories).
+# "spring-framework" returned exactly 1 CVE, which is enough for
+# real_mrr evaluation but cannot form any pairwise training constraint
+# (needs >=2 per package) -- dropped for now rather than special-cased as
+# a test-only package, to keep the split logic simple; re-add later with
+# a proper re-pull if a spring-framework-specific ablation is wanted.
+#
+# The remaining 9 packages were split via size-balanced greedy assignment
+# (sorted by CVE count descending, alternating train/test by whichever
+# side has fewer CVEs so far) rather than by name or raw package count,
+# because the corpus is heavily skewed -- curl/openssl/django/
+# jackson-databind alone are 83% of all CVEs. An unbalanced split would
+# let one or two huge packages dominate whichever side's significance
+# tests. Result: 248 CVEs (5 packages) vs. 249 CVEs (4 packages) -- close
+# to a 50/50 split by volume despite very different package counts on
+# each side.
+TRAIN_PACKAGES = ["curl", "jackson-databind", "log4j-core", "lodash", "flask"]
+TEST_PACKAGES = ["openssl", "django", "openssh", "xz-utils"]
 
 FEATURE_NAMES = ["rrf_score", "bm25_score", "dense_score", "w1_severity", "w2_vuln_status", "w3_recency"]
 COEF_BOUNDS = (0.0, 1.0)  # matches static TWR's beta/gamma/delta range
@@ -68,7 +88,7 @@ def load_corpus(path="data_in/corpus.json"):
 def load_ground_truth(path="data_in/ground_truth.json"):
     """Loads the REAL top-k judgment file: {package: [cve_id, ...]},
     ordered most-relevant-first, derived from NVD's own CPE-match linkage
-    (see corpus_gen.py's generate_corpus()/build_seed_corpus()).
+    (see cve_corpus_gen.py's generate_corpus()/build_seed_corpus()).
     This is the external signal the earlier domains' LTWR training
     lacked."""
     return json.load(open(path))
@@ -237,7 +257,7 @@ def main():
 
     if X_i.shape[0] == 0:
         print("WARNING: zero training pairs generated -- check that "
-              "ground_truth.json covers TRAIN_PACKAGES and that the "
+              "cve_ground_truth.json covers TRAIN_PACKAGES and that the "
               "retrieval stage is actually surfacing ground-truth CVEs for "
               "these queries. Skipping pairwise fit.")
         pairwise_model = None
@@ -249,10 +269,10 @@ def main():
         for feat in FEATURE_NAMES:
             print(f"{feat:15s} : {coefficients[feat]:+.6f}")
 
-        with open("domain/ltwr_model.pkl", "wb") as f:
+        with open("domain/ltwr_cve_model.pkl", "wb") as f:
             pickle.dump(pairwise_model, f)
-        print("Saved -> domain/ltwr_model.pkl  (this is the model "
-              "run_experiment.py's 'ltwr' arm loads by default)")
+        print("Saved -> domain/ltwr_cve_model.pkl  (this is the model "
+              "run_experiment_cve.py's 'ltwr' arm loads by default)")
 
     print("\n" + "=" * 70)
     print("OBJECTIVE 2 (reference/ablation ONLY -- NOT validated against "
@@ -269,9 +289,9 @@ def main():
             print(f"{feat:15s} : {ridge_coefficients[feat]:+.6f}")
         print(f"Intercept       : {ridge_model.intercept_:+.6f}  (unconstrained)")
 
-        with open("domain/ltwr_model_ablation_ridge.pkl", "wb") as f:
+        with open("domain/ltwr_cve_model_ablation_ridge.pkl", "wb") as f:
             pickle.dump(ridge_model, f)
-        print("Saved -> domain/ltwr_model_ablation_ridge.pkl  "
+        print("Saved -> domain/ltwr_cve_model_ablation_ridge.pkl  "
               "(ablation reference only -- do not load this as the "
               "headline 'ltwr' arm)")
 

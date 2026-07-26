@@ -1,0 +1,314 @@
+[
+ {
+  "id": 1,
+  "query": "What are the most severe known vulnerabilities in xz-utils?",
+  "package": "xz-utils",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 2,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in xz-utils?",
+  "package": "xz-utils",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 3,
+  "query": "What are the most recently disclosed vulnerabilities in xz-utils?",
+  "package": "xz-utils",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 4,
+  "query": "What vulnerabilities affect xz-utils?",
+  "package": "xz-utils",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 5,
+  "query": "What are the most severe known vulnerabilities in log4j-core?",
+  "package": "log4j-core",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 6,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in log4j-core?",
+  "package": "log4j-core",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 7,
+  "query": "What are the most recently disclosed vulnerabilities in log4j-core?",
+  "package": "log4j-core",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 8,
+  "query": "What vulnerabilities affect log4j-core?",
+  "package": "log4j-core",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 9,
+  "query": "What are the most severe known vulnerabilities in openssl?",
+  "package": "openssl",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 10,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in openssl?",
+  "package": "openssl",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 11,
+  "query": "What are the most recently disclosed vulnerabilities in openssl?",
+  "package": "openssl",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 12,
+  "query": "What vulnerabilities affect openssl?",
+  "package": "openssl",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 13,
+  "query": "What are the most severe known vulnerabilities in lodash?",
+  "package": "lodash",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 14,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in lodash?",
+  "package": "lodash",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 15,
+  "query": "What are the most recently disclosed vulnerabilities in lodash?",
+  "package": "lodash",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 16,
+  "query": "What vulnerabilities affect lodash?",
+  "package": "lodash",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 17,
+  "query": "What are the most severe known vulnerabilities in express?",
+  "package": "express",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 18,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in express?",
+  "package": "express",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 19,
+  "query": "What are the most recently disclosed vulnerabilities in express?",
+  "package": "express",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 20,
+  "query": "What vulnerabilities affect express?",
+  "package": "express",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 21,
+  "query": "What are the most severe known vulnerabilities in flask?",
+  "package": "flask",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 22,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in flask?",
+  "package": "flask",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 23,
+  "query": "What are the most recently disclosed vulnerabilities in flask?",
+  "package": "flask",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 24,
+  "query": "What vulnerabilities affect flask?",
+  "package": "flask",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 25,
+  "query": "What are the most severe known vulnerabilities in django?",
+  "package": "django",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 26,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in django?",
+  "package": "django",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 27,
+  "query": "What are the most recently disclosed vulnerabilities in django?",
+  "package": "django",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 28,
+  "query": "What vulnerabilities affect django?",
+  "package": "django",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 29,
+  "query": "What are the most severe known vulnerabilities in spring-framework?",
+  "package": "spring-framework",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 30,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in spring-framework?",
+  "package": "spring-framework",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 31,
+  "query": "What are the most recently disclosed vulnerabilities in spring-framework?",
+  "package": "spring-framework",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 32,
+  "query": "What vulnerabilities affect spring-framework?",
+  "package": "spring-framework",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 33,
+  "query": "What are the most severe known vulnerabilities in struts2?",
+  "package": "struts2",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 34,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in struts2?",
+  "package": "struts2",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 35,
+  "query": "What are the most recently disclosed vulnerabilities in struts2?",
+  "package": "struts2",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 36,
+  "query": "What vulnerabilities affect struts2?",
+  "package": "struts2",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 37,
+  "query": "What are the most severe known vulnerabilities in jackson-databind?",
+  "package": "jackson-databind",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 38,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in jackson-databind?",
+  "package": "jackson-databind",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 39,
+  "query": "What are the most recently disclosed vulnerabilities in jackson-databind?",
+  "package": "jackson-databind",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 40,
+  "query": "What vulnerabilities affect jackson-databind?",
+  "package": "jackson-databind",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 41,
+  "query": "What are the most severe known vulnerabilities in openssh?",
+  "package": "openssh",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 42,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in openssh?",
+  "package": "openssh",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 43,
+  "query": "What are the most recently disclosed vulnerabilities in openssh?",
+  "package": "openssh",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 44,
+  "query": "What vulnerabilities affect openssh?",
+  "package": "openssh",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 45,
+  "query": "What are the most severe known vulnerabilities in curl?",
+  "package": "curl",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 46,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in curl?",
+  "package": "curl",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 47,
+  "query": "What are the most recently disclosed vulnerabilities in curl?",
+  "package": "curl",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 48,
+  "query": "What vulnerabilities affect curl?",
+  "package": "curl",
+  "ablation_dimension": "combined"
+ },
+ {
+  "id": 49,
+  "query": "What are the most severe known vulnerabilities in requests?",
+  "package": "requests",
+  "ablation_dimension": "severity"
+ },
+ {
+  "id": 50,
+  "query": "What are the confirmed, analyst-reviewed vulnerabilities in requests?",
+  "package": "requests",
+  "ablation_dimension": "vuln_status"
+ },
+ {
+  "id": 51,
+  "query": "What are the most recently disclosed vulnerabilities in requests?",
+  "package": "requests",
+  "ablation_dimension": "recency"
+ },
+ {
+  "id": 52,
+  "query": "What vulnerabilities affect requests?",
+  "package": "requests",
+  "ablation_dimension": "combined"
+ }
+]

@@ -1,5 +1,5 @@
 """
-run_experiment_cve.py -- runs all three arms (RRF, static TWR, LTWR) on the
+run_experiment.py -- runs all three arms (RRF, static TWR, LTWR) on the
 PACKAGE-DISJOINT test-package queries only (train packages were used to fit
 the LTWR model in train_ltwr_cve.py). Reports:
 
@@ -29,9 +29,9 @@ from scipy import stats
 from statsmodels.stats.multitest import multipletests
 
 from infra.cve_document import CveDocument
-from pipeline.retrieval import CveTWRPipeline
-from domain.gains import severity_gain, vuln_status_gain, is_authoritative
-from domain.train_ltwr import TEST_PACKAGES, load_corpus, load_ground_truth
+from pipeline.cve_retrieval import CveTWRPipeline
+from domain.cve_gains import severity_gain, vuln_status_gain, is_authoritative
+from domain.train_ltwr_cve import TEST_PACKAGES, load_corpus, load_ground_truth
 # Explicit import so a missing/renamed model_utils.py fails here with a clear
 # ImportError, rather than as a confusing AttributeError inside pickle.load()
 # below -- see domain/model_utils.py's docstring for why this class lives
@@ -144,14 +144,14 @@ def main():
           f"(packages: {sorted(set(q['package'] for q in queries))})")
 
     try:
-        with open("domain/ltwr_model.pkl", "rb") as f:
+        with open("domain/ltwr_cve_model.pkl", "rb") as f:
             ltwr_model = pickle.load(f)
     except FileNotFoundError:
         raise RuntimeError(
-            "domain/ltwr_model.pkl not found -- run train_ltwr_cve.py "
+            "domain/ltwr_cve_model.pkl not found -- run train_ltwr_cve.py "
             "first. Note: this must be the PAIRWISE-objective model (the "
             "default save target in train_ltwr_cve.py's main()), not "
-            "ltwr_model_ablation_ridge.pkl -- see that module's "
+            "ltwr_cve_model_ablation_ridge.pkl -- see that module's "
             "docstring for why the ablation model should not be reported "
             "as the headline LTWR arm."
         )
@@ -185,7 +185,7 @@ def main():
             rows.append(m)
 
     df = pd.DataFrame(rows)
-    df.to_csv("eval_results/metrics_per_query.csv", index=False)
+    df.to_csv("eval_results/cve_metrics_per_query.csv", index=False)
 
     pivot = {}
     for metric in METRICS:
@@ -210,7 +210,7 @@ def main():
         r["significant"] = bool(sig)
 
     stats_df = pd.DataFrame(test_results)
-    stats_df.to_csv("eval_results/stats_report.csv", index=False)
+    stats_df.to_csv("eval_results/cve_stats_report.csv", index=False)
     print(stats_df.to_string(index=False))
 
     print("\n=== Fusion-step latency (microseconds per query) ===")
@@ -218,7 +218,7 @@ def main():
         print(f"{arm:12s} mean={np.mean(lat):8.1f}us  p95={np.percentile(lat,95):8.1f}us")
 
     lat_df = pd.DataFrame(fusion_latency)
-    lat_df.to_csv("eval_results/fusion_latency.csv", index=False)
+    lat_df.to_csv("eval_results/cve_fusion_latency.csv", index=False)
 
     print("\nNOTE: 'real_ndcg3' and 'real_mrr' are the metrics validated "
           "against external ground truth (NVD's own CPE-match linkage). "
