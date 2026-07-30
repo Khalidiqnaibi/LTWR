@@ -34,6 +34,15 @@ Split is PACKAGE-DISJOINT (train packages != test packages), the
 CVE-domain analogue of the SEC domain's company-disjoint split and the
 academic domain's field-disjoint split, to avoid a query about a package
 seen during training leaking into evaluation.
+
+TRAIN_PACKAGES/TEST_PACKAGES are now loaded from
+data_in/train_test_split.json (written by corpus_gen.py's
+generate_corpus() at pull time) rather than hardcoded here. This closes a
+real gap found during development: a hand-copied split can silently go
+stale the moment the corpus is regenerated with a different package list
+or different CPE-match results, while the hardcoded Python constants
+keep referring to packages that may no longer exist (or may no longer be
+excluded) in the actual data on disk. See load_train_test_split() below.
 """
 import json
 import pickle
@@ -45,39 +54,49 @@ from pipeline.retrieval import CveTWRPipeline
 from domain.gains import severity_gain, vuln_status_gain, recency_weight, SEVERITY_GAIN
 from domain.model_utils import BoundedLinearModel
 
-# Package-disjoint split, rebuilt from the real live-NVD-pulled corpus
-# (data_in/corpus.json / data_in/ground_truth.json).
-#
-# Four packages from the original candidate list were dropped entirely
-# before this split was built: "express", "struts2", and "requests"
-# returned ZERO ground-truth CVEs (a real query/CPE-match gap worth
-# re-pulling separately later, not a sign the rest of the data is bad --
-# spot-checked several of the remaining packages' CVE records against
-# independent sources, e.g. CVE-2026-59995/CVE-2026-34477, and both
-# verified as real, accurately-described, live NVD/CNA advisories).
-# "spring-framework" returned exactly 1 CVE, which is enough for
-# real_mrr evaluation but cannot form any pairwise training constraint
-# (needs >=2 per package) -- dropped for now rather than special-cased as
-# a test-only package, to keep the split logic simple; re-add later with
-# a proper re-pull if a spring-framework-specific ablation is wanted.
-#
-# The remaining 9 packages were split via size-balanced greedy assignment
-# (sorted by CVE count descending, alternating train/test by whichever
-# side has fewer CVEs so far) rather than by name or raw package count,
-# because the corpus is heavily skewed -- curl/openssl/django/
-# jackson-databind alone are 83% of all CVEs. An unbalanced split would
-# let one or two huge packages dominate whichever side's significance
-# tests. Result: 248 CVEs (5 packages) vs. 249 CVEs (4 packages) -- close
-# to a 50/50 split by volume despite very different package counts on
-# each side.
-TRAIN_PACKAGES = ["curl", "jackson-databind", "log4j-core", "lodash", "flask"]
-TEST_PACKAGES = ["openssl", "django", "openssh", "xz-utils"]
+# Package-disjoint split is now loaded from data_in/train_test_split.json,
+# written by corpus_gen.py's generate_corpus() at pull time -- derived
+# from whichever packages actually survived the >=2-ground-truth-CVEs
+# filter on THIS run, not hand-copied from a previous run's printout.
+# The earlier hardcoded TRAIN_PACKAGES/TEST_PACKAGES here were exactly
+# how express/struts2/requests/spring-framework could silently go stale
+# the moment the corpus was regenerated with a different package list or
+# different CPE-match results: the hardcoded names would still exist as
+# Python constants even after the underlying data changed underneath
+# them. See load_train_test_split() below.
+_FALLBACK_TRAIN_PACKAGES = ["curl", "jackson-databind", "log4j-core", "lodash", "flask"]
+_FALLBACK_TEST_PACKAGES = ["openssl", "django", "openssh", "xz-utils"]
 
 FEATURE_NAMES = ["rrf_score", "bm25_score", "dense_score", "w1_severity", "w2_vuln_status", "w3_recency"]
 COEF_BOUNDS = (0.0, 1.0)  # matches static TWR's beta/gamma/delta range
 
 SEVERITY_GAIN_MAX = max(SEVERITY_GAIN.values())  # = 4
 COMBINED_LABEL_MAX = 3.0  # max of a 3-term sum of [0,1]-normalized signals
+
+
+def load_train_test_split(path="data_in/train_test_split.json"):
+    """Loads the package-disjoint split written by corpus_gen.py's
+    generate_corpus() at pull time. Falls back to a hardcoded split ONLY
+    if the file is missing (e.g. running against an older corpus pull
+    from before this file existed), and prints a loud warning when that
+    happens, since a stale hardcoded fallback silently matching or not
+    matching the actual corpus on disk is exactly the failure mode this
+    loader exists to prevent."""
+    try:
+        split = json.load(open(path))
+        return split["train_packages"], split["test_packages"]
+    except FileNotFoundError:
+        print(f"*** WARNING: {path} not found -- falling back to a "
+              f"hardcoded train/test split ({_FALLBACK_TRAIN_PACKAGES} / "
+              f"{_FALLBACK_TEST_PACKAGES}). This fallback may not match "
+              f"the packages actually present in your current "
+              f"data_in/ground_truth.json. Re-run corpus_gen.py's "
+              f"generate_corpus() to produce a real train_test_split.json "
+              f"before trusting results from this fallback. ***")
+        return _FALLBACK_TRAIN_PACKAGES, _FALLBACK_TEST_PACKAGES
+
+
+TRAIN_PACKAGES, TEST_PACKAGES = load_train_test_split()
 
 
 def load_corpus(path="data_in/corpus.json"):

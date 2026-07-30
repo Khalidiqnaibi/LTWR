@@ -1,3 +1,10 @@
+"""
+corpus_gen.py -- CVE/supply-chain-security corpus + ground-truth generator.
+See module docstring history: this file replaced free-text keywordSearch-
+against-CVE-prose with a CPE-Dictionary-first architecture (resolve the
+real vendor:product CPE identifier for a package, then fetch CVEs that
+NVD has structurally CPE-matched against it via virtualMatchString).
+"""
 import json
 import time
 from datetime import datetime, timedelta, timezone
@@ -9,27 +16,84 @@ NVD_CVE_URL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 NVD_CPE_URL = "https://services.nvd.nist.gov/rest/json/cpes/2.0"
 MIN_PUB_YEAR = 2018
 
+# Kept SINGLE-WORD wherever possible. NVD's CPE dictionary keywordSearch
+# appears to search TITLE text (human-readable product names), not the
+# underlying vendor/product SLUG -- a slug-style hint like "expressjs" may
+# simply never appear in a title that reads "Express" or "Express.js", and
+# a multi-word hint risks AND-style matching that fails outright if the
+# real title doesn't contain every word (this is the most likely reason
+# "python requests" and "spring framework" returned nothing: if the actual
+# title is just "Requests" or "Spring Framework" is stored/indexed
+# differently than expected, a multi-word AND query can silently return
+# zero instead of narrowing correctly). Single natural words + the
+# resolve_cpe_matches() relevance filter doing the narrowing is the more
+# robust default. STILL NEEDS VERIFICATION against a live run -- these are
+# informed guesses, and resolve_cpe_matches() prints every vendor:product
+# pair it finds specifically so a wrong guess is diagnosable from real
+# output, not guessed a third time blind.
 PACKAGE_CPE_HINTS = {
     "xz-utils": "xz",
     "log4j-core": "log4j",
-    "spring-framework": "spring framework",
+    "spring-framework": "spring",
     "struts2": "struts2",
-    "express": "expressjs",
-    "requests": "python requests",
+    "express": "express",
+    "requests": "requests",
+    "apache-http-server": "httpd",  # Apache's own project name for this is "httpd", not "apache http server"
 }
 
 MAX_PAGES_PER_CPE = 10
 RESULTS_PER_PAGE = 100
 
+# Training-readiness thresholds. A package needs >=2 ground-truth CVEs to
+# form even one pairwise training constraint (build_pairwise_training_set
+# in train_ltwr.py needs a strict better-than relation, which requires at
+# least two ranked items); a package with 0 or 1 is dead weight for
+# training and near-meaningless for real_mrr evaluation (MRR against an
+# empty set is trivially 0 for every arm, which is anti-signal, not
+# neutral). generate_corpus() enforces this automatically instead of
+# leaving it to be filtered out by hand after the fact.
+MIN_CVES_PER_PACKAGE = 2
+
+# A SEPARATE, higher bar specifically for packages landing in the TEST
+# split: MIN_CVES_PER_PACKAGE=2 is the right bar for "can this package
+# contribute anything to TRAINING at all," but it is too low a bar for
+# "can this package's per-query metrics be trusted as an evaluation data
+# point." A test package with 4-5 CVEs produces a near-meaningless nDCG/MRR
+# distribution that still counts toward headline significance tests,
+# quietly diluting statistical power. This does not exclude thin packages
+# from the corpus or from TRAINING -- only flags them if the auto-split
+# below puts them in TEST specifically.
+MIN_CVES_PER_TEST_PACKAGE = 15
+
+# Used only to size the min-power warning in generate_corpus() -- one
+# query per ablation dimension (severity/vuln_status/recency/combined),
+# matching query_gen.py's QUERY_TEMPLATES.
+QUERY_DIMENSIONS_PER_PACKAGE = 4
+
+# Replace with your real contact info -- _get() below refuses to send
+# requests against the placeholder value rather than silently identifying
+# as a fake contact to NVD. (An earlier version of this check compared
+# against a DIFFERENT placeholder string than the one actually assigned
+# below and only printed a warning instead of refusing -- restored to a
+# hard, matching check here: a silently-weakened guard is worse than no
+# guard, since it looks like protection that isn't actually there.)
 CONTACT_EMAIL = "241154@ppu.edu.ps"
+PLACEHOLDER_EMAIL = "you@example.com"
 HEADERS = {"User-Agent": f"LTWR-CVE-Research (research contact: {CONTACT_EMAIL})"}
 
+# NVD rate-limits unauthenticated requests to ~5 requests / 30s (shared
+# across ALL services.nvd.nist.gov endpoints, CPE dictionary included --
+# not just the CVE endpoint).
 NVD_RATE_LIMIT_SLEEP_SEC = 6.5
 
 
 def _get(url, params=None, api_key=None, max_retries=3):
-    if CONTACT_EMAIL == "your_email@example.com": # Using a generic placeholder for demonstration
-        print("WARNING: CONTACT_EMAIL is still the placeholder value. Please replace it with your real contact info.")
+    if CONTACT_EMAIL == PLACEHOLDER_EMAIL:
+        raise RuntimeError(
+            "CONTACT_EMAIL is still the placeholder value -- edit it at the "
+            "top of domain/corpus_gen.py to your real contact info before "
+            "making live NVD requests. Refusing to send a fake identity."
+        )
     headers = dict(HEADERS)
     if api_key:
         headers["apiKey"] = api_key
@@ -49,16 +113,14 @@ def _get(url, params=None, api_key=None, max_retries=3):
 
 
 def resolve_severity(cve_item: dict) -> str:
-    """w1 resolution: prefers CVSS v3.1, falls back to v3.0, then v2.
-    Mirrors NVD's own documented precedence for which score is
-    'the' score when multiple versions are present on a record."""
+    """w1 resolution: prefers CVSS v3.1, falls back to v3.0, then v2."""
     metrics = cve_item.get("metrics", {})
     for key in ("cvssMetricV31", "cvssMetricV30"):
         entries = metrics.get(key)
         if entries:
             sev = entries[0].get("cvssData", {}).get("baseSeverity") or entries[0].get("baseSeverity")
             if sev:
-                return sev.title()  # NVD returns e.g. "CRITICAL" -> "Critical"
+                return sev.title()
     v2_entries = metrics.get("cvssMetricV2")
     if v2_entries:
         sev = v2_entries[0].get("baseSeverity")
@@ -68,21 +130,15 @@ def resolve_severity(cve_item: dict) -> str:
 
 
 def resolve_vuln_status(cve_item: dict) -> str:
-    """w2 resolution: NVD's own vulnStatus field, used as-is. This is
-    already the exact external review-status hierarchy w2 needs -- no
-    further derivation required, unlike the SEC domain's ICFR flag which
-    had to be extracted from filing markup."""
+    """w2 resolution: NVD's own vulnStatus field, used as-is."""
     return cve_item.get("vulnStatus", "Awaiting Analysis")
 
 
 def extract_affected_packages(cve_item: dict):
-    """Pulls all (product) names out of NVD's CPE-match configuration
-    nodes, purely for DISPLAY in the passage text (build_passage_text
-    below) -- e.g. "this CVE also affects these bundling products." This
-    is NOT used for relevance decisions anymore (see module docstring):
-    which CVEs belong to which package is now determined upstream, by
-    which resolved CPE pattern a CVE was fetched under, not by inspecting
-    this list after the fact."""
+    """Pulls all product names out of NVD's CPE-match configuration nodes,
+    purely for DISPLAY in the passage text -- not used for relevance
+    decisions (see module docstring: relevance is decided upstream now, by
+    which resolved CPE pattern a CVE was fetched under)."""
     packages = set()
     for config in cve_item.get("configurations", []):
         for node in config.get("nodes", []):
@@ -95,10 +151,6 @@ def extract_affected_packages(cve_item: dict):
 
 
 def build_passage_text(cve_item: dict) -> str:
-    """Builds the retrieval passage text: CVE ID, description, and
-    affected-package list, mirroring how the SEC domain concatenates
-    filing text with '[Extracted facts: ...]' -- structured metadata
-    folded into the text a BM25/dense index actually searches over."""
     cve_id = cve_item.get("id", "")
     descriptions = cve_item.get("descriptions", [])
     desc_text = next((d["value"] for d in descriptions if d.get("lang") == "en"), "")
@@ -109,9 +161,8 @@ def build_passage_text(cve_item: dict) -> str:
 
 def build_document_record(chunk_id: int, cve_item: dict, ecosystem_lookup: dict, package: str) -> dict:
     """package: the canonical package name this CVE was fetched for --
-    known with CERTAINTY here, not guessed. Retrieval is now by a resolved
-    CPE vendor:product pair specific to this package (see
-    resolve_cpe_matches / fetch_cves_for_virtual_match)."""
+    known with CERTAINTY here (retrieval is by a resolved CPE vendor:
+    product pair specific to this package), not guessed."""
     cve_id = cve_item.get("id", "")
     pub_year = int(cve_item.get("published", "1970")[:4])
     ecosystem = ecosystem_lookup.get(package, "system")
@@ -130,26 +181,53 @@ def build_document_record(chunk_id: int, cve_item: dict, ecosystem_lookup: dict,
 
 
 def _split_cpe(cpe_name: str):
-    """cpe:2.3:{part}:{vendor}:{product}:{version}:... -> (part, vendor,
-    product). Returns None if the string doesn't look like a well-formed
-    CPE 2.3 URI."""
     parts = cpe_name.split(":")
     if len(parts) < 5:
         return None
     return parts[2], parts[3], parts[4]
 
 
+def _normalize(s: str) -> str:
+    return s.replace("_", " ").replace("-", " ").lower().strip()
+
+
+def _is_relevant(product: str, package: str, query_phrase: str) -> bool:
+    """FIXED relevance check. The previous version only tested whether a
+    canonical name string appeared AS A SUBSTRING WITHIN the product name
+    (`canonical_norm in product_hyphen`) -- which silently fails whenever
+    the canonical name is LONGER than the real product token, exactly the
+    "apache-http-server" (canonical/hint) vs "http_server" (real CPE
+    product) case: "apache-http-server" can never be a substring of the
+    shorter "http-server", so a genuinely correct match was rejected. This
+    version normalizes both sides to a token set (splitting on hyphen/
+    underscore/space) and accepts a match on: (a) exact normalized
+    equality, (b) any shared significant word (len > 3) between the
+    product and EITHER the package name or the query phrase, or (c) a
+    substring match tested in BOTH directions, not just one."""
+    product_norm = _normalize(product)
+    product_words = set(product_norm.split())
+
+    for candidate in (package, query_phrase):
+        cand_norm = _normalize(candidate)
+        if cand_norm == product_norm:
+            return True
+        cand_words = set(cand_norm.split())
+        shared = {w for w in (product_words & cand_words) if len(w) > 3}
+        if shared:
+            return True
+        if len(cand_norm) > 3 and (cand_norm.replace(" ", "") in product_norm.replace(" ", "")
+                                    or product_norm.replace(" ", "") in cand_norm.replace(" ", "")):
+            return True
+    return False
+
+
 def resolve_cpe_matches(package: str, hint: str = None, api_key: str = None,
                          max_results: int = 100) -> list:
-    """Queries NVD's CPE DICTIONARY (services.nvd.nist.gov/rest/json/cpes/2.0)
-    -- a curated space of official product identifiers -- for the product
-    this package refers to, and returns a list of virtualMatchString
-    patterns (wildcarded CPE 2.3 URIs, one per distinct vendor:product pair
-    found, covering ALL versions of each) to feed into
-    fetch_cves_for_virtual_match().
+    """Queries NVD's CPE DICTIONARY for the product this package refers to,
+    and returns a list of virtualMatchString patterns (one per distinct
+    vendor:product pair found) to feed into fetch_cves_for_virtual_match().
     """
     query_phrase = hint or package
-    # Changed 'keywordSearchPhrase' to 'keywordSearch' as per NVD API 2.0 documentation for CPE search
     params = {"keywordSearch": query_phrase, "resultsPerPage": max_results}
     resp = _get(NVD_CPE_URL, params=params, api_key=api_key)
     data = resp.json()
@@ -166,29 +244,24 @@ def resolve_cpe_matches(package: str, hint: str = None, api_key: str = None,
             continue
         pairs.add((vendor, product))
 
-    canonical_norms = {
-        package.lower(), package.lower().replace("-", "_"),
-        query_phrase.lower(), query_phrase.lower().replace("-", "_"),
-    }
-    relevant_pairs = []
-    for vendor, product in sorted(pairs):
-        product_hyphen = product.replace("_", "-").lower()
-        product_underscore = product.replace("-", "_").lower()
-        if (product_hyphen in canonical_norms or product_underscore in canonical_norms
-                or any(len(c) > 3 and c in product_hyphen for c in canonical_norms)):
-            relevant_pairs.append((vendor, product))
+    relevant_pairs = [
+        (vendor, product) for vendor, product in sorted(pairs)
+        if _is_relevant(product, package, query_phrase)
+    ]
 
     print(f"  CPE dictionary lookup for '{package}' (query: '{query_phrase}'): "
           f"{len(pairs)} distinct vendor:product pair(s) found, "
           f"{len(relevant_pairs)} kept as relevant: {relevant_pairs}")
     if not relevant_pairs and pairs:
         print(f"  *** '{package}': none of the {len(pairs)} pairs found were kept as "
-              f"relevant -- inspect this full list and add an entry to "
-              f"PACKAGE_CPE_HINTS if the right one is in here under a name the "
-              f"filter didn't recognize: {sorted(pairs)[:25]} ***")
+              f"relevant -- inspect this full list and add/adjust a PACKAGE_CPE_HINTS "
+              f"entry if the right one is in here under a name the filter still "
+              f"didn't recognize: {sorted(pairs)[:25]} ***")
     elif not pairs:
         print(f"  *** '{package}': CPE dictionary lookup returned ZERO products for "
-              f"query '{query_phrase}' -- try a different PACKAGE_CPE_HINTS phrase. ***")
+              f"query '{query_phrase}' -- try a different PACKAGE_CPE_HINTS phrase "
+              f"(prefer a single natural word over a slug or multi-word phrase -- "
+              f"see PACKAGE_CPE_HINTS's comment for why). ***")
 
     return [f"cpe:2.3:a:{vendor}:{product}:*:*:*:*:*:*:*:*" for vendor, product in relevant_pairs]
 
@@ -197,8 +270,7 @@ def fetch_cves_for_virtual_match(virtual_match_string: str, api_key: str = None,
                                   results_per_page: int = RESULTS_PER_PAGE,
                                   max_pages: int = MAX_PAGES_PER_CPE) -> list:
     """Fetches every CVE NVD says structurally matches this CPE pattern --
-    a server-side CPE match, not a free-text guess. Every record returned
-    here is relevant BY CONSTRUCTION."""
+    a server-side CPE match, not a free-text guess."""
     all_vulns = []
     for page_num in range(max_pages):
         params = {
@@ -211,7 +283,7 @@ def fetch_cves_for_virtual_match(virtual_match_string: str, api_key: str = None,
         vulns = data.get("vulnerabilities", [])
         all_vulns.extend(vulns)
         if len(vulns) < results_per_page:
-            break  # got fewer than a full page -- no more results for this CPE pattern
+            break
         time.sleep(NVD_RATE_LIMIT_SLEEP_SEC)
     return all_vulns
 
@@ -223,19 +295,11 @@ def generate_corpus(
     api_key: str = None,
 ):
     """Live NVD pull: for each package, resolves its real CPE vendor:product
-    identifier(s) via the CPE dictionary, fetches every CVE NVD has
-    structurally CPE-matched against those identifiers, builds CveDocument
-    records (package assignment is now CERTAIN, not guessed), and writes
-    the corpus JSON.
-
-    Also returns a {package: [cve_id, ...]} ground-truth map -- built
-    directly from NVD's own CPE linkage and severity/status fields, not
-    authored by this paper's team. See build_relevance_judgments() usage
-    below for how this becomes the per-query top-k judgment file
-    train_ltwr_cve.py trains against.
-    """
+    identifier(s), fetches every CVE NVD has structurally CPE-matched
+    against it, builds records, and writes the corpus + ground truth +
+    train/test split."""
     docs = []
-    ground_truth = {}  # package -> [cve_id, ...], in NVD's own relevance order (severity then recency)
+    ground_truth = {}
     chunk_id = 0
 
     for package in packages:
@@ -266,7 +330,7 @@ def generate_corpus(
                 cve_item = vuln.get("cve", {})
                 cve_id = cve_item.get("id", "")
                 if not cve_id or cve_id in seen_cve_ids:
-                    continue  # same CVE reachable via >1 resolved vendor:product pair
+                    continue
                 seen_cve_ids.add(cve_id)
 
                 record = build_document_record(chunk_id, cve_item, ecosystem_lookup, package)
@@ -284,13 +348,6 @@ def generate_corpus(
               f"{len(virtual_match_strings)} vendor:product pair(s) -> {n_kept} kept "
               f"({n_dropped_old} dropped as pre-{MIN_PUB_YEAR})")
 
-        # NVD's own implied relevance order for ground truth: severity
-        # first (Critical > High > Medium > Low), then recency within a
-        # tier. This is NOT an invented ranking -- both fields are NVD's
-        # own assigned data; imposing this order for judgment purposes
-        # simply operationalizes "which of NVD's own matched CVEs would a
-        # security analyst want surfaced first," using only NVD-assigned
-        # facts, not this paper's trust-weighting scheme itself.
         pkg_docs = [d for d in docs if d["package"] == package]
         pkg_docs_sorted = sorted(
             pkg_docs,
@@ -306,6 +363,77 @@ def generate_corpus(
             "services.nvd.nist.gov and the per-package messages printed above."
         )
 
+    usable_packages = {pkg for pkg, cves in ground_truth.items() if len(cves) >= MIN_CVES_PER_PACKAGE}
+    dropped_packages = {pkg: len(cves) for pkg, cves in ground_truth.items() if pkg not in usable_packages}
+
+    if dropped_packages:
+        print(f"\n*** Dropping {len(dropped_packages)} package(s) with < "
+              f"{MIN_CVES_PER_PACKAGE} ground-truth CVEs from the training-ready "
+              f"output: {dropped_packages}")
+        print("    Most likely cause is resolve_cpe_matches() not finding a "
+              "matching CPE vendor:product pair. Check the 'CPE dictionary "
+              "lookup' messages above and consider adjusting PACKAGE_CPE_HINTS "
+              "before treating the drop as final.\n")
+
+    docs = [d for d in docs if d["package"] in usable_packages]
+    ground_truth = {pkg: cves for pkg, cves in ground_truth.items() if pkg in usable_packages}
+
+    if not docs:
+        raise RuntimeError(
+            f"After filtering to packages with >= {MIN_CVES_PER_PACKAGE} "
+            "ground-truth CVEs, ZERO packages remain -- refusing to write "
+            "an empty corpus.json/ground_truth.json."
+        )
+
+    # Auto-generated, size-balanced, package-disjoint train/test split.
+    ranked = sorted(ground_truth.items(), key=lambda kv: -len(kv[1]))
+    train_packages, test_packages = [], []
+    train_n, test_n = 0, 0
+    for pkg, cves in ranked:
+        if train_n <= test_n:
+            train_packages.append(pkg)
+            train_n += len(cves)
+        else:
+            test_packages.append(pkg)
+            test_n += len(cves)
+
+    train_test_split = {
+        "train_packages": train_packages,
+        "test_packages": test_packages,
+        "train_cve_count": train_n,
+        "test_cve_count": test_n,
+        "min_cves_per_package_threshold": MIN_CVES_PER_PACKAGE,
+        "dropped_packages": dropped_packages,
+    }
+
+    # Aggregate min-power warning (unchanged from prior version).
+    n_test_queries = len(test_packages) * QUERY_DIMENSIONS_PER_PACKAGE
+    MIN_RECOMMENDED_TEST_QUERIES = 30
+    if n_test_queries < MIN_RECOMMENDED_TEST_QUERIES:
+        print(f"\n*** WARNING: this split yields only {n_test_queries} test queries "
+              f"({len(test_packages)} packages x {QUERY_DIMENSIONS_PER_PACKAGE} "
+              f"dimensions), below the ~{MIN_RECOMMENDED_TEST_QUERIES} recommended "
+              f"for adequate power at Holm-Bonferroni-corrected significance. "
+              f"Add more packages to `packages` and re-run before treating "
+              f"results from this split as conclusive. ***\n")
+
+    # NEW: per-package depth warning for TEST packages specifically. The
+    # aggregate check above catches "not enough test queries overall" but
+    # says nothing about an individual thin package sitting in TEST diluting
+    # power on its own -- e.g. a 4-5 CVE package contributing a near-
+    # meaningless per-query nDCG/MRR distribution that still counts toward
+    # headline significance tests. This is a DIFFERENT failure mode from
+    # the aggregate one and needs its own check.
+    thin_test_packages = {pkg: len(ground_truth[pkg]) for pkg in test_packages
+                           if len(ground_truth[pkg]) < MIN_CVES_PER_TEST_PACKAGE}
+    if thin_test_packages:
+        print(f"\n*** WARNING: {len(thin_test_packages)} TEST package(s) have fewer "
+              f"than {MIN_CVES_PER_TEST_PACKAGE} ground-truth CVEs: {thin_test_packages}. "
+              f"These will produce a near-meaningless per-query metric distribution "
+              f"individually, even though they still count toward the aggregate "
+              f"test-query total above. Consider moving them to TRAIN (where a low "
+              f"bar is fine) or dropping them, rather than leaving them in TEST as-is. ***\n")
+
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(docs, f, indent=1)
@@ -316,18 +444,18 @@ def generate_corpus(
         json.dump(ground_truth, f, indent=1)
     print(f"Ground-truth top-k judgments -> {gt_path}")
 
+    split_path = str(Path(out_path).parent / "train_test_split.json")
+    with open(split_path, "w", encoding="utf-8") as f:
+        json.dump(train_test_split, f, indent=1)
+    print(f"Train/test package split -> {split_path}")
+    print(f"  TRAIN_PACKAGES ({len(train_packages)} packages, {train_n} CVEs): {train_packages}")
+    print(f"  TEST_PACKAGES  ({len(test_packages)} packages, {test_n} CVEs): {test_packages}")
+
     print_severity_status_coverage_report(docs)
-    return docs, ground_truth
+    return docs, ground_truth, train_test_split
 
 
 def print_severity_status_coverage_report(docs):
-    """Data-quality/coverage report, mirroring the SEC domain's
-    per-filing-type collinearity check and corpus-wide resolver-failure
-    check. Here the two axes are severity (w1) and vuln_status (w2) --
-    they should vary largely independently (a Critical CVE can be
-    Analyzed or still Awaiting Analysis; a Rejected CVE can have any
-    nominal severity), so a strong correlation between them would signal
-    a resolver bug, not real structure."""
     from collections import Counter, defaultdict
     cross = defaultdict(Counter)
     overall_severity = Counter()
@@ -351,9 +479,7 @@ def print_severity_status_coverage_report(docs):
         if dom_count / total_docs >= 0.95:
             print(f"  *** WARNING: '{dom_status}' is {dom_count}/{total_docs} "
                   f"({dom_count/total_docs:.0%}) of the entire corpus -- check "
-                  f"resolve_vuln_status() / the raw NVD response shape before "
-                  f"trusting downstream w2 results (same failure pattern seen "
-                  f"once already in the SEC domain's audit-tier resolver). ***")
+                  f"resolve_vuln_status() before trusting downstream w2 results. ***")
 
     packages_seen = sorted(set(d["package"] for d in docs))
     print(f"\n  packages with >=1 kept record ({len(packages_seen)}): {packages_seen}")
@@ -376,6 +502,16 @@ SEED_ECOSYSTEM_LOOKUP = {
     "requests": "pypi",
     "express": "npm",
     "flask": "pypi",
+    "pyyaml": "pypi",
+    "jinja2": "pypi",
+    "axios": "npm",
+    "guava": "maven",
+    "netty": "maven",
+    "tomcat": "system",
+    "nginx": "system",
+    "apache-http-server": "system",
+    "postgresql": "system",
+    "redis": "system",
 }
 
 
@@ -384,6 +520,8 @@ if __name__ == "__main__":
         "xz-utils", "log4j-core", "openssl", "lodash", "express", "flask",
         "django", "spring-framework", "struts2", "jackson-databind",
         "openssh", "curl", "requests",
+        "pyyaml", "jinja2", "axios", "guava", "netty", "tomcat",
+        "nginx", "apache-http-server", "postgresql", "redis",
     ]
 
     print("Attempting live NVD pull (services.nvd.nist.gov)...")
