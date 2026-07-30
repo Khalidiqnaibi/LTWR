@@ -32,13 +32,24 @@ MIN_PUB_YEAR = 2018
 # pair it finds specifically so a wrong guess is diagnosable from real
 # output, not guessed a third time blind.
 PACKAGE_CPE_HINTS = {
-    "xz-utils": "xz",
+    # xz-utils: bare "xz" matched unrelated same-word products (GNU gzip's
+    # zgrep, and an unrelated Go-language library also named "xz").
+    # "tukaani" is the actual upstream project/vendor name for the C
+    # xz-utils this package means -- cpe:2.3:a:tukaani:xz.
+    "xz-utils": "tukaani xz",
     "log4j-core": "log4j",
     "spring-framework": "spring",
     "struts2": "struts2",
     "express": "express",
     "requests": "requests",
-    "apache-http-server": "httpd",  # Apache's own project name for this is "httpd", not "apache http server"
+    # apache-http-server: bare "httpd" matched unrelated same-word products
+    # (ACME Ultra Mini HTTPd, Jasper httpdx). Vendor-scoping targets
+    # Apache's actual httpd -- cpe:2.3:a:apache:http_server.
+    "apache-http-server": "apache httpd",
+    # guava: bare "guava" pulled in an unrelated hit (Terracotta Quartz
+    # Scheduler) via the fuzzy word-overlap matcher. Vendor-scoping to
+    # cpe:2.3:a:google:guava avoids that.
+    "guava": "google guava",
 }
 
 MAX_PAGES_PER_CPE = 10
@@ -203,7 +214,20 @@ def _is_relevant(product: str, package: str, query_phrase: str) -> bool:
     underscore/space) and accepts a match on: (a) exact normalized
     equality, (b) any shared significant word (len > 3) between the
     product and EITHER the package name or the query phrase, or (c) a
-    substring match tested in BOTH directions, not just one."""
+    substring match tested in BOTH directions, not just one.
+
+    CAUGHT VIA MANUAL SPOT-CHECK, NOT AUTOMATICALLY: this word-overlap
+    heuristic still passes false positives when an unrelated product
+    happens to share one generic word -- confirmed cases: bare "xz" (hint)
+    matched GNU gzip's zgrep and an unrelated Go-language library also
+    named "xz"; bare "httpd" matched "ACME Ultra Mini HTTPd" and "Jasper
+    httpdx" (neither is Apache's httpd); bare "guava" matched Terracotta
+    Quartz Scheduler via an unrelated shared word in its CPE product
+    string. All three were fixed by vendor-scoping PACKAGE_CPE_HINTS
+    (e.g. "google guava", "apache httpd", "tukaani xz") plus the
+    PACKAGE_VENDOR_ALLOWLIST enforced in resolve_cpe_matches() below,
+    which actually guarantees that scoping instead of just hoping the
+    word-overlap heuristic happens to agree with it."""
     product_norm = _normalize(product)
     product_words = set(product_norm.split())
 
@@ -219,6 +243,22 @@ def _is_relevant(product: str, package: str, query_phrase: str) -> bool:
                                     or product_norm.replace(" ", "") in cand_norm.replace(" ", "")):
             return True
     return False
+
+
+# Vendor allowlist for packages where the fuzzy word-overlap check in
+# _is_relevant() was confirmed (by manual spot-check of returned CVE text
+# against its own [Affected packages: ...] field) to admit unrelated
+# same-word products. When a package has an entry here, resolve_cpe_matches
+# requires the CPE vendor token to be in this set -- word-overlap on the
+# product name alone is not sufficient. This is a stronger, more durable
+# guarantee than a better-scoped PACKAGE_CPE_HINTS phrase by itself, since
+# it doesn't depend on no *other* vendor ever using the same generic product
+# word (e.g. some other vendor shipping a product literally called "guava").
+PACKAGE_VENDOR_ALLOWLIST = {
+    "xz-utils": {"tukaani"},
+    "apache-http-server": {"apache"},
+    "guava": {"google"},
+}
 
 
 def resolve_cpe_matches(package: str, hint: str = None, api_key: str = None,
@@ -244,9 +284,11 @@ def resolve_cpe_matches(package: str, hint: str = None, api_key: str = None,
             continue
         pairs.add((vendor, product))
 
+    allowed_vendors = PACKAGE_VENDOR_ALLOWLIST.get(package)
     relevant_pairs = [
         (vendor, product) for vendor, product in sorted(pairs)
         if _is_relevant(product, package, query_phrase)
+        and (allowed_vendors is None or vendor.lower() in allowed_vendors)
     ]
 
     print(f"  CPE dictionary lookup for '{package}' (query: '{query_phrase}'): "
