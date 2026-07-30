@@ -330,6 +330,30 @@ def fetch_cves_for_virtual_match(virtual_match_string: str, api_key: str = None,
     return all_vulns
 
 
+# Manual, per-(package, cve_id) exclusions -- for cases where NVD's own
+# CPE configuration for a CVE genuinely includes this package's
+# vendor:product (so PACKAGE_VENDOR_ALLOWLIST correctly lets it through),
+# but manual review of the CVE's own description confirmed it is about a
+# different tool entirely. This is NOT a correction to our matching logic
+# -- the match is real on NVD's side -- it's an explicit, documented
+# override of NVD's CPE tagging for this one record, kept narrow and
+# auditable rather than silently dropped.
+#
+# CVE-2022-1271 / xz-utils: NVD's CPE configuration for this CVE lists
+# "debian-linux, gzip, jboss-data-grid, xz" as affected products (see the
+# CVE's own [Affected packages: ...] text), so a tukaani/xz vendor match
+# is real. But the CVE description is entirely about GNU gzip's zgrep
+# utility -- xz-utils itself is not the vulnerable component. Likely
+# NVD over-tagged this CPE configuration to cover a packaging bundle
+# (zgrep ships alongside xz in some distributions) rather than the
+# vulnerable code itself. Excluded from xz-utils's ground truth so a
+# query for "vulnerabilities affecting xz-utils" doesn't surface a
+# gzip bug as a top-k result.
+MANUAL_CVE_EXCLUSIONS = {
+    ("xz-utils", "CVE-2022-1271"),
+}
+
+
 def generate_corpus(
     packages: list,
     ecosystem_lookup: dict,
@@ -343,6 +367,7 @@ def generate_corpus(
     docs = []
     ground_truth = {}
     chunk_id = 0
+    n_manually_excluded = 0
 
     for package in packages:
         hint = PACKAGE_CPE_HINTS.get(package)
@@ -374,6 +399,12 @@ def generate_corpus(
                 if not cve_id or cve_id in seen_cve_ids:
                     continue
                 seen_cve_ids.add(cve_id)
+
+                if (package, cve_id) in MANUAL_CVE_EXCLUSIONS:
+                    n_manually_excluded += 1
+                    print(f"    Manually excluding {cve_id} for '{package}' "
+                          f"(see MANUAL_CVE_EXCLUSIONS comment for reasoning).")
+                    continue
 
                 record = build_document_record(chunk_id, cve_item, ecosystem_lookup, package)
                 if record["pub_year"] < MIN_PUB_YEAR:
@@ -480,6 +511,9 @@ def generate_corpus(
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(docs, f, indent=1)
     print(f"Successfully generated {len(docs)} corpus records -> {out_path}")
+    if n_manually_excluded:
+        print(f"  ({n_manually_excluded} record(s) manually excluded via "
+              f"MANUAL_CVE_EXCLUSIONS -- see that dict for reasoning)")
 
     gt_path = str(Path(out_path).parent / "ground_truth.json")
     with open(gt_path, "w", encoding="utf-8") as f:

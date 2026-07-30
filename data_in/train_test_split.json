@@ -6,7 +6,8 @@
   "axios",
   "redis",
   "flask",
-  "pyyaml"
+  "xz-utils",
+  "guava"
  ],
  "test_packages": [
   "openssl",
@@ -16,11 +17,10 @@
   "log4j-core",
   "lodash",
   "spring-framework",
-  "xz-utils",
-  "guava"
+  "pyyaml"
  ],
- "train_cve_count": 369,
- "test_cve_count": 371,
+ "train_cve_count": 371,
+ "test_cve_count": 368,
  "min_cves_per_package_threshold": 2,
  "dropped_packages": {
   "express": 0,
