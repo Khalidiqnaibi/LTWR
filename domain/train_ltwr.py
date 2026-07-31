@@ -98,6 +98,32 @@ def load_ground_truth(path="data_in/ground_truth.json"):
 
 
 def build_pairwise_training_set(pipeline, queries, ground_truth, packages_filter):
+    """
+    an earlier version of this
+    function ONLY formed pairs between two documents that were BOTH
+    already confirmed members of the query's own package's ground truth
+    (the `if cve_id in cve_to_true_rank` filter below used to apply to
+    BOTH pair members). That meant every training pair was, by
+    construction, already package-pure -- rrf_score/bm25_score/dense_score
+    carried zero signal for the comparisons the model was actually fit on
+    (only severity/w2/recency mattered, since true_order ranks by
+    severity-then-recency), so gradient descent correctly learned to zero
+    out retrieval-relevance features entirely. At test time,
+    hybrid_retrieval() searches the WHOLE corpus with no package
+    restriction, so an off-package document CAN leak into a query's
+    candidate pool -- and a model with near-zero rrf/bm25/dense weight has
+    no signal telling it that document doesn't belong, so it ranks purely
+    on severity/recency regardless of package. This is why real_mrr
+    collapsed to ~0.44 (below even plain RRF's ~0.86) despite training
+    pairwise accuracy of 0.92: the model was never given a single training
+    example teaching it "an off-package document should rank below an
+    on-package one."
+
+    FIX: retrieved candidates NOT in the query's package ground truth are
+    no longer discarded -- they're kept as guaranteed-WORSE members of a
+    pair against every genuine ground-truth document retrieved for that
+    query. This directly supplies the missing training signal.
+    """
     pair_features_i, pair_features_j = [], []
     n_queries_used = 0
 
@@ -115,15 +141,24 @@ def build_pairwise_training_set(pipeline, queries, ground_truth, packages_filter
         idx_to_cve = {idx: pipeline.corpus[idx].cve_id for idx in feats}
         cve_to_true_rank = {cve_id: r for r, cve_id in enumerate(true_order)}
 
+        # Ground-truth-ranked candidates (in-package, real relevance order).
         retrieved_with_rank = [
             (idx, cve_to_true_rank[cve_id])
             for idx, cve_id in idx_to_cve.items()
             if cve_id in cve_to_true_rank
         ]
-        if len(retrieved_with_rank) < 2:
-            continue
+        # NEW: off-package candidates that were retrieved but are NOT in
+        # this package's ground truth at all -- these are the negative
+        # examples the model needs to see, not discard.
+        off_package_idxs = [idx for idx, cve_id in idx_to_cve.items() if cve_id not in cve_to_true_rank]
+
+        if len(retrieved_with_rank) < 1:
+            continue  # need at least one real ground-truth hit to anchor any pair against
 
         n_queries_used += 1
+
+        # Original pairs: better-ranked-in-ground-truth beats worse-ranked
+        # (only meaningful if >=2 ground-truth hits were retrieved).
         for a in range(len(retrieved_with_rank)):
             for b in range(len(retrieved_with_rank)):
                 idx_i, rank_i = retrieved_with_rank[a]
@@ -131,6 +166,13 @@ def build_pairwise_training_set(pipeline, queries, ground_truth, packages_filter
                 if rank_i < rank_j:
                     pair_features_i.append(feats[idx_i])
                     pair_features_j.append(feats[idx_j])
+
+        # NEW: every in-package ground-truth hit beats every off-package
+        # candidate that was retrieved alongside it for this query.
+        for idx_i, _rank_i in retrieved_with_rank:
+            for idx_j in off_package_idxs:
+                pair_features_i.append(feats[idx_i])
+                pair_features_j.append(feats[idx_j])
 
     return np.array(pair_features_i), np.array(pair_features_j), n_queries_used
 
