@@ -1,5 +1,5 @@
 """
-run_experiment.py -- runs all three arms (RRF, static TWR, LTWR) on the
+run_experiment.py .. runs all three arms (RRF, static TWR, LTWR) on the
 PACKAGE-DISJOINT test-package queries only. Reports:
 
   - Gain-based metrics (nDCG@3 severity, nDCG@3 vuln_status, MRR-authoritative)
@@ -117,7 +117,7 @@ def main():
     model_path = Path("domain/ltwr_cve_model.json")
     if not model_path.exists():
         raise FileNotFoundError(
-            f"{model_path} not found -- run train_ltwr.py to export the JSON model first."
+            f"{model_path} not found .. run train_ltwr.py to export the JSON model first."
         )
 
     pipeline = CveTWRPipeline(corpus, ltwr_model_path=model_path)

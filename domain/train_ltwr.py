@@ -1,11 +1,11 @@
 """
-train_ltwr.py -- CVE/supply-chain-security analogue of
+train_ltwr.py .. CVE/supply-chain-security analogue of
 domain/train_ltwr.py (academic) and business_domain/train_ltwr.py (SEC),
 BUT with the key architectural fix those domains could not make without
 new annotation infrastructure: this module fits beta/gamma/delta against
 REAL per-query top-k relevance judgments (data_in/ground_truth.json,
 produced by cve_corpus_gen.py from NVD's own CPE-match linkage), using a
-pairwise ranking loss -- not a regression against a self-declared scalar
+pairwise ranking loss .. not a regression against a self-declared scalar
 label.
 """
 import json
@@ -35,7 +35,7 @@ def load_train_test_split(path="data_in/train_test_split.json"):
         split = json.load(open(path))
         return split["train_packages"], split["test_packages"]
     except FileNotFoundError:
-        print(f"*** WARNING: {path} not found -- falling back to a "
+        print(f"*** WARNING: {path} not found .. falling back to a "
               f"hardcoded train/test split. ***")
         return _FALLBACK_TRAIN_PACKAGES, _FALLBACK_TEST_PACKAGES
 
@@ -173,7 +173,7 @@ def main():
         for feat in FEATURE_NAMES:
             print(f"{feat:15s} : {coefficients[feat]:+.6f}")
 
-        # ---> REPLACE PICKLE SAVE WITH JSON SAVE <---
+        # ..-> REPLACE PICKLE SAVE WITH JSON SAVE <..-
         output_path = "domain/ltwr_cve_model.json"
         Path(output_path).parent.mkdir(parents=True, exist_ok=True)
         
@@ -193,7 +193,7 @@ def main():
         for feat in FEATURE_NAMES:
             print(f"{feat:15s} : {ridge_coefficients[feat]:+.6f}")
 
-        # ---> REPLACE RIDGE PICKLE SAVE WITH JSON SAVE <---
+        # ..-> REPLACE RIDGE PICKLE SAVE WITH JSON SAVE <..-
         ablation_path = "domain/ltwr_cve_model_ablation_ridge.json"
         ablation_payload = {
             "coef": [float(w) for w in ridge_model.coef_],

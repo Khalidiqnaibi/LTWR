@@ -1,32 +1,20 @@
 """
-retrieval.py -- CVE/supply-chain-security analogue of
+retrieval.py .. CVE/supply-chain-security analogue of
 pipeline/academic_retrieval.py and pipeline/business_retrieval.py. Same
 three-arm design:
 
-  Arm A: RRF   -- unweighted reciprocal-rank fusion (baseline)
-  Arm B: Static TWR -- hand-set alpha/beta/gamma/delta (Eq. 2, as specified:
+  Arm A: RRF   .. unweighted reciprocal-rank fusion (baseline)
+  Arm B: Static TWR .. hand-set alpha/beta/gamma/delta (Eq. 2, as specified:
          w1=severity, w2=cvss_version/scoring-methodology-currency,
          w3=recency decay)
-  Arm C: LTWR (Learned Trust-Weighted Ranking) -- learned fusion weights
+  Arm C: LTWR (Learned Trust-Weighted Ranking) .. learned fusion weights
          over the SAME closed, scalar feature set as static TWR (rrf score,
          bm25 score, dense score, w1, w2, w3). No document text is a
          feature, no new embeddings, no cross-encoder pass.
 
 Both the retrieval stage (BM25 + dense) and the candidate pool are IDENTICAL
 across all three arms, so any measured difference is attributable to the
-fusion step alone -- matching Section 3.1 of the TWR paper exactly.
-
-w2 NOTE: w2 was originally vuln_status (NVD review-status), but that was
-confirmed near-constant (~100% Analyzed/Modified) across every package in
-this corpus -- no discriminative signal for static TWR's gamma term or
-for LTWR's learned coefficient. w2 was swapped to cvss_version (which
-CVSS scoring methodology -- v3.1/v3.0/v2 -- the CVE was scored under),
-verified to have real spread (90.1%/9.9% v3.1/v3.0 overall, non-
-degenerate on both sides of the train/test split). See domain/gains.py's
-W2_SIGNAL flag and module docstring for the full rationale; this pipeline
-calls domain.gains.w2_weight(doc), which dispatches to whichever signal
-W2_SIGNAL selects, so this file doesn't need to change again if that
-choice is revisited.
+fusion step alone .. matching Section 3.1 of the TWR paper exactly.
 """
 import re
 import time
@@ -123,12 +111,12 @@ class CveTWRPipeline:
                 rrf_scores[doc_idx] = rrf_scores.get(doc_idx, 0.0) + alpha * contrib
         return rrf_scores
 
-    # ---- Arm A: RRF -------------------------------------------------
+    #  Arm A: RRF 
     def rrf_only(self, bm25_ranking, faiss_ranking) -> List[int]:
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)
         return sorted(rrf_scores.keys(), key=lambda x: rrf_scores[x], reverse=True)
 
-    # ---- Arm B: static TWR (Eq. 2, exactly as specified) ------------
+    #  Arm B: static TWR (Eq. 2, exactly as specified) 
     def static_twr(self, bm25_ranking, faiss_ranking,
                     alpha=1.0, beta=0.6, gamma=0.6, delta=0.3) -> List[int]:
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking, alpha=1.0)
@@ -140,7 +128,7 @@ class CveTWRPipeline:
             twr_scores[doc_idx] = alpha * rrf_norm_score + beta * w1 + gamma * w2 + delta * w3
         return sorted(twr_scores.keys(), key=lambda x: twr_scores[x], reverse=True)
 
-    # ---- Feature vector shared by static TWR and LTWR ------------
+    #  Feature vector shared by static TWR and LTWR 
     def _feature_vector(self, doc_idx, rrf_score, bm25_score, faiss_score_lookup):
         doc = self.corpus[doc_idx]
         w1, w2, w3 = self.calculate_metadata_components(doc)
@@ -171,11 +159,11 @@ class CveTWRPipeline:
             feats[doc_idx] = self._feature_vector(doc_idx, rrf, bm25_norm(doc_idx), faiss_score_lookup)
         return feats
 
-    # ---- Arm C: LTWR (learned scalar-feature fusion) -------------
+    #  Arm C: LTWR (learned scalar-feature fusion) 
     def ltwr(self, bm25_ranking: List[int], bm25_scores: dict, faiss_ranking: List[int]) -> List[int]:
         """Pure Python scalar LTWR ranking using JSON-loaded weights (no scikit-learn / no fallback)."""
         if not hasattr(self, "ltwr_coef") or self.ltwr_coef is None:
-            raise RuntimeError("LTWR JSON model not loaded -- call load_ltwr_model() first.")
+            raise RuntimeError("LTWR JSON model not loaded .. call load_ltwr_model() first.")
 
         # 1. Compute baseline RRF scores
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)

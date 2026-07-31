@@ -4,7 +4,7 @@
 
 ---
 
-## 📌 Overview
+##  Overview
 
 Standard hybrid retrieval pipelines combine sparse lexical search (BM25) and dense vector search (FAISS, Sentence-BERT) using Reciprocal Rank Fusion (RRF). While highly effective for topical relevance, **similarity-based rankers are mathematically blind to institutional authority and evidence quality**.
 
@@ -12,7 +12,7 @@ This creates the **Semantic Trap**: a low-evidence, unverified source (e.g., a s
 
 **LTWR (Learned Trust-Weighted Retrieval)** solves this by folding domain-specific structural trust metadata—such as evidence hierarchies, journal quartiles, authority levels, and temporal decay—directly into the rank fusion arithmetic.
 
-```
+``` bash
 [BM25 + Dense Retrieval] ──> [Top-N Candidates] ──> [LTWR Zero-Latency Fusion] ──> [Ranked Output]
                                                            │
                                             ┌──────────────┴──────────────┐
@@ -24,7 +24,7 @@ This creates the **Semantic Trap**: a low-evidence, unverified source (e.g., a s
 
 ```
 
-### 🔑 Key Advantages
+###  Key Advantages
 
 * **$O(1)$ Zero Runtime Latency:** Operates entirely at the fusion layer over retrieved candidates. Requires no neural re-ranking forward passes, no cross-encoders, and zero GPU overhead.
 * **Offline LTR Compiler Paradigm:** Uses Learning-to-Rank (LTR) as an *offline compiler* to discover optimal fusion coefficients ($\alpha, \beta, \gamma, \delta$), compiling them into static parameters applied instantaneously at runtime.
@@ -33,7 +33,7 @@ This creates the **Semantic Trap**: a low-evidence, unverified source (e.g., a s
 
 ---
 
-## 📐 Mathematical Formulation
+##  Mathematical Formulation
 
 ### Additive Trust Score
 
@@ -61,7 +61,7 @@ $$w_3(d) = e^{-\lambda (Y_{\text{current}} - Y_{\text{pub}}(d))}$$
 
 ---
 
-## 📊 Empirical Evaluation & Benchmark Results
+## Empirical Evaluation & Benchmark Results
 
 LTWR was evaluated against standard Reciprocal Rank Fusion (RRF) across **170 paired gold-standard clinical queries** and **cybersecurity CVE threat databases**.
 
@@ -78,7 +78,7 @@ LTWR was evaluated against standard Reciprocal Rank Fusion (RRF) across **170 pa
 
 ---
 
-## 🚀 Quickstart
+## Quickstart
 
 ### 1. Installation
 
@@ -145,34 +145,9 @@ print("Learned Static Parameters:", optimal_params)
 # Output: {'alpha': 0.85, 'beta': 0.62, 'gamma': 0.48, 'delta': 0.25}
 
 ```
-
 ---
 
-## 📂 Repository Structure
-
-```
-LTWR/
-├── ltwr/
-│   ├── __init__.py
-│   ├── ranker.py           # Core TWR zero-overhead fusion engine
-│   ├── compiler.py         # Offline Learning-to-Rank parameter optimizer
-│   ├── metadata.py         # Metadata normalization and weight mappings
-│   └── metrics.py          # Custom IR evaluation metrics (Evidence nDCG, MRR)
-├── benchmarks/
-│   ├── clinical_cte/       # Clinical evaluation suite (170 queries)
-│   └── cve_cybersecurity/  # CVE threat intelligence evaluation suite
-├── experiments/
-│   ├── run_eval.py         # Reproducible benchmark runner with Holm-Bonferroni tests
-│   └── ablation_study.py   # Dimensional ablation scripts
-├── paper/                  # Paper manuscript and draft assets
-├── requirements.txt
-└── README.md
-
-```
-
----
-
-## 🛠️ Reproducibility
+##  Reproducibility
 
 To execute the complete evaluation pipeline and recreate all figures and statistical tests reported in the paper:
 
@@ -185,7 +160,7 @@ Every execution logs the raw sparse rank, dense rank, fused rank, and structured
 
 ---
 
-## 📜 Citation
+##  Citation
 
 If you use **LTWR** or **TWR** in your research or production RAG systems, please cite:
 
@@ -201,6 +176,6 @@ If you use **LTWR** or **TWR** in your research or production RAG systems, pleas
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](https://www.google.com/search?q=LICENSE) file for details.
