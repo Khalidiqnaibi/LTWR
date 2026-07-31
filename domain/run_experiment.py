@@ -30,7 +30,7 @@ from statsmodels.stats.multitest import multipletests
 
 from infra.cve_document import CveDocument
 from pipeline.retrieval import CveTWRPipeline
-from domain.gains import severity_gain, vuln_status_gain, is_authoritative
+from domain.gains import severity_gain, w2_gain, is_authoritative
 from domain.train_ltwr import TEST_PACKAGES, load_corpus, load_ground_truth
 # Explicit import so a missing/renamed model_utils.py fails here with a clear
 # ImportError, rather than as a confusing AttributeError inside pickle.load()
@@ -62,7 +62,7 @@ def real_ndcg_at_k(results, true_order: list, k=3):
     -- i.e. a real graded relevance score derived directly from NVD's own
     CPE-matched ordering, not from this paper's w1/w2/w3 scoring. This is
     the metric that is NOT circular, unlike a metric built from
-    severity_gain/vuln_status_gain (those measure 'does the ranking
+    severity_gain/w2_gain (those measure 'does the ranking
     reflect the paper's own weights,' which was exactly the problem
     identified earlier in this project)."""
     cve_to_true_rank = {cve_id: r for r, cve_id in enumerate(true_order)}
@@ -95,10 +95,10 @@ def real_mrr(results, true_order: list):
 
 def query_metrics(results, true_order: list):
     sev_gains = [severity_gain(r["severity"]) for r in results]
-    status_gains = [vuln_status_gain(r["vuln_status"]) for r in results]
+    status_gains = [w2_gain(r) for r in results]  # w2 = cvss_version currently; see domain/gains.py W2_SIGNAL
     return {
         "ndcg3_severity": ndcg_at_k(sev_gains, 3),
-        "ndcg3_vuln_status": ndcg_at_k(status_gains, 3),
+        "ndcg3_w2": ndcg_at_k(status_gains, 3),  # w2 = cvss_version (see domain/gains.py W2_SIGNAL)
         "mrr_authoritative": mrr_authoritative(results),
         "real_ndcg3": real_ndcg_at_k(results, true_order, 3),
         "real_mrr": real_mrr(results, true_order),
@@ -132,7 +132,7 @@ def paired_test(a, b, label):
             "test": test_name, "cliffs_delta": float(delta)}
 
 
-METRICS = ["ndcg3_severity", "ndcg3_vuln_status", "mrr_authoritative", "real_ndcg3", "real_mrr"]
+METRICS = ["ndcg3_severity", "ndcg3_w2", "mrr_authoritative", "real_ndcg3", "real_mrr"]
 
 
 def main():
@@ -222,7 +222,8 @@ def main():
 
     print("\nNOTE: 'real_ndcg3' and 'real_mrr' are the metrics validated "
           "against external ground truth (NVD's own CPE-match linkage). "
-          "'ndcg3_severity', 'ndcg3_vuln_status', and 'mrr_authoritative' "
+          "'ndcg3_severity', 'ndcg3_w2' (w2 = cvss_version, see "
+          "domain/gains.py's W2_SIGNAL), and 'mrr_authoritative' "
           "are gain-based metrics kept for comparability with the "
           "clinical/academic/SEC domains' metric family -- they measure "
           "agreement with this paper's own w1/w2/w3 scheme, not with "

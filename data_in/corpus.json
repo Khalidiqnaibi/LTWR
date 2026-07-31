@@ -6,6 +6,7 @@
   "cve_id": "CVE-2020-22916",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "xz-utils",
   "ecosystem": "system"
@@ -17,6 +18,7 @@
   "cve_id": "CVE-2024-3094",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "xz-utils",
   "ecosystem": "system"
@@ -28,6 +30,7 @@
   "cve_id": "CVE-2026-34743",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "xz-utils",
   "ecosystem": "system"
@@ -39,6 +42,7 @@
   "cve_id": "CVE-2019-17571",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -50,6 +54,7 @@
   "cve_id": "CVE-2020-9488",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -61,6 +66,7 @@
   "cve_id": "CVE-2020-9493",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -72,6 +78,7 @@
   "cve_id": "CVE-2021-44228",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -83,6 +90,7 @@
   "cve_id": "CVE-2021-4104",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -94,6 +102,7 @@
   "cve_id": "CVE-2021-45046",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -105,6 +114,7 @@
   "cve_id": "CVE-2021-45105",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -116,6 +126,7 @@
   "cve_id": "CVE-2021-44832",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -127,6 +138,7 @@
   "cve_id": "CVE-2022-23302",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -138,6 +150,7 @@
   "cve_id": "CVE-2022-23305",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -149,6 +162,7 @@
   "cve_id": "CVE-2022-23307",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -160,6 +174,7 @@
   "cve_id": "CVE-2023-26464",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -171,6 +186,7 @@
   "cve_id": "CVE-2025-68161",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -182,6 +198,7 @@
   "cve_id": "CVE-2026-34477",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -193,6 +210,7 @@
   "cve_id": "CVE-2026-34478",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -204,6 +222,7 @@
   "cve_id": "CVE-2026-34479",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -215,6 +234,7 @@
   "cve_id": "CVE-2026-34480",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -226,6 +246,7 @@
   "cve_id": "CVE-2026-34481",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -237,6 +258,7 @@
   "cve_id": "CVE-2026-49844",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "log4j-core",
   "ecosystem": "maven"
@@ -248,6 +270,7 @@
   "cve_id": "CVE-2018-0733",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -259,6 +282,7 @@
   "cve_id": "CVE-2018-0739",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -270,6 +294,7 @@
   "cve_id": "CVE-2018-0737",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -281,6 +306,7 @@
   "cve_id": "CVE-2018-0732",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -292,6 +318,7 @@
   "cve_id": "CVE-2016-7056",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -303,6 +330,7 @@
   "cve_id": "CVE-2018-0735",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -314,6 +342,7 @@
   "cve_id": "CVE-2018-0734",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -325,6 +354,7 @@
   "cve_id": "CVE-2018-5407",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssl",
   "ecosystem": "system"
@@ -336,6 +366,7 @@
   "cve_id": "CVE-2019-0190",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -347,6 +378,7 @@
   "cve_id": "CVE-2019-1559",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -358,6 +390,7 @@
   "cve_id": "CVE-2019-1543",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -369,6 +402,7 @@
   "cve_id": "CVE-2019-1552",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -380,6 +414,7 @@
   "cve_id": "CVE-2019-1547",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -391,6 +426,7 @@
   "cve_id": "CVE-2019-1549",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -402,6 +438,7 @@
   "cve_id": "CVE-2019-1563",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -413,6 +450,7 @@
   "cve_id": "CVE-2019-1551",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssl",
   "ecosystem": "system"
@@ -424,6 +462,7 @@
   "cve_id": "CVE-2020-7041",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -435,6 +474,7 @@
   "cve_id": "CVE-2020-7042",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -446,6 +486,7 @@
   "cve_id": "CVE-2020-7043",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -457,6 +498,7 @@
   "cve_id": "CVE-2020-1967",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -468,6 +510,7 @@
   "cve_id": "CVE-2020-1968",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -479,6 +522,7 @@
   "cve_id": "CVE-2020-1971",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssl",
   "ecosystem": "system"
@@ -490,6 +534,7 @@
   "cve_id": "CVE-2021-23839",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -501,6 +546,7 @@
   "cve_id": "CVE-2021-23840",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -512,6 +558,7 @@
   "cve_id": "CVE-2021-23841",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -523,6 +570,7 @@
   "cve_id": "CVE-2021-3449",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -534,6 +582,7 @@
   "cve_id": "CVE-2021-3450",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -545,6 +594,7 @@
   "cve_id": "CVE-2021-3711",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -556,6 +606,7 @@
   "cve_id": "CVE-2021-3712",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -567,6 +618,7 @@
   "cve_id": "CVE-2021-4044",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssl",
   "ecosystem": "system"
@@ -578,6 +630,7 @@
   "cve_id": "CVE-2021-4160",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -589,6 +642,7 @@
   "cve_id": "CVE-2022-0778",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -600,6 +654,7 @@
   "cve_id": "CVE-2022-1292",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -611,6 +666,7 @@
   "cve_id": "CVE-2022-1343",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -622,6 +678,7 @@
   "cve_id": "CVE-2022-1434",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -633,6 +690,7 @@
   "cve_id": "CVE-2022-1473",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -644,6 +702,7 @@
   "cve_id": "CVE-2022-2068",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -655,6 +714,7 @@
   "cve_id": "CVE-2022-2274",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -666,6 +726,7 @@
   "cve_id": "CVE-2022-2097",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -677,6 +738,7 @@
   "cve_id": "CVE-2022-3358",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -688,6 +750,7 @@
   "cve_id": "CVE-2022-3602",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -699,6 +762,7 @@
   "cve_id": "CVE-2022-3786",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -710,6 +774,7 @@
   "cve_id": "CVE-2022-3996",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssl",
   "ecosystem": "system"
@@ -721,6 +786,7 @@
   "cve_id": "CVE-2022-4304",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -732,6 +798,7 @@
   "cve_id": "CVE-2022-4450",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -743,6 +810,7 @@
   "cve_id": "CVE-2023-0215",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -754,6 +822,7 @@
   "cve_id": "CVE-2023-0216",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -765,6 +834,7 @@
   "cve_id": "CVE-2023-0217",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -776,6 +846,7 @@
   "cve_id": "CVE-2023-0286",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -787,6 +858,7 @@
   "cve_id": "CVE-2023-0401",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -798,6 +870,7 @@
   "cve_id": "CVE-2022-4203",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -809,6 +882,7 @@
   "cve_id": "CVE-2023-0464",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -820,6 +894,7 @@
   "cve_id": "CVE-2023-0465",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -831,6 +906,7 @@
   "cve_id": "CVE-2023-0466",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -842,6 +918,7 @@
   "cve_id": "CVE-2023-1255",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -853,6 +930,7 @@
   "cve_id": "CVE-2023-2650",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -864,6 +942,7 @@
   "cve_id": "CVE-2023-2975",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -875,6 +954,7 @@
   "cve_id": "CVE-2023-3446",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -886,6 +966,7 @@
   "cve_id": "CVE-2023-3817",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -897,6 +978,7 @@
   "cve_id": "CVE-2023-4807",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -908,6 +990,7 @@
   "cve_id": "CVE-2023-5363",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -919,6 +1002,7 @@
   "cve_id": "CVE-2023-5678",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssl",
   "ecosystem": "system"
@@ -930,6 +1014,7 @@
   "cve_id": "CVE-2023-6129",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "openssl",
   "ecosystem": "system"
@@ -941,6 +1026,7 @@
   "cve_id": "CVE-2024-0727",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "openssl",
   "ecosystem": "system"
@@ -952,6 +1038,7 @@
   "cve_id": "CVE-2024-6119",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "openssl",
   "ecosystem": "system"
@@ -963,6 +1050,7 @@
   "cve_id": "CVE-2025-4575",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "openssl",
   "ecosystem": "system"
@@ -974,6 +1062,7 @@
   "cve_id": "CVE-2025-11187",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -985,6 +1074,7 @@
   "cve_id": "CVE-2025-15467",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -996,6 +1086,7 @@
   "cve_id": "CVE-2025-15468",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1007,6 +1098,7 @@
   "cve_id": "CVE-2025-15469",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1018,6 +1110,7 @@
   "cve_id": "CVE-2025-66199",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1029,6 +1122,7 @@
   "cve_id": "CVE-2025-68160",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1040,6 +1134,7 @@
   "cve_id": "CVE-2025-69418",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1051,6 +1146,7 @@
   "cve_id": "CVE-2025-69419",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1062,6 +1158,7 @@
   "cve_id": "CVE-2025-69420",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1073,6 +1170,7 @@
   "cve_id": "CVE-2025-69421",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1084,6 +1182,7 @@
   "cve_id": "CVE-2026-22795",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1095,6 +1194,7 @@
   "cve_id": "CVE-2026-22796",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1106,6 +1206,7 @@
   "cve_id": "CVE-2026-2673",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1117,6 +1218,7 @@
   "cve_id": "CVE-2026-28386",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1128,6 +1230,7 @@
   "cve_id": "CVE-2026-28387",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1139,6 +1242,7 @@
   "cve_id": "CVE-2026-28388",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1150,6 +1254,7 @@
   "cve_id": "CVE-2026-28389",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1161,6 +1266,7 @@
   "cve_id": "CVE-2026-28390",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1172,6 +1278,7 @@
   "cve_id": "CVE-2026-31789",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1183,6 +1290,7 @@
   "cve_id": "CVE-2026-31790",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1194,6 +1302,7 @@
   "cve_id": "CVE-2026-34180",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1205,6 +1314,7 @@
   "cve_id": "CVE-2026-34181",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1216,6 +1326,7 @@
   "cve_id": "CVE-2026-34182",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1227,6 +1338,7 @@
   "cve_id": "CVE-2026-34183",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1238,6 +1350,7 @@
   "cve_id": "CVE-2026-35188",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1249,6 +1362,7 @@
   "cve_id": "CVE-2026-42764",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1260,6 +1374,7 @@
   "cve_id": "CVE-2026-42765",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1271,6 +1386,7 @@
   "cve_id": "CVE-2026-42766",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1282,6 +1398,7 @@
   "cve_id": "CVE-2026-42767",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1293,6 +1410,7 @@
   "cve_id": "CVE-2026-42768",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1304,6 +1422,7 @@
   "cve_id": "CVE-2026-42769",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1315,6 +1434,7 @@
   "cve_id": "CVE-2026-42770",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1326,6 +1446,7 @@
   "cve_id": "CVE-2026-42771",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1337,6 +1458,7 @@
   "cve_id": "CVE-2026-45445",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1348,6 +1470,7 @@
   "cve_id": "CVE-2026-45446",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1359,6 +1482,7 @@
   "cve_id": "CVE-2026-45447",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1370,6 +1494,7 @@
   "cve_id": "CVE-2026-7383",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1381,6 +1506,7 @@
   "cve_id": "CVE-2026-9076",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssl",
   "ecosystem": "system"
@@ -1392,6 +1518,7 @@
   "cve_id": "CVE-2018-3721",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1403,6 +1530,7 @@
   "cve_id": "CVE-2018-16487",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1414,6 +1542,7 @@
   "cve_id": "CVE-2019-1010266",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1425,6 +1554,7 @@
   "cve_id": "CVE-2019-10744",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1436,6 +1566,7 @@
   "cve_id": "CVE-2020-8203",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1447,6 +1578,7 @@
   "cve_id": "CVE-2020-28500",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1458,6 +1590,7 @@
   "cve_id": "CVE-2021-23337",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1469,6 +1602,7 @@
   "cve_id": "CVE-2025-13465",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1480,6 +1614,7 @@
   "cve_id": "CVE-2026-2950",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1491,6 +1626,7 @@
   "cve_id": "CVE-2026-4800",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "lodash",
   "ecosystem": "npm"
@@ -1502,6 +1638,7 @@
   "cve_id": "CVE-2018-16516",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1513,6 +1650,7 @@
   "cve_id": "CVE-2020-25032",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1524,6 +1662,7 @@
   "cve_id": "CVE-2024-6839",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1535,6 +1674,7 @@
   "cve_id": "CVE-2024-6844",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2025,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1546,6 +1686,7 @@
   "cve_id": "CVE-2024-6866",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1557,6 +1698,7 @@
   "cve_id": "CVE-2018-1000656",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1568,6 +1710,7 @@
   "cve_id": "CVE-2019-1010083",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1579,6 +1722,7 @@
   "cve_id": "CVE-2023-30861",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1590,6 +1734,7 @@
   "cve_id": "CVE-2026-27205",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "flask",
   "ecosystem": "pypi"
@@ -1601,6 +1746,7 @@
   "cve_id": "CVE-2018-6188",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "django",
   "ecosystem": "pypi"
@@ -1612,6 +1758,7 @@
   "cve_id": "CVE-2018-7536",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "django",
   "ecosystem": "pypi"
@@ -1623,6 +1770,7 @@
   "cve_id": "CVE-2018-7537",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "django",
   "ecosystem": "pypi"
@@ -1634,6 +1782,7 @@
   "cve_id": "CVE-2018-14574",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "django",
   "ecosystem": "pypi"
@@ -1645,6 +1794,7 @@
   "cve_id": "CVE-2018-16984",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "django",
   "ecosystem": "pypi"
@@ -1656,6 +1806,7 @@
   "cve_id": "CVE-2019-3498",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1667,6 +1818,7 @@
   "cve_id": "CVE-2019-6975",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1678,6 +1830,7 @@
   "cve_id": "CVE-2019-12308",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1689,6 +1842,7 @@
   "cve_id": "CVE-2019-12781",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1700,6 +1854,7 @@
   "cve_id": "CVE-2019-14232",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1711,6 +1866,7 @@
   "cve_id": "CVE-2019-14233",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1722,6 +1878,7 @@
   "cve_id": "CVE-2019-14235",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1733,6 +1890,7 @@
   "cve_id": "CVE-2019-14234",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1744,6 +1902,7 @@
   "cve_id": "CVE-2019-19118",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1755,6 +1914,7 @@
   "cve_id": "CVE-2019-19844",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "django",
   "ecosystem": "pypi"
@@ -1766,6 +1926,7 @@
   "cve_id": "CVE-2020-7471",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1777,6 +1938,7 @@
   "cve_id": "CVE-2020-9402",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1788,6 +1950,7 @@
   "cve_id": "CVE-2020-13254",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1799,6 +1962,7 @@
   "cve_id": "CVE-2020-13596",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1810,6 +1974,7 @@
   "cve_id": "CVE-2020-24583",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1821,6 +1986,7 @@
   "cve_id": "CVE-2020-24584",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "django",
   "ecosystem": "pypi"
@@ -1832,6 +1998,7 @@
   "cve_id": "CVE-2021-3281",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1843,6 +2010,7 @@
   "cve_id": "CVE-2021-23336",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1854,6 +2022,7 @@
   "cve_id": "CVE-2021-28658",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1865,6 +2034,7 @@
   "cve_id": "CVE-2021-31542",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1876,6 +2046,7 @@
   "cve_id": "CVE-2021-32052",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1887,6 +2058,7 @@
   "cve_id": "CVE-2021-33203",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1898,6 +2070,7 @@
   "cve_id": "CVE-2021-33571",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1909,6 +2082,7 @@
   "cve_id": "CVE-2021-35042",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1920,6 +2094,7 @@
   "cve_id": "CVE-2021-44420",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "django",
   "ecosystem": "pypi"
@@ -1931,6 +2106,7 @@
   "cve_id": "CVE-2021-45115",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1942,6 +2118,7 @@
   "cve_id": "CVE-2021-45116",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1953,6 +2130,7 @@
   "cve_id": "CVE-2021-45452",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1964,6 +2142,7 @@
   "cve_id": "CVE-2022-22818",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1975,6 +2154,7 @@
   "cve_id": "CVE-2022-23833",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1986,6 +2166,7 @@
   "cve_id": "CVE-2022-28346",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -1997,6 +2178,7 @@
   "cve_id": "CVE-2022-28347",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -2008,6 +2190,7 @@
   "cve_id": "CVE-2022-34265",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -2019,6 +2202,7 @@
   "cve_id": "CVE-2022-36359",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -2030,6 +2214,7 @@
   "cve_id": "CVE-2022-41323",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "django",
   "ecosystem": "pypi"
@@ -2041,6 +2226,7 @@
   "cve_id": "CVE-2023-23969",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2052,6 +2238,7 @@
   "cve_id": "CVE-2023-24580",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2063,6 +2250,7 @@
   "cve_id": "CVE-2023-31047",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2074,6 +2262,7 @@
   "cve_id": "CVE-2023-36053",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2085,6 +2274,7 @@
   "cve_id": "CVE-2023-46695",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2096,6 +2286,7 @@
   "cve_id": "CVE-2023-41164",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2107,6 +2298,7 @@
   "cve_id": "CVE-2023-43665",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "django",
   "ecosystem": "pypi"
@@ -2118,6 +2310,7 @@
   "cve_id": "CVE-2024-24680",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2129,6 +2322,7 @@
   "cve_id": "CVE-2024-27351",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2140,6 +2334,7 @@
   "cve_id": "CVE-2024-38875",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2151,6 +2346,7 @@
   "cve_id": "CVE-2024-39329",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2162,6 +2358,7 @@
   "cve_id": "CVE-2024-39330",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2173,6 +2370,7 @@
   "cve_id": "CVE-2024-39614",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2184,6 +2382,7 @@
   "cve_id": "CVE-2024-41989",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2195,6 +2394,7 @@
   "cve_id": "CVE-2024-41990",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2206,6 +2406,7 @@
   "cve_id": "CVE-2024-41991",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2217,6 +2418,7 @@
   "cve_id": "CVE-2024-42005",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2228,6 +2430,7 @@
   "cve_id": "CVE-2024-45230",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2239,6 +2442,7 @@
   "cve_id": "CVE-2024-45231",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2250,6 +2454,7 @@
   "cve_id": "CVE-2024-53907",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2261,6 +2466,7 @@
   "cve_id": "CVE-2024-53908",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "django",
   "ecosystem": "pypi"
@@ -2272,6 +2478,7 @@
   "cve_id": "CVE-2024-56374",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2283,6 +2490,7 @@
   "cve_id": "CVE-2025-26699",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2294,6 +2502,7 @@
   "cve_id": "CVE-2025-27556",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2305,6 +2514,7 @@
   "cve_id": "CVE-2025-32873",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2316,6 +2526,7 @@
   "cve_id": "CVE-2025-48432",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2327,6 +2538,7 @@
   "cve_id": "CVE-2025-57833",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2338,6 +2550,7 @@
   "cve_id": "CVE-2025-59681",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2349,6 +2562,7 @@
   "cve_id": "CVE-2025-59682",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2360,6 +2574,7 @@
   "cve_id": "CVE-2025-64458",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2371,6 +2586,7 @@
   "cve_id": "CVE-2025-64459",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2382,6 +2598,7 @@
   "cve_id": "CVE-2025-13372",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2393,6 +2610,7 @@
   "cve_id": "CVE-2025-64460",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "django",
   "ecosystem": "pypi"
@@ -2404,6 +2622,7 @@
   "cve_id": "CVE-2025-13473",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2415,6 +2634,7 @@
   "cve_id": "CVE-2025-14550",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2426,6 +2646,7 @@
   "cve_id": "CVE-2026-1207",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2437,6 +2658,7 @@
   "cve_id": "CVE-2026-1285",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2448,6 +2670,7 @@
   "cve_id": "CVE-2026-1287",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2459,6 +2682,7 @@
   "cve_id": "CVE-2026-1312",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2470,6 +2694,7 @@
   "cve_id": "CVE-2026-25673",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2481,6 +2706,7 @@
   "cve_id": "CVE-2026-25674",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2492,6 +2718,7 @@
   "cve_id": "CVE-2026-33033",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2503,6 +2730,7 @@
   "cve_id": "CVE-2026-33034",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2514,6 +2742,7 @@
   "cve_id": "CVE-2026-3902",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2525,6 +2754,7 @@
   "cve_id": "CVE-2026-4277",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2536,6 +2766,7 @@
   "cve_id": "CVE-2026-4292",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2547,6 +2778,7 @@
   "cve_id": "CVE-2026-35192",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2558,6 +2790,7 @@
   "cve_id": "CVE-2026-5766",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2569,6 +2802,7 @@
   "cve_id": "CVE-2026-6907",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2580,6 +2814,7 @@
   "cve_id": "CVE-2026-35193",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2591,6 +2826,7 @@
   "cve_id": "CVE-2026-48587",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2602,6 +2838,7 @@
   "cve_id": "CVE-2026-6873",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2613,6 +2850,7 @@
   "cve_id": "CVE-2026-7666",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2624,6 +2862,7 @@
   "cve_id": "CVE-2026-8404",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2635,6 +2874,7 @@
   "cve_id": "CVE-2026-48588",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2646,6 +2886,7 @@
   "cve_id": "CVE-2026-53877",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2657,6 +2898,7 @@
   "cve_id": "CVE-2026-53878",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "django",
   "ecosystem": "pypi"
@@ -2668,6 +2910,7 @@
   "cve_id": "CVE-2022-22969",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2679,6 +2922,7 @@
   "cve_id": "CVE-2013-6430",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2690,6 +2934,7 @@
   "cve_id": "CVE-2018-1258",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2701,6 +2946,7 @@
   "cve_id": "CVE-2020-5407",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2712,6 +2958,7 @@
   "cve_id": "CVE-2020-5408",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2723,6 +2970,7 @@
   "cve_id": "CVE-2021-22112",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "spring-framework",
   "ecosystem": "maven"
@@ -2734,6 +2982,7 @@
   "cve_id": "CVE-2017-17485",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2745,6 +2994,7 @@
   "cve_id": "CVE-2018-5968",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2756,6 +3006,7 @@
   "cve_id": "CVE-2017-15095",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2767,6 +3018,7 @@
   "cve_id": "CVE-2017-7525",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2778,6 +3030,7 @@
   "cve_id": "CVE-2018-7489",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2789,6 +3042,7 @@
   "cve_id": "CVE-2018-14718",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2800,6 +3054,7 @@
   "cve_id": "CVE-2018-14719",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2811,6 +3066,7 @@
   "cve_id": "CVE-2018-14720",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2822,6 +3078,7 @@
   "cve_id": "CVE-2018-14721",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2833,6 +3090,7 @@
   "cve_id": "CVE-2018-19360",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2844,6 +3102,7 @@
   "cve_id": "CVE-2018-19361",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2855,6 +3114,7 @@
   "cve_id": "CVE-2018-19362",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2866,6 +3126,7 @@
   "cve_id": "CVE-2018-12022",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2877,6 +3138,7 @@
   "cve_id": "CVE-2018-12023",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2888,6 +3150,7 @@
   "cve_id": "CVE-2019-12086",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2899,6 +3162,7 @@
   "cve_id": "CVE-2019-12814",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2910,6 +3174,7 @@
   "cve_id": "CVE-2019-12384",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2921,6 +3186,7 @@
   "cve_id": "CVE-2018-11307",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2932,6 +3198,7 @@
   "cve_id": "CVE-2019-14379",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2943,6 +3210,7 @@
   "cve_id": "CVE-2019-14439",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2954,6 +3222,7 @@
   "cve_id": "CVE-2019-14540",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2965,6 +3234,7 @@
   "cve_id": "CVE-2019-16335",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2976,6 +3246,7 @@
   "cve_id": "CVE-2019-16942",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2987,6 +3258,7 @@
   "cve_id": "CVE-2019-16943",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -2998,6 +3270,7 @@
   "cve_id": "CVE-2019-17267",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3009,6 +3282,7 @@
   "cve_id": "CVE-2019-17531",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3020,6 +3294,7 @@
   "cve_id": "CVE-2019-20330",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3031,6 +3306,7 @@
   "cve_id": "CVE-2020-8840",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3042,6 +3318,7 @@
   "cve_id": "CVE-2020-9546",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3053,6 +3330,7 @@
   "cve_id": "CVE-2020-9547",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3064,6 +3342,7 @@
   "cve_id": "CVE-2020-9548",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3075,6 +3354,7 @@
   "cve_id": "CVE-2019-14892",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3086,6 +3366,7 @@
   "cve_id": "CVE-2019-14893",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3097,6 +3378,7 @@
   "cve_id": "CVE-2020-10672",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3108,6 +3390,7 @@
   "cve_id": "CVE-2020-10673",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3119,6 +3402,7 @@
   "cve_id": "CVE-2020-10968",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3130,6 +3414,7 @@
   "cve_id": "CVE-2020-10969",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3141,6 +3426,7 @@
   "cve_id": "CVE-2020-11111",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3152,6 +3438,7 @@
   "cve_id": "CVE-2020-11112",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3163,6 +3450,7 @@
   "cve_id": "CVE-2020-11113",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3174,6 +3462,7 @@
   "cve_id": "CVE-2020-11619",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3185,6 +3474,7 @@
   "cve_id": "CVE-2020-11620",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3196,6 +3486,7 @@
   "cve_id": "CVE-2020-14061",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3207,6 +3498,7 @@
   "cve_id": "CVE-2020-14062",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3218,6 +3510,7 @@
   "cve_id": "CVE-2020-14060",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3229,6 +3522,7 @@
   "cve_id": "CVE-2020-14195",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3240,6 +3534,7 @@
   "cve_id": "CVE-2020-24616",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3251,6 +3546,7 @@
   "cve_id": "CVE-2020-24750",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3262,6 +3558,7 @@
   "cve_id": "CVE-2020-25649",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3273,6 +3570,7 @@
   "cve_id": "CVE-2020-35490",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3284,6 +3582,7 @@
   "cve_id": "CVE-2020-35491",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3295,6 +3594,7 @@
   "cve_id": "CVE-2020-35728",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3306,6 +3606,7 @@
   "cve_id": "CVE-2020-36181",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3317,6 +3618,7 @@
   "cve_id": "CVE-2020-36184",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3328,6 +3630,7 @@
   "cve_id": "CVE-2020-36185",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3339,6 +3642,7 @@
   "cve_id": "CVE-2020-36186",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3350,6 +3654,7 @@
   "cve_id": "CVE-2020-36187",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3361,6 +3666,7 @@
   "cve_id": "CVE-2020-36188",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3372,6 +3678,7 @@
   "cve_id": "CVE-2020-36189",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3383,6 +3690,7 @@
   "cve_id": "CVE-2020-36179",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3394,6 +3702,7 @@
   "cve_id": "CVE-2020-36180",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3405,6 +3714,7 @@
   "cve_id": "CVE-2020-36182",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3416,6 +3726,7 @@
   "cve_id": "CVE-2020-36183",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3427,6 +3738,7 @@
   "cve_id": "CVE-2021-20190",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3438,6 +3750,7 @@
   "cve_id": "CVE-2020-36518",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3449,6 +3762,7 @@
   "cve_id": "CVE-2022-42003",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3460,6 +3774,7 @@
   "cve_id": "CVE-2022-42004",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3471,6 +3786,7 @@
   "cve_id": "CVE-2020-10650",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3482,6 +3798,7 @@
   "cve_id": "CVE-2021-46877",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3493,6 +3810,7 @@
   "cve_id": "CVE-2023-35116",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3504,6 +3822,7 @@
   "cve_id": "CVE-2026-50193",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3515,6 +3834,7 @@
   "cve_id": "CVE-2026-54512",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3526,6 +3846,7 @@
   "cve_id": "CVE-2026-54513",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3537,6 +3858,7 @@
   "cve_id": "CVE-2026-54514",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3548,6 +3870,7 @@
   "cve_id": "CVE-2026-54515",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3559,6 +3882,7 @@
   "cve_id": "CVE-2026-54516",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3570,6 +3894,7 @@
   "cve_id": "CVE-2026-54517",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3581,6 +3906,7 @@
   "cve_id": "CVE-2026-54518",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "jackson-databind",
   "ecosystem": "maven"
@@ -3592,6 +3918,7 @@
   "cve_id": "CVE-2016-10708",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssh",
   "ecosystem": "system"
@@ -3603,6 +3930,7 @@
   "cve_id": "CVE-2018-15473",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssh",
   "ecosystem": "system"
@@ -3614,6 +3942,7 @@
   "cve_id": "CVE-2018-15919",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "openssh",
   "ecosystem": "system"
@@ -3625,6 +3954,7 @@
   "cve_id": "CVE-2018-20685",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssh",
   "ecosystem": "system"
@@ -3636,6 +3966,7 @@
   "cve_id": "CVE-2019-6109",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssh",
   "ecosystem": "system"
@@ -3647,6 +3978,7 @@
   "cve_id": "CVE-2019-6110",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssh",
   "ecosystem": "system"
@@ -3658,6 +3990,7 @@
   "cve_id": "CVE-2019-6111",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssh",
   "ecosystem": "system"
@@ -3669,6 +4002,7 @@
   "cve_id": "CVE-2019-16905",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "openssh",
   "ecosystem": "system"
@@ -3680,6 +4014,7 @@
   "cve_id": "CVE-2020-12062",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssh",
   "ecosystem": "system"
@@ -3691,6 +4026,7 @@
   "cve_id": "CVE-2020-14145",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssh",
   "ecosystem": "system"
@@ -3702,6 +4038,7 @@
   "cve_id": "CVE-2020-15778",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "openssh",
   "ecosystem": "system"
@@ -3713,6 +4050,7 @@
   "cve_id": "CVE-2021-28041",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssh",
   "ecosystem": "system"
@@ -3724,6 +4062,7 @@
   "cve_id": "CVE-2016-20012",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssh",
   "ecosystem": "system"
@@ -3735,6 +4074,7 @@
   "cve_id": "CVE-2021-41617",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "openssh",
   "ecosystem": "system"
@@ -3746,6 +4086,7 @@
   "cve_id": "CVE-2021-36368",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "openssh",
   "ecosystem": "system"
@@ -3757,6 +4098,7 @@
   "cve_id": "CVE-2023-25136",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3768,6 +4110,7 @@
   "cve_id": "CVE-2023-28531",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3779,6 +4122,7 @@
   "cve_id": "CVE-2023-38408",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3790,6 +4134,7 @@
   "cve_id": "CVE-2023-48795",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3801,6 +4146,7 @@
   "cve_id": "CVE-2023-51384",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3812,6 +4158,7 @@
   "cve_id": "CVE-2023-51385",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3823,6 +4170,7 @@
   "cve_id": "CVE-2023-51767",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "openssh",
   "ecosystem": "system"
@@ -3834,6 +4182,7 @@
   "cve_id": "CVE-2024-6387",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "openssh",
   "ecosystem": "system"
@@ -3845,6 +4194,7 @@
   "cve_id": "CVE-2025-26465",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "openssh",
   "ecosystem": "system"
@@ -3856,6 +4206,7 @@
   "cve_id": "CVE-2025-26466",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "openssh",
   "ecosystem": "system"
@@ -3867,6 +4218,7 @@
   "cve_id": "CVE-2025-32728",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "openssh",
   "ecosystem": "system"
@@ -3878,6 +4230,7 @@
   "cve_id": "CVE-2026-3497",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3889,6 +4242,7 @@
   "cve_id": "CVE-2026-35385",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3900,6 +4254,7 @@
   "cve_id": "CVE-2026-35386",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3911,6 +4266,7 @@
   "cve_id": "CVE-2026-35387",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3922,6 +4278,7 @@
   "cve_id": "CVE-2026-35388",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3933,6 +4290,7 @@
   "cve_id": "CVE-2026-35414",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3944,6 +4302,7 @@
   "cve_id": "CVE-2026-55653",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3955,6 +4314,7 @@
   "cve_id": "CVE-2026-55654",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3966,6 +4326,7 @@
   "cve_id": "CVE-2026-55655",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3977,6 +4338,7 @@
   "cve_id": "CVE-2026-59995",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3988,6 +4350,7 @@
   "cve_id": "CVE-2026-59996",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -3999,6 +4362,7 @@
   "cve_id": "CVE-2026-59997",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4010,6 +4374,7 @@
   "cve_id": "CVE-2026-59998",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4021,6 +4386,7 @@
   "cve_id": "CVE-2026-59999",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4032,6 +4398,7 @@
   "cve_id": "CVE-2026-60000",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4043,6 +4410,7 @@
   "cve_id": "CVE-2026-60001",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4054,6 +4422,7 @@
   "cve_id": "CVE-2026-60002",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "openssh",
   "ecosystem": "system"
@@ -4065,6 +4434,7 @@
   "cve_id": "CVE-2018-1000007",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4076,6 +4446,7 @@
   "cve_id": "CVE-2017-2628",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4087,6 +4458,7 @@
   "cve_id": "CVE-2016-9952",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4098,6 +4470,7 @@
   "cve_id": "CVE-2016-9953",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4109,6 +4482,7 @@
   "cve_id": "CVE-2018-1000120",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4120,6 +4494,7 @@
   "cve_id": "CVE-2018-1000121",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4131,6 +4506,7 @@
   "cve_id": "CVE-2018-1000122",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4142,6 +4518,7 @@
   "cve_id": "CVE-2016-9586",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4153,6 +4530,7 @@
   "cve_id": "CVE-2016-9594",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4164,6 +4542,7 @@
   "cve_id": "CVE-2018-1000300",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4175,6 +4554,7 @@
   "cve_id": "CVE-2018-1000301",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4186,6 +4566,7 @@
   "cve_id": "CVE-2018-0500",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4197,6 +4578,7 @@
   "cve_id": "CVE-2017-2629",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4208,6 +4590,7 @@
   "cve_id": "CVE-2016-8618",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4219,6 +4602,7 @@
   "cve_id": "CVE-2016-8624",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4230,6 +4614,7 @@
   "cve_id": "CVE-2016-8617",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4241,6 +4626,7 @@
   "cve_id": "CVE-2016-8621",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4252,6 +4638,7 @@
   "cve_id": "CVE-2016-8615",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4263,6 +4650,7 @@
   "cve_id": "CVE-2016-8616",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4274,6 +4662,7 @@
   "cve_id": "CVE-2016-8619",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4285,6 +4674,7 @@
   "cve_id": "CVE-2016-8620",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4296,6 +4686,7 @@
   "cve_id": "CVE-2016-8623",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4307,6 +4698,7 @@
   "cve_id": "CVE-2016-8625",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4318,6 +4710,7 @@
   "cve_id": "CVE-2003-1605",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4329,6 +4722,7 @@
   "cve_id": "CVE-2018-16839",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4340,6 +4734,7 @@
   "cve_id": "CVE-2018-16840",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4351,6 +4746,7 @@
   "cve_id": "CVE-2018-16842",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "curl",
   "ecosystem": "system"
@@ -4362,6 +4758,7 @@
   "cve_id": "CVE-2019-5435",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "curl",
   "ecosystem": "system"
@@ -4373,6 +4770,7 @@
   "cve_id": "CVE-2019-5443",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "curl",
   "ecosystem": "system"
@@ -4384,6 +4782,7 @@
   "cve_id": "CVE-2019-5481",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "curl",
   "ecosystem": "system"
@@ -4395,6 +4794,7 @@
   "cve_id": "CVE-2019-5482",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "curl",
   "ecosystem": "system"
@@ -4406,6 +4806,7 @@
   "cve_id": "CVE-2016-4606",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "curl",
   "ecosystem": "system"
@@ -4417,6 +4818,7 @@
   "cve_id": "CVE-2020-8169",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "curl",
   "ecosystem": "system"
@@ -4428,6 +4830,7 @@
   "cve_id": "CVE-2020-8177",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "curl",
   "ecosystem": "system"
@@ -4439,6 +4842,7 @@
   "cve_id": "CVE-2020-8284",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "curl",
   "ecosystem": "system"
@@ -4450,6 +4854,7 @@
   "cve_id": "CVE-2021-22897",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4461,6 +4866,7 @@
   "cve_id": "CVE-2021-22898",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4472,6 +4878,7 @@
   "cve_id": "CVE-2021-22901",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4483,6 +4890,7 @@
   "cve_id": "CVE-2021-22922",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4494,6 +4902,7 @@
   "cve_id": "CVE-2021-22923",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4505,6 +4914,7 @@
   "cve_id": "CVE-2021-22925",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4516,6 +4926,7 @@
   "cve_id": "CVE-2021-22926",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4527,6 +4938,7 @@
   "cve_id": "CVE-2021-22946",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4538,6 +4950,7 @@
   "cve_id": "CVE-2021-22947",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "curl",
   "ecosystem": "system"
@@ -4549,6 +4962,7 @@
   "cve_id": "CVE-2022-22576",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4560,6 +4974,7 @@
   "cve_id": "CVE-2022-27774",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4571,6 +4986,7 @@
   "cve_id": "CVE-2022-27775",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4582,6 +4998,7 @@
   "cve_id": "CVE-2022-27776",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4593,6 +5010,7 @@
   "cve_id": "CVE-2022-27778",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4604,6 +5022,7 @@
   "cve_id": "CVE-2022-27779",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4615,6 +5034,7 @@
   "cve_id": "CVE-2022-27780",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4626,6 +5046,7 @@
   "cve_id": "CVE-2022-27781",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4637,6 +5058,7 @@
   "cve_id": "CVE-2022-27782",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4648,6 +5070,7 @@
   "cve_id": "CVE-2022-30115",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4659,6 +5082,7 @@
   "cve_id": "CVE-2022-32205",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4670,6 +5094,7 @@
   "cve_id": "CVE-2022-32206",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4681,6 +5106,7 @@
   "cve_id": "CVE-2022-32207",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4692,6 +5118,7 @@
   "cve_id": "CVE-2022-32208",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4703,6 +5130,7 @@
   "cve_id": "CVE-2022-35252",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4714,6 +5142,7 @@
   "cve_id": "CVE-2022-42916",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4725,6 +5154,7 @@
   "cve_id": "CVE-2022-42915",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4736,6 +5166,7 @@
   "cve_id": "CVE-2022-32221",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4747,6 +5178,7 @@
   "cve_id": "CVE-2022-35260",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4758,6 +5190,7 @@
   "cve_id": "CVE-2022-43551",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "curl",
   "ecosystem": "system"
@@ -4769,6 +5202,7 @@
   "cve_id": "CVE-2022-43552",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4780,6 +5214,7 @@
   "cve_id": "CVE-2023-23914",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4791,6 +5226,7 @@
   "cve_id": "CVE-2023-23915",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4802,6 +5238,7 @@
   "cve_id": "CVE-2023-23916",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4813,6 +5250,7 @@
   "cve_id": "CVE-2023-27533",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4824,6 +5262,7 @@
   "cve_id": "CVE-2023-27534",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4835,6 +5274,7 @@
   "cve_id": "CVE-2023-28319",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4846,6 +5286,7 @@
   "cve_id": "CVE-2023-28320",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4857,6 +5298,7 @@
   "cve_id": "CVE-2023-28321",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4868,6 +5310,7 @@
   "cve_id": "CVE-2023-28322",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4879,6 +5322,7 @@
   "cve_id": "CVE-2020-19909",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4890,6 +5334,7 @@
   "cve_id": "CVE-2023-38039",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4901,6 +5346,7 @@
   "cve_id": "CVE-2023-46218",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4912,6 +5358,7 @@
   "cve_id": "CVE-2023-46219",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "curl",
   "ecosystem": "system"
@@ -4923,6 +5370,7 @@
   "cve_id": "CVE-2024-0853",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4934,6 +5382,7 @@
   "cve_id": "CVE-2024-2004",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4945,6 +5394,7 @@
   "cve_id": "CVE-2024-2379",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4956,6 +5406,7 @@
   "cve_id": "CVE-2024-2398",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4967,6 +5418,7 @@
   "cve_id": "CVE-2024-2466",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4978,6 +5430,7 @@
   "cve_id": "CVE-2024-8096",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -4989,6 +5442,7 @@
   "cve_id": "CVE-2024-9681",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -5000,6 +5454,7 @@
   "cve_id": "CVE-2024-11053",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "curl",
   "ecosystem": "system"
@@ -5011,6 +5466,7 @@
   "cve_id": "CVE-2025-0167",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5022,6 +5478,7 @@
   "cve_id": "CVE-2025-0665",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5033,6 +5490,7 @@
   "cve_id": "CVE-2025-0725",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5044,6 +5502,7 @@
   "cve_id": "CVE-2025-4947",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5055,6 +5514,7 @@
   "cve_id": "CVE-2025-5025",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5066,6 +5526,7 @@
   "cve_id": "CVE-2025-5399",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5077,6 +5538,7 @@
   "cve_id": "CVE-2025-10148",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5088,6 +5550,7 @@
   "cve_id": "CVE-2025-9086",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5099,6 +5562,7 @@
   "cve_id": "CVE-2025-10966",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "curl",
   "ecosystem": "system"
@@ -5110,6 +5574,7 @@
   "cve_id": "CVE-2025-13034",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5121,6 +5586,7 @@
   "cve_id": "CVE-2025-14017",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5132,6 +5598,7 @@
   "cve_id": "CVE-2025-14524",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5143,6 +5610,7 @@
   "cve_id": "CVE-2025-14819",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5154,6 +5622,7 @@
   "cve_id": "CVE-2025-15079",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5165,6 +5634,7 @@
   "cve_id": "CVE-2025-15224",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5176,6 +5646,7 @@
   "cve_id": "CVE-2025-11563",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5187,6 +5658,7 @@
   "cve_id": "CVE-2026-1965",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5198,6 +5670,7 @@
   "cve_id": "CVE-2026-3783",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5209,6 +5682,7 @@
   "cve_id": "CVE-2026-3784",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5220,6 +5694,7 @@
   "cve_id": "CVE-2026-3805",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5231,6 +5706,7 @@
   "cve_id": "CVE-2026-4873",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5242,6 +5718,7 @@
   "cve_id": "CVE-2026-5545",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5253,6 +5730,7 @@
   "cve_id": "CVE-2026-5773",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5264,6 +5742,7 @@
   "cve_id": "CVE-2026-6253",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5275,6 +5754,7 @@
   "cve_id": "CVE-2026-6276",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5286,6 +5766,7 @@
   "cve_id": "CVE-2026-6429",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5297,6 +5778,7 @@
   "cve_id": "CVE-2026-7009",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5308,6 +5790,7 @@
   "cve_id": "CVE-2026-7168",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5319,6 +5802,7 @@
   "cve_id": "CVE-2026-10536",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5330,6 +5814,7 @@
   "cve_id": "CVE-2026-11352",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5341,6 +5826,7 @@
   "cve_id": "CVE-2026-11564",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5352,6 +5838,7 @@
   "cve_id": "CVE-2026-11586",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5363,6 +5850,7 @@
   "cve_id": "CVE-2026-11856",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5374,6 +5862,7 @@
   "cve_id": "CVE-2026-12064",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5385,6 +5874,7 @@
   "cve_id": "CVE-2026-8286",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5396,6 +5886,7 @@
   "cve_id": "CVE-2026-8458",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5407,6 +5898,7 @@
   "cve_id": "CVE-2026-8924",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5418,6 +5910,7 @@
   "cve_id": "CVE-2026-8925",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5429,6 +5922,7 @@
   "cve_id": "CVE-2026-8926",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5440,6 +5934,7 @@
   "cve_id": "CVE-2026-8927",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5451,6 +5946,7 @@
   "cve_id": "CVE-2026-8932",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5462,6 +5958,7 @@
   "cve_id": "CVE-2026-9079",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5473,6 +5970,7 @@
   "cve_id": "CVE-2026-9080",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5484,6 +5982,7 @@
   "cve_id": "CVE-2026-9545",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5495,6 +5994,7 @@
   "cve_id": "CVE-2026-9546",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5506,6 +6006,7 @@
   "cve_id": "CVE-2026-9547",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "curl",
   "ecosystem": "system"
@@ -5517,6 +6018,7 @@
   "cve_id": "CVE-2017-18342",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "pyyaml",
   "ecosystem": "pypi"
@@ -5528,6 +6030,7 @@
   "cve_id": "CVE-2019-20477",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "pyyaml",
   "ecosystem": "pypi"
@@ -5539,6 +6042,7 @@
   "cve_id": "CVE-2020-1747",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "pyyaml",
   "ecosystem": "pypi"
@@ -5550,6 +6054,7 @@
   "cve_id": "CVE-2020-14343",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "pyyaml",
   "ecosystem": "pypi"
@@ -5561,6 +6066,7 @@
   "cve_id": "CVE-2019-10742",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "axios",
   "ecosystem": "npm"
@@ -5572,6 +6078,7 @@
   "cve_id": "CVE-2020-28168",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "axios",
   "ecosystem": "npm"
@@ -5583,6 +6090,7 @@
   "cve_id": "CVE-2021-3749",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "axios",
   "ecosystem": "npm"
@@ -5594,6 +6102,7 @@
   "cve_id": "CVE-2023-45857",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "axios",
   "ecosystem": "npm"
@@ -5605,6 +6114,7 @@
   "cve_id": "CVE-2024-39338",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "axios",
   "ecosystem": "npm"
@@ -5616,6 +6126,7 @@
   "cve_id": "CVE-2024-57965",
   "severity": "None",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "axios",
   "ecosystem": "npm"
@@ -5627,6 +6138,7 @@
   "cve_id": "CVE-2025-27152",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "axios",
   "ecosystem": "npm"
@@ -5638,6 +6150,7 @@
   "cve_id": "CVE-2025-58754",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "axios",
   "ecosystem": "npm"
@@ -5649,6 +6162,7 @@
   "cve_id": "CVE-2026-25639",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5660,6 +6174,7 @@
   "cve_id": "CVE-2026-39865",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5671,6 +6186,7 @@
   "cve_id": "CVE-2025-62718",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5682,6 +6198,7 @@
   "cve_id": "CVE-2026-40175",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5693,6 +6210,7 @@
   "cve_id": "CVE-2026-42033",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5704,6 +6222,7 @@
   "cve_id": "CVE-2026-42034",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5715,6 +6234,7 @@
   "cve_id": "CVE-2026-42035",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5726,6 +6246,7 @@
   "cve_id": "CVE-2026-42036",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5737,6 +6258,7 @@
   "cve_id": "CVE-2026-42037",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5748,6 +6270,7 @@
   "cve_id": "CVE-2026-42038",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5759,6 +6282,7 @@
   "cve_id": "CVE-2026-42039",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5770,6 +6294,7 @@
   "cve_id": "CVE-2026-42040",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5781,6 +6306,7 @@
   "cve_id": "CVE-2026-42041",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5792,6 +6318,7 @@
   "cve_id": "CVE-2026-42042",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5803,6 +6330,7 @@
   "cve_id": "CVE-2026-42043",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5814,6 +6342,7 @@
   "cve_id": "CVE-2026-42044",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5825,6 +6354,7 @@
   "cve_id": "CVE-2026-42264",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5836,6 +6366,7 @@
   "cve_id": "CVE-2026-44486",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5847,6 +6378,7 @@
   "cve_id": "CVE-2026-44487",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5858,6 +6390,7 @@
   "cve_id": "CVE-2026-44488",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5869,6 +6402,7 @@
   "cve_id": "CVE-2026-44489",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5880,6 +6414,7 @@
   "cve_id": "CVE-2026-44490",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5891,6 +6426,7 @@
   "cve_id": "CVE-2026-44492",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5902,6 +6438,7 @@
   "cve_id": "CVE-2026-44494",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5913,6 +6450,7 @@
   "cve_id": "CVE-2026-44496",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "axios",
   "ecosystem": "npm"
@@ -5924,6 +6462,7 @@
   "cve_id": "CVE-2018-10237",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "guava",
   "ecosystem": "maven"
@@ -5935,6 +6474,7 @@
   "cve_id": "CVE-2020-8908",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "guava",
   "ecosystem": "maven"
@@ -5946,6 +6486,7 @@
   "cve_id": "CVE-2023-2976",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "guava",
   "ecosystem": "maven"
@@ -5957,6 +6498,7 @@
   "cve_id": "CVE-2017-15706",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -5968,6 +6510,7 @@
   "cve_id": "CVE-2018-1305",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -5979,6 +6522,7 @@
   "cve_id": "CVE-2018-1304",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -5990,6 +6534,7 @@
   "cve_id": "CVE-2018-8014",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6001,6 +6546,7 @@
   "cve_id": "CVE-2018-8034",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6012,6 +6558,7 @@
   "cve_id": "CVE-2018-1336",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6023,6 +6570,7 @@
   "cve_id": "CVE-2018-8037",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6034,6 +6582,7 @@
   "cve_id": "CVE-2018-11784",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6045,6 +6594,7 @@
   "cve_id": "CVE-2019-0199",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6056,6 +6606,7 @@
   "cve_id": "CVE-2019-0232",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6067,6 +6618,7 @@
   "cve_id": "CVE-2019-2684",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6078,6 +6630,7 @@
   "cve_id": "CVE-2019-0221",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6089,6 +6642,7 @@
   "cve_id": "CVE-2019-10072",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6100,6 +6654,7 @@
   "cve_id": "CVE-2019-17563",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6111,6 +6666,7 @@
   "cve_id": "CVE-2019-12418",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6122,6 +6678,7 @@
   "cve_id": "CVE-2019-17569",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6133,6 +6690,7 @@
   "cve_id": "CVE-2020-1935",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6144,6 +6702,7 @@
   "cve_id": "CVE-2020-1938",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6155,6 +6714,7 @@
   "cve_id": "CVE-2020-9484",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6166,6 +6726,7 @@
   "cve_id": "CVE-2020-11996",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6177,6 +6738,7 @@
   "cve_id": "CVE-2020-8022",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6188,6 +6750,7 @@
   "cve_id": "CVE-2020-13934",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6199,6 +6762,7 @@
   "cve_id": "CVE-2020-13935",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6210,6 +6774,7 @@
   "cve_id": "CVE-2020-13943",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6221,6 +6786,7 @@
   "cve_id": "CVE-2020-17527",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6232,6 +6798,7 @@
   "cve_id": "CVE-2021-24122",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6243,6 +6810,7 @@
   "cve_id": "CVE-2021-25122",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6254,6 +6822,7 @@
   "cve_id": "CVE-2021-25329",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6265,6 +6834,7 @@
   "cve_id": "CVE-2021-30639",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6276,6 +6846,7 @@
   "cve_id": "CVE-2021-30640",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6287,6 +6858,7 @@
   "cve_id": "CVE-2021-33037",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6298,6 +6870,7 @@
   "cve_id": "CVE-2021-41079",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6309,6 +6882,7 @@
   "cve_id": "CVE-2021-42340",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6320,6 +6894,7 @@
   "cve_id": "CVE-2022-23181",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6331,6 +6906,7 @@
   "cve_id": "CVE-2022-29885",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6342,6 +6918,7 @@
   "cve_id": "CVE-2022-25762",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6353,6 +6930,7 @@
   "cve_id": "CVE-2022-34305",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6364,6 +6942,7 @@
   "cve_id": "CVE-2021-43980",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6375,6 +6954,7 @@
   "cve_id": "CVE-2022-42252",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6386,6 +6966,7 @@
   "cve_id": "CVE-2022-45143",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6397,6 +6978,7 @@
   "cve_id": "CVE-2023-28708",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6408,6 +6990,7 @@
   "cve_id": "CVE-2023-28709",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6419,6 +7002,7 @@
   "cve_id": "CVE-2023-34981",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6430,6 +7014,7 @@
   "cve_id": "CVE-2023-41080",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6441,6 +7026,7 @@
   "cve_id": "CVE-2023-44487",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6452,6 +7038,7 @@
   "cve_id": "CVE-2023-42794",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6463,6 +7050,7 @@
   "cve_id": "CVE-2023-42795",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6474,6 +7062,7 @@
   "cve_id": "CVE-2023-45648",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6485,6 +7074,7 @@
   "cve_id": "CVE-2023-46589",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6496,6 +7086,7 @@
   "cve_id": "CVE-2024-21733",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6507,6 +7098,7 @@
   "cve_id": "CVE-2024-23672",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6518,6 +7110,7 @@
   "cve_id": "CVE-2024-24549",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6529,6 +7122,7 @@
   "cve_id": "CVE-2024-34750",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6540,6 +7134,7 @@
   "cve_id": "CVE-2024-38286",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6551,6 +7146,7 @@
   "cve_id": "CVE-2024-52316",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6562,6 +7158,7 @@
   "cve_id": "CVE-2024-52317",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6573,6 +7170,7 @@
   "cve_id": "CVE-2024-52318",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6584,6 +7182,7 @@
   "cve_id": "CVE-2024-50379",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6595,6 +7194,7 @@
   "cve_id": "CVE-2024-54677",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6606,6 +7206,7 @@
   "cve_id": "CVE-2024-56337",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6617,6 +7218,7 @@
   "cve_id": "CVE-2025-24813",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6628,6 +7230,7 @@
   "cve_id": "CVE-2025-31650",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6639,6 +7242,7 @@
   "cve_id": "CVE-2025-31651",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6650,6 +7254,7 @@
   "cve_id": "CVE-2025-46701",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6661,6 +7266,7 @@
   "cve_id": "CVE-2025-48988",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6672,6 +7278,7 @@
   "cve_id": "CVE-2025-49124",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6683,6 +7290,7 @@
   "cve_id": "CVE-2025-49125",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6694,6 +7302,7 @@
   "cve_id": "CVE-2025-52434",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6705,6 +7314,7 @@
   "cve_id": "CVE-2025-52520",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6716,6 +7326,7 @@
   "cve_id": "CVE-2025-53506",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6727,6 +7338,7 @@
   "cve_id": "CVE-2025-48989",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6738,6 +7350,7 @@
   "cve_id": "CVE-2025-55668",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6749,6 +7362,7 @@
   "cve_id": "CVE-2025-55752",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6760,6 +7374,7 @@
   "cve_id": "CVE-2025-55754",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6771,6 +7386,7 @@
   "cve_id": "CVE-2025-61795",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2025,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6782,6 +7398,7 @@
   "cve_id": "CVE-2025-66614",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6793,6 +7410,7 @@
   "cve_id": "CVE-2026-24733",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6804,6 +7422,7 @@
   "cve_id": "CVE-2026-24734",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6815,6 +7434,7 @@
   "cve_id": "CVE-2026-24880",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6826,6 +7446,7 @@
   "cve_id": "CVE-2026-25854",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6837,6 +7458,7 @@
   "cve_id": "CVE-2026-29129",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6848,6 +7470,7 @@
   "cve_id": "CVE-2026-29145",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6859,6 +7482,7 @@
   "cve_id": "CVE-2026-29146",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6870,6 +7494,7 @@
   "cve_id": "CVE-2026-32990",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6881,6 +7506,7 @@
   "cve_id": "CVE-2026-34483",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6892,6 +7518,7 @@
   "cve_id": "CVE-2026-34486",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6903,6 +7530,7 @@
   "cve_id": "CVE-2026-34487",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6914,6 +7542,7 @@
   "cve_id": "CVE-2026-34500",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6925,6 +7554,7 @@
   "cve_id": "CVE-2026-41284",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6936,6 +7566,7 @@
   "cve_id": "CVE-2026-41293",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6947,6 +7578,7 @@
   "cve_id": "CVE-2026-42498",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6958,6 +7590,7 @@
   "cve_id": "CVE-2026-43512",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6969,6 +7602,7 @@
   "cve_id": "CVE-2026-43513",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6980,6 +7614,7 @@
   "cve_id": "CVE-2026-43514",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -6991,6 +7626,7 @@
   "cve_id": "CVE-2026-43515",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7002,6 +7638,7 @@
   "cve_id": "CVE-2026-50229",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7013,6 +7650,7 @@
   "cve_id": "CVE-2026-53404",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7024,6 +7662,7 @@
   "cve_id": "CVE-2026-53434",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7035,6 +7674,7 @@
   "cve_id": "CVE-2026-55276",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7046,6 +7686,7 @@
   "cve_id": "CVE-2026-55955",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7057,6 +7698,7 @@
   "cve_id": "CVE-2026-55956",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7068,6 +7710,7 @@
   "cve_id": "CVE-2026-55957",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7079,6 +7722,7 @@
   "cve_id": "CVE-2026-59083",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7090,6 +7734,7 @@
   "cve_id": "CVE-2026-59084",
   "severity": "Critical",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "tomcat",
   "ecosystem": "system"
@@ -7101,6 +7746,7 @@
   "cve_id": "CVE-2018-1052",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7112,6 +7758,7 @@
   "cve_id": "CVE-2018-1053",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7123,6 +7770,7 @@
   "cve_id": "CVE-2017-14798",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7134,6 +7782,7 @@
   "cve_id": "CVE-2018-1058",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7145,6 +7794,7 @@
   "cve_id": "CVE-2018-1115",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7156,6 +7806,7 @@
   "cve_id": "CVE-2018-10915",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7167,6 +7818,7 @@
   "cve_id": "CVE-2018-10925",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7178,6 +7830,7 @@
   "cve_id": "CVE-2016-7048",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7189,6 +7842,7 @@
   "cve_id": "CVE-2018-16850",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2018,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7200,6 +7854,7 @@
   "cve_id": "CVE-2019-9193",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7211,6 +7866,7 @@
   "cve_id": "CVE-2019-10164",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7222,6 +7878,7 @@
   "cve_id": "CVE-2019-10129",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7233,6 +7890,7 @@
   "cve_id": "CVE-2019-10130",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7244,6 +7902,7 @@
   "cve_id": "CVE-2019-10208",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7255,6 +7914,7 @@
   "cve_id": "CVE-2019-10209",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7266,6 +7926,7 @@
   "cve_id": "CVE-2019-10210",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7277,6 +7938,7 @@
   "cve_id": "CVE-2019-10211",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7288,6 +7950,7 @@
   "cve_id": "CVE-2015-3166",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7299,6 +7962,7 @@
   "cve_id": "CVE-2015-3167",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7310,6 +7974,7 @@
   "cve_id": "CVE-2014-8161",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7321,6 +7986,7 @@
   "cve_id": "CVE-2015-0241",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7332,6 +7998,7 @@
   "cve_id": "CVE-2015-0242",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7343,6 +8010,7 @@
   "cve_id": "CVE-2015-0243",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7354,6 +8022,7 @@
   "cve_id": "CVE-2015-0244",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7365,6 +8034,7 @@
   "cve_id": "CVE-2020-1720",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7376,6 +8046,7 @@
   "cve_id": "CVE-2020-14349",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7387,6 +8058,7 @@
   "cve_id": "CVE-2020-14350",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7398,6 +8070,7 @@
   "cve_id": "CVE-2020-10733",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7409,6 +8082,7 @@
   "cve_id": "CVE-2020-25694",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7420,6 +8094,7 @@
   "cve_id": "CVE-2020-25695",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7431,6 +8106,7 @@
   "cve_id": "CVE-2020-25696",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7442,6 +8118,7 @@
   "cve_id": "CVE-2021-20229",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7453,6 +8130,7 @@
   "cve_id": "CVE-2019-10127",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7464,6 +8142,7 @@
   "cve_id": "CVE-2019-10128",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7475,6 +8154,7 @@
   "cve_id": "CVE-2021-3393",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7486,6 +8166,7 @@
   "cve_id": "CVE-2021-32027",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7497,6 +8178,7 @@
   "cve_id": "CVE-2021-32029",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7508,6 +8190,7 @@
   "cve_id": "CVE-2021-32028",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7519,6 +8202,7 @@
   "cve_id": "CVE-2021-23222",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7530,6 +8214,7 @@
   "cve_id": "CVE-2021-3677",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7541,6 +8226,7 @@
   "cve_id": "CVE-2021-23214",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7552,6 +8238,7 @@
   "cve_id": "CVE-2022-24844",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7563,6 +8250,7 @@
   "cve_id": "CVE-2022-2625",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7574,6 +8262,7 @@
   "cve_id": "CVE-2021-43767",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7585,6 +8274,7 @@
   "cve_id": "CVE-2022-1552",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2022,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7596,6 +8286,7 @@
   "cve_id": "CVE-2022-41862",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7607,6 +8298,7 @@
   "cve_id": "CVE-2023-32305",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7618,6 +8310,7 @@
   "cve_id": "CVE-2023-2454",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7629,6 +8322,7 @@
   "cve_id": "CVE-2023-2455",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7640,6 +8334,7 @@
   "cve_id": "CVE-2023-39417",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7651,6 +8346,7 @@
   "cve_id": "CVE-2023-39418",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7662,6 +8358,7 @@
   "cve_id": "CVE-2020-21469",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7673,6 +8370,7 @@
   "cve_id": "CVE-2023-5868",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7684,6 +8382,7 @@
   "cve_id": "CVE-2023-5869",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7695,6 +8394,7 @@
   "cve_id": "CVE-2023-5870",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2023,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7706,6 +8406,7 @@
   "cve_id": "CVE-2024-0985",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7717,6 +8418,7 @@
   "cve_id": "CVE-2024-4317",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7728,6 +8430,7 @@
   "cve_id": "CVE-2024-7348",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7739,6 +8442,7 @@
   "cve_id": "CVE-2024-10976",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7750,6 +8454,7 @@
   "cve_id": "CVE-2024-10977",
   "severity": "Low",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7761,6 +8466,7 @@
   "cve_id": "CVE-2024-10978",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7772,6 +8478,7 @@
   "cve_id": "CVE-2024-10979",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2024,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7783,6 +8490,7 @@
   "cve_id": "CVE-2026-2003",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7794,6 +8502,7 @@
   "cve_id": "CVE-2026-2004",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7805,6 +8514,7 @@
   "cve_id": "CVE-2026-2005",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7816,6 +8526,7 @@
   "cve_id": "CVE-2026-2006",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7827,6 +8538,7 @@
   "cve_id": "CVE-2026-2007",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7838,6 +8550,7 @@
   "cve_id": "CVE-2026-6472",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7849,6 +8562,7 @@
   "cve_id": "CVE-2026-6473",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7860,6 +8574,7 @@
   "cve_id": "CVE-2026-6474",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7871,6 +8586,7 @@
   "cve_id": "CVE-2026-6475",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7882,6 +8598,7 @@
   "cve_id": "CVE-2026-6476",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7893,6 +8610,7 @@
   "cve_id": "CVE-2026-6477",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7904,6 +8622,7 @@
   "cve_id": "CVE-2026-6478",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7915,6 +8634,7 @@
   "cve_id": "CVE-2026-6479",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7926,6 +8646,7 @@
   "cve_id": "CVE-2026-6575",
   "severity": "Medium",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7937,6 +8658,7 @@
   "cve_id": "CVE-2026-6637",
   "severity": "High",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7948,6 +8670,7 @@
   "cve_id": "CVE-2026-6638",
   "severity": "Low",
   "vuln_status": "Analyzed",
+  "cvss_version": "v3.1",
   "pub_year": 2026,
   "package": "postgresql",
   "ecosystem": "system"
@@ -7959,6 +8682,7 @@
   "cve_id": "CVE-2018-12453",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "redis",
   "ecosystem": "system"
@@ -7970,6 +8694,7 @@
   "cve_id": "CVE-2018-12326",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "redis",
   "ecosystem": "system"
@@ -7981,6 +8706,7 @@
   "cve_id": "CVE-2018-11218",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "redis",
   "ecosystem": "system"
@@ -7992,6 +8718,7 @@
   "cve_id": "CVE-2018-11219",
   "severity": "Critical",
   "vuln_status": "Modified",
+  "cvss_version": "v3.0",
   "pub_year": 2018,
   "package": "redis",
   "ecosystem": "system"
@@ -8003,6 +8730,7 @@
   "cve_id": "CVE-2019-10192",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "redis",
   "ecosystem": "system"
@@ -8014,6 +8742,7 @@
   "cve_id": "CVE-2019-10193",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "redis",
   "ecosystem": "system"
@@ -8025,6 +8754,7 @@
   "cve_id": "CVE-2013-0178",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "redis",
   "ecosystem": "system"
@@ -8036,6 +8766,7 @@
   "cve_id": "CVE-2013-0180",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2019,
   "package": "redis",
   "ecosystem": "system"
@@ -8047,6 +8778,7 @@
   "cve_id": "CVE-2020-14147",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2020,
   "package": "redis",
   "ecosystem": "system"
@@ -8058,6 +8790,7 @@
   "cve_id": "CVE-2021-21309",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8069,6 +8802,7 @@
   "cve_id": "CVE-2021-3470",
   "severity": "Medium",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8080,6 +8814,7 @@
   "cve_id": "CVE-2021-29477",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8091,6 +8826,7 @@
   "cve_id": "CVE-2021-29478",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8102,6 +8838,7 @@
   "cve_id": "CVE-2021-32625",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8113,6 +8850,7 @@
   "cve_id": "CVE-2021-32761",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"
@@ -8124,6 +8862,7 @@
   "cve_id": "CVE-2020-21468",
   "severity": "High",
   "vuln_status": "Modified",
+  "cvss_version": "v3.1",
   "pub_year": 2021,
   "package": "redis",
   "ecosystem": "system"

@@ -5,7 +5,8 @@ three-arm design:
 
   Arm A: RRF   -- unweighted reciprocal-rank fusion (baseline)
   Arm B: Static TWR -- hand-set alpha/beta/gamma/delta (Eq. 2, as specified:
-         w1=severity, w2=vuln_status/review-status, w3=recency decay)
+         w1=severity, w2=cvss_version/scoring-methodology-currency,
+         w3=recency decay)
   Arm C: LTWR (Learned Trust-Weighted Ranking) -- learned fusion weights
          over the SAME closed, scalar feature set as static TWR (rrf score,
          bm25 score, dense score, w1, w2, w3). No document text is a
@@ -14,6 +15,18 @@ three-arm design:
 Both the retrieval stage (BM25 + dense) and the candidate pool are IDENTICAL
 across all three arms, so any measured difference is attributable to the
 fusion step alone -- matching Section 3.1 of the TWR paper exactly.
+
+w2 NOTE: w2 was originally vuln_status (NVD review-status), but that was
+confirmed near-constant (~100% Analyzed/Modified) across every package in
+this corpus -- no discriminative signal for static TWR's gamma term or
+for LTWR's learned coefficient. w2 was swapped to cvss_version (which
+CVSS scoring methodology -- v3.1/v3.0/v2 -- the CVE was scored under),
+verified to have real spread (90.1%/9.9% v3.1/v3.0 overall, non-
+degenerate on both sides of the train/test split). See domain/gains.py's
+W2_SIGNAL flag and module docstring for the full rationale; this pipeline
+calls domain.gains.w2_weight(doc), which dispatches to whichever signal
+W2_SIGNAL selects, so this file doesn't need to change again if that
+choice is revisited.
 """
 import re
 import time
@@ -24,7 +37,7 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 
 from infra.cve_document import CveDocument
-from domain.gains import severity_weight, vuln_status_weight, recency_weight
+from domain.gains import severity_weight, w2_weight, recency_weight
 
 DENSE_MODEL_NAME = "all-MiniLM-L6-v2"
 
@@ -87,7 +100,7 @@ class CveTWRPipeline:
 
     def calculate_metadata_components(self, doc: CveDocument):
         w1 = severity_weight(doc.severity)
-        w2 = vuln_status_weight(doc.vuln_status)
+        w2 = w2_weight(doc)  # dispatches per domain.gains.W2_SIGNAL (currently cvss_version)
         w3 = recency_weight(doc.pub_year, self.current_year)
         return w1, w2, w3
 
@@ -204,6 +217,7 @@ class CveTWRPipeline:
                 "cve_id": doc.cve_id,
                 "severity": doc.severity,
                 "vuln_status": doc.vuln_status,
+                "cvss_version": doc.cvss_version,
                 "pub_year": doc.pub_year,
                 "package": doc.package,
                 "ecosystem": doc.ecosystem,
