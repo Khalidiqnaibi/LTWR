@@ -31,7 +31,7 @@ choice is revisited.
 import re
 import time
 import numpy as np
-import faiss
+import faiss ,json
 from typing import List, Dict, Any, Optional
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
@@ -43,33 +43,44 @@ DENSE_MODEL_NAME = "all-MiniLM-L6-v2"
 
 
 class CveTWRPipeline:
-    def __init__(self, corpus: List[CveDocument], k_doc: int = 5, ltwr_model=None):
+    def __init__(self, corpus: List[CveDocument], k_doc: int = 5, ltwr_model_path=None):
         self.corpus = corpus
         self.k_doc = k_doc
         self.k_rrf = 60
         self.current_year = 2026
-        self.ltwr_model = ltwr_model  # trained sklearn-compatible model, or None
+        self.ltwr_model_path = ltwr_model_path  # path to the LTWR model file
+        self.load_ltwr_model(self.ltwr_model_path) if self.ltwr_model_path else None
 
-        # RRF(d) is a sum of up to 2 terms of 1/(k_rrf + rank + 1), rank in
-        # [0, top_n). Its max possible value (best rank, both rankers
-        # agreeing) is 2/(k_rrf+1) -- used to normalize RRF onto roughly
-        # the same [0,1] scale as w1/w2/w3 before combining in static_twr
-        # and in the LTWR feature vector. Without this, RRF(d) tops out
-        # around 0.03 while w1/w3 range up to 1.0, so beta*w1(d) alone
-        # (e.g. 0.6*1.0=0.6) dwarfs the entire RRF term regardless of
-        # alpha -- static_twr's ranking ends up driven almost entirely by
-        # severity/recency with retrieval relevance contributing a
-        # rounding error. Confirmed via the CVE-domain run where static
-        # TWR scored significantly *worse* than bare RRF on real_mrr
-        # (Cliff's delta -0.80, p_holm=0.00015) -- the fused score was
-        # effectively promoting the most severe/recent CVE among whatever
-        # got retrieved, independent of whether it was actually relevant
-        # to the query.
         self.rrf_norm = 2.0 / (self.k_rrf + 1)
 
         self.embedder = SentenceTransformer(DENSE_MODEL_NAME)
         self._build_bm25_index()
         self._build_dense_index()
+
+    def load_ltwr_model(self, model_path) -> bool:
+        """Loads LTWR linear weights strictly from a JSON file.
+
+        Expected JSON format:
+        {
+            "coef": [c0, c1, c2, c3, c4, c5],
+            "intercept": 0.123
+        }
+        """
+        if not model_path.exists():
+            raise FileNotFoundError(f"LTWR JSON model file not found: {model_path}")
+
+        if model_path.suffix != ".json":
+            raise ValueError(f"Only JSON model files are accepted. Got: {model_path.suffix}")
+
+        with open(model_path, "r", encoding="utf-8") as f:
+            model_data = json.load(f)
+
+        if "coef" not in model_data or "intercept" not in model_data:
+            raise KeyError("JSON model file must contain 'coef' and 'intercept' keys.")
+
+        self.ltwr_coef = [float(c) for c in model_data["coef"]]
+        self.ltwr_intercept = float(model_data["intercept"])
+        return True
 
     def _build_bm25_index(self):
         tokenized_corpus = [re.findall(r"\b\w+\b", doc.text.lower()) for doc in self.corpus]
@@ -100,7 +111,7 @@ class CveTWRPipeline:
 
     def calculate_metadata_components(self, doc: CveDocument):
         w1 = severity_weight(doc.severity)
-        w2 = w2_weight(doc)  # dispatches per domain.gains.W2_SIGNAL (currently cvss_version)
+        w2 = w2_weight(doc)
         w3 = recency_weight(doc.pub_year, self.current_year)
         return w1, w2, w3
 
@@ -120,29 +131,12 @@ class CveTWRPipeline:
     # ---- Arm B: static TWR (Eq. 2, exactly as specified) ------------
     def static_twr(self, bm25_ranking, faiss_ranking,
                     alpha=1.0, beta=0.6, gamma=0.6, delta=0.3) -> List[int]:
-        """TWR(d) = alpha*RRF_norm(d) + beta*w1(d) + gamma*w2(d) + delta*w3(d).
-        RRF_norm(d) = RRF(d) / rrf_norm, rescaled to ~[0,1] so alpha is
-        directly comparable to beta/gamma/delta (see __init__ for why:
-        raw RRF(d) tops out around 0.03, dwarfed by w1/w3's [0,1] range,
-        which made alpha=1.0 meaningless in practice -- retrieval
-        relevance was contributing a rounding error to the fused score
-        regardless of alpha's value). beta (severity) and gamma
-        (review-status) are set equal by default -- unlike the academic
-        domain's retraction penalty, which was deliberately weighted
-        higher than the other two signals, neither severity nor
-        review-status obviously dominates the other for a security-triage
-        use case: an unreviewed Critical-CVSS-scored CVE and a fully-
-        Analyzed High-severity CVE are both worth surfacing prominently.
-        Tune per your paper's design; this is a stated default, not a
-        derived constant (see Section 6.2 of the TWR paper on why static
-        coefficients are auditable-by-construction rather than fit to
-        data by default)."""
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking, alpha=1.0)
         twr_scores = {}
         for doc_idx, rrf in rrf_scores.items():
             doc = self.corpus[doc_idx]
             w1, w2, w3 = self.calculate_metadata_components(doc)
-            rrf_norm_score = rrf / self.rrf_norm  # rescale to ~[0,1], see __init__
+            rrf_norm_score = rrf / self.rrf_norm
             twr_scores[doc_idx] = alpha * rrf_norm_score + beta * w1 + gamma * w2 + delta * w3
         return sorted(twr_scores.keys(), key=lambda x: twr_scores[x], reverse=True)
 
@@ -151,7 +145,7 @@ class CveTWRPipeline:
         doc = self.corpus[doc_idx]
         w1, w2, w3 = self.calculate_metadata_components(doc)
         dense_score = faiss_score_lookup.get(doc_idx, 0.0)
-        rrf_norm_score = rrf_score / self.rrf_norm  # see __init__: same rescale as static_twr
+        rrf_norm_score = rrf_score / self.rrf_norm
         return [rrf_norm_score, bm25_score, dense_score, w1, w2, w3]
 
     def build_features(self, query: str, top_n: int = 10):
@@ -159,23 +153,9 @@ class CveTWRPipeline:
         return self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
 
     def build_features_from_rankings(self, bm25_ranking, bm25_scores, faiss_ranking):
-        """Builds features from pre-computed rankings so static TWR/RRF/LTWR
-        can share ONE retrieval call per query instead of three."""
         rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)
         faiss_score_lookup = {idx: 1.0 / (r + 1) for r, idx in enumerate(faiss_ranking)}
 
-        # bm25_scores from rank_bm25 is raw, unbounded Okapi BM25 output
-        # (typically ~0-20+ depending on term frequency and corpus
-        # statistics) -- a different scale entirely from dense_score,
-        # w1, w2, w3, which all live in roughly [0,1]. Left unnormalized,
-        # this creates the same class of scale mismatch that broke
-        # static_twr (see __init__/static_twr), and independently
-        # explains why the learned bm25_score coefficient collapsed near
-        # zero: a [0,1]-bounded coefficient can't meaningfully weight an
-        # unbounded-scale feature against features that are already
-        # normalized. Min-max normalized over the retrieved candidate
-        # pool for this query (not global corpus stats, since BM25 score
-        # ranges are query-dependent).
         candidate_idxs = set(bm25_ranking) | set(faiss_ranking)
         bm25_pool = [bm25_scores[idx] for idx in candidate_idxs]
         bm25_min, bm25_max = min(bm25_pool), max(bm25_pool)
@@ -192,20 +172,45 @@ class CveTWRPipeline:
         return feats
 
     # ---- Arm C: LTWR (learned scalar-feature fusion) -------------
-    def ltwr(self, bm25_ranking, bm25_scores, faiss_ranking) -> List[int]:
-        """Runs fast, zero-overhead scalar ranking using pre-computed
-        ranking state (no re-running retrieval for this arm)."""
-        if self.ltwr_model is None:
-            raise RuntimeError("LTWR model not loaded -- train it first (domain/train_ltwr_cve.py)")
+    def ltwr(self, bm25_ranking: List[int], bm25_scores: dict, faiss_ranking: List[int]) -> List[int]:
+        """Pure Python scalar LTWR ranking using JSON-loaded weights (no scikit-learn / no fallback)."""
+        if not hasattr(self, "ltwr_coef") or self.ltwr_coef is None:
+            raise RuntimeError("LTWR JSON model not loaded -- call load_ltwr_model() first.")
 
-        feats = self.build_features_from_rankings(bm25_ranking, bm25_scores, faiss_ranking)
-        doc_idxs = list(feats.keys())
-        if not doc_idxs:
+        # 1. Compute baseline RRF scores
+        rrf_scores = self._accumulate_rrf(bm25_ranking, faiss_ranking)
+        if not rrf_scores:
             return []
-        X = np.array([feats[i] for i in doc_idxs])
-        scores = self.ltwr_model.predict(X)
-        order = np.argsort(scores)[::-1]
-        return [doc_idxs[i] for i in order]
+
+        # 2. Build fast lookup tables for BM25 normalization and FAISS rank reciprocal
+        candidate_idxs = set(bm25_ranking) | set(faiss_ranking)
+        bm25_pool = [bm25_scores[idx] for idx in candidate_idxs]
+        bm25_min, bm25_max = min(bm25_pool), max(bm25_pool)
+        bm25_range = (bm25_max - bm25_min) if (bm25_max - bm25_min) > 0 else 1.0
+
+        faiss_score_lookup = {idx: 1.0 / (r + 1) for r, idx in enumerate(faiss_ranking)}
+
+        # 3. Pure scalar dot product loop (Zero NumPy matrix allocation)
+        c0, c1, c2, c3, c4, c5 = self.ltwr_coef
+        intercept = self.ltwr_intercept
+        scores = {}
+
+        for doc_idx, rrf in rrf_scores.items():
+            doc = self.corpus[doc_idx]
+            w1, w2, w3 = self.calculate_metadata_components(doc)
+            
+            rrf_norm = rrf / self.rrf_norm
+            bm25_norm = (bm25_scores[doc_idx] - bm25_min) / bm25_range
+            dense_val = faiss_score_lookup.get(doc_idx, 0.0)
+
+            scores[doc_idx] = (c0 * rrf_norm + 
+                               c1 * bm25_norm + 
+                               c2 * dense_val + 
+                               c3 * w1 + 
+                               c4 * w2 + 
+                               c5 * w3 + intercept)
+
+        return sorted(scores.keys(), key=lambda x: scores[x], reverse=True)
 
     def provenance(self, indices: List[int]) -> List[Dict[str, Any]]:
         out = []
