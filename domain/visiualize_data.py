@@ -57,17 +57,16 @@ def VisualizeData(
     # Figure 1: Fusion Latency Distribution
     # ==========================================
     fig, ax = plt.subplots(figsize=(3.5, 3.0))  # Single-column width
+    
     df_lat_rename = df_lat.rename(columns=ARM_MAP)
-    df_lat_long = df_lat_rename.melt(var_name="Fusion Arm", value_name="Latency (μs)")
+    arms = list(ARM_MAP.values())
+    data_to_plot = [df_lat_rename[arm].dropna() for arm in arms if arm in df_lat_rename]
 
-    sns.boxplot(
-        data=df_lat_long,
-        x="Fusion Arm",
-        y="Latency (μs)",
-        ax=ax,
-        palette=PALETTE,
-        width=0.4,
-        linewidth=0.8,
+    bp = ax.boxplot(
+        data_to_plot,
+        labels=[arm for arm in arms if arm in df_lat_rename],
+        patch_artist=True,
+        widths=0.4,
         showmeans=True,
         meanprops={
             "marker": "o",
@@ -75,7 +74,18 @@ def VisualizeData(
             "markeredgecolor": "black",
             "markersize": 5,
         },
+        boxprops=dict(linewidth=0.8),
+        medianprops=dict(color="black", linewidth=1),
+        whiskerprops=dict(linewidth=0.8),
+        capprops=dict(linewidth=0.8),
     )
+
+    # Apply custom colors cleanly
+    for patch, color in zip(bp['boxes'], PALETTE):
+        patch.set_facecolor(color)
+        patch.set_edgecolor('black')
+        patch.set_linewidth(0.6)
+
     ax.set_title("CVE Fusion Latency Distribution")
     ax.set_xlabel("Fusion Arm")
     ax.set_ylabel("Latency (μs)")
@@ -200,4 +210,4 @@ def VisualizeData(
 
 
 if __name__ == "__main__":
-    VisualizeData()
+    VisualizeData("results/ltwr/cve_fusion_latency.csv", "results/ltwr/cve_metrics_per_query.csv", "results/ltwr/cve_stats_report.csv")
