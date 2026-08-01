@@ -106,7 +106,7 @@ def paired_test(a, b, label):
 METRICS = ["ndcg3_severity", "ndcg3_w2", "mrr_authoritative", "real_ndcg3", "real_mrr"]
 
 
-def main():
+def RunExperiment():
     corpus = load_corpus()
     ground_truth = load_ground_truth()
     all_queries = json.load(open("data_in/queries.json"))
@@ -187,4 +187,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    RunExperiment()

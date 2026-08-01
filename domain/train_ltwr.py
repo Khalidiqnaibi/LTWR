@@ -155,7 +155,7 @@ def build_regression_training_set(pipeline, queries, packages_filter):
     return np.array(X_rows), np.array(y_rows)
 
 
-def main():
+def TrainLTWR():
     corpus = load_corpus()
     queries = json.load(open("data_in/queries.json"))
     ground_truth = load_ground_truth()
@@ -205,4 +205,4 @@ def main():
         print(f"[+] Saved ablation Ridge JSON weights to {ablation_path}")
 
 if __name__ == "__main__":
-    main()
+    TrainLTWR()

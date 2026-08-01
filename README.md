@@ -4,6 +4,10 @@
 
 ---
 
+## Dataset: 
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21727536.svg)](https://doi.org/10.5281/zenodo.21727536)
+
 ##  Overview
 
 Standard hybrid retrieval pipelines combine sparse lexical search (BM25) and dense vector search (FAISS, Sentence-BERT) using Reciprocal Rank Fusion (RRF). While highly effective for topical relevance, **similarity-based rankers are mathematically blind to institutional authority and evidence quality**.
@@ -80,98 +84,32 @@ LTWR was evaluated against standard Reciprocal Rank Fusion (RRF) across **170 pa
 
 ## Quickstart
 
-### 1. Installation
+### 1. Environment Setup
 
-```bash
+Make sure that you have a `.env` file with the shape of `.env.example` in the root directory of the project.
+
+### 2. Clone the Repository
+
+```
 git clone https://github.com/Khalidiqnaibi/LTWR.git
 cd LTWR
-pip install -r requirements.txt
-
 ```
 
-### 2. Basic Usage
+### 3. Dataset Preparation
 
-```python
-from ltwr import TrustWeightedRanker, MetadataConfig
-
-# Define structural metadata mapping rules
-config = MetadataConfig(
-    alpha=1.0,  # RRF weight
-    beta=0.5,   # Evidence level weight
-    gamma=0.5,  # Journal tier weight
-    delta=0.3,  # Recency decay weight
-    lambda_decay=0.05
-)
-
-# Initialize LTWR Ranker
-ranker = TrustWeightedRanker(config=config)
-
-# Sample retrieved candidate pool (BM25 + FAISS Dense outputs)
-candidates = [
-    {
-        "id": "doc_101",
-        "title": "Single-patient case report on treatment X",
-        "bm25_rank": 0,
-        "dense_rank": 1,
-        "metadata": {"ocebm_level": 5, "sjr_quartile": "Q4", "year": 2015}
-    },
-    {
-        "id": "doc_202",
-        "title": "Systematic review and meta-analysis on treatment X",
-        "bm25_rank": 2,
-        "dense_rank": 0,
-        "metadata": {"ocebm_level": 1, "sjr_quartile": "Q1", "year": 2023}
-    }
-]
-
-# Run zero-latency fusion ranking
-fused_results = ranker.rank(candidates)
-
-for doc in fused_results:
-    print(f"Rank: {doc['final_rank']} | Score: {doc['twr_score']:.4f} | Title: {doc['title']}")
-
-```
-
-### 3. Offline Parameter Optimization (LTWR Compiler)
-
-```python
-from ltwr.compiler import LTWRCompiler
-
-# Fit optimal static coefficients offline using Learning-to-Rank on query logs
-compiler = LTWRCompiler(loss_function="pairwise_hinge")
-optimal_params = compiler.fit(query_logs=train_query_logs)
-
-print("Learned Static Parameters:", optimal_params)
-# Output: {'alpha': 0.85, 'beta': 0.62, 'gamma': 0.48, 'delta': 0.25}
-
-```
----
-
-##  Reproducibility
-
-To execute the complete evaluation pipeline and recreate all figures and statistical tests reported in the paper:
+Download the LTWR CVE dataset from Zenodo then extract it into the `data_in/` directory:
 
 ```bash
-python experiments/run_eval.py --dataset clinical_cte --output_dir results/
-
+cd data_in
+wget https://zenodo.org/api/records/21727536/files-archive
 ```
 
-Every execution logs the raw sparse rank, dense rank, fused rank, and structured trust provenance metadata to an audit log file (`audit_trail.jsonl`).
+### 4. Installation & Execution
 
----
-
-##  Citation
-
-If you use **LTWR** or **TWR** in your research or production RAG systems, please cite:
-
-```bibtex
-@article{iqnaibi2026ltwr,
-  title={Trust-Weighted Retrieval (TWR): Mitigating the Semantic Trap in Clinical and High-Stakes Retrieval-Augmented Generation},
-  author={Iqnaibi, Khalid},
-  journal={Working Draft / IR Journal Submission},
-  year={2026}
-}
-
+```bash
+cd ..
+pip install -r requirements.txt
+python main.py
 ```
 
 ---
