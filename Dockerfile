@@ -21,4 +21,4 @@ RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTr
 
 VOLUME ["/app/eval_results"]
 
-ENTRYPOINT ["python", "domain/run_experiment.py"]
+ENTRYPOINT ["python", "main.py"]
