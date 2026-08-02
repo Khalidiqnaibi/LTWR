@@ -1,4 +1,4 @@
-# LTWR: Learned Trust-Weighted Retrieval
+# LTWR: Learned Trust-Weighted Ranking
 
 > **Mitigating the Semantic Trap in High-Stakes Retrieval-Augmented Generation (RAG) at Zero Online Latency.**
 
